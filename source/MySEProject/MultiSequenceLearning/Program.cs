@@ -19,8 +19,10 @@ namespace MySEProject
         /// <param name="args"></param>
         static void Main(string[] args)
         {
-            
+
             // RunMultiSimpleSequenceLearningExperiment();
+
+            Console.WriteLine("Running RunMultiSequenceLearningExperiment()");
             RunMultiSequenceLearningExperiment();
         }
 
@@ -28,8 +30,9 @@ namespace MySEProject
         {
             Dictionary<string, List<double>> sequences = new Dictionary<string, List<double>>();
 
-            sequences.Add("S1", new List<double>(new double[] { 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, }));
-            sequences.Add("S2", new List<double>(new double[] { 10.0, 11.0, 12.0, 13.0, 14.0, 15.0, 16.0 }));
+            sequences.Add("S1", new List<double>(new double[] { 1.0, 2.0, 3.0, 5.0, 6.0, 7.0, 9.0, 11.0 }));
+            sequences.Add("S2", new List<double>(new double[] { 2.0, 3.0, 5.0, 6.0, 7.0, 9.0, 10.0 }));
+            sequences.Add("S3", new List<double>(new double[] { 1.0, 2.0, 3.0, 6.0, 7.0, 9.0, 10.0 }));
 
             //
             // Prototype for building the prediction engine.
@@ -51,8 +54,12 @@ namespace MySEProject
             //sequences.Add("S1", new List<double>(new double[] { 0.0, 1.0, 0.0, 2.0, 3.0, 4.0, 5.0, 6.0, 5.0, 4.0, 3.0, 7.0, 1.0, 9.0, 12.0, 11.0, 12.0, 13.0, 14.0, 11.0, 12.0, 14.0, 5.0, 7.0, 6.0, 9.0, 3.0, 4.0, 3.0, 4.0, 3.0, 4.0 }));
             //sequences.Add("S2", new List<double>(new double[] { 0.8, 2.0, 0.0, 3.0, 3.0, 4.0, 5.0, 6.0, 5.0, 7.0, 2.0, 7.0, 1.0, 9.0, 11.0, 11.0, 10.0, 13.0, 14.0, 11.0, 7.0, 6.0, 5.0, 7.0, 6.0, 5.0, 3.0, 2.0, 3.0, 4.0, 3.0, 4.0 }));
 
-            sequences.Add("S1", new List<double>(new double[] { 0.0, 1.0, 2.0, 3.0, 4.0, 2.0, 5.0, }));
-            sequences.Add("S2", new List<double>(new double[] { 8.0, 1.0, 2.0, 9.0, 10.0, 7.0, 11.00 }));
+            //sequences.Add("S1", new List<double>(new double[] { 0.0, 1.0, 2.0, 3.0, 4.0, 2.0, 5.0, }));
+            //sequences.Add("S2", new List<double>(new double[] { 8.0, 1.0, 2.0, 9.0, 10.0, 7.0, 11.00 }));
+
+            sequences.Add("S1", new List<double>(new double[] { 1.0, 2.0, 3.0, 5.0, 6.0, 7.0, 9.0, 11.0 }));
+            sequences.Add("S2", new List<double>(new double[] { 2.0, 3.0, 5.0, 6.0, 7.0, 9.0, 10.0 }));
+            sequences.Add("S3", new List<double>(new double[] { 1.0, 2.0, 3.0, 6.0, 7.0, 9.0, 10.0 }));
 
             //
             // Prototype for building the prediction engine.
@@ -63,9 +70,9 @@ namespace MySEProject
             // These list are used to see how the prediction works.
             // Predictor is traversing the list element by element. 
             // By providing more elements to the prediction, the predictor delivers more precise result.
-            var list1 = new double[] { 1.0, 2.0, 3.0, 4.0, 2.0, 5.0 };
-            var list2 = new double[] { 2.0, 3.0, 4.0 };
-            var list3 = new double[] { 8.0, 1.0, 2.0 };
+            var list1 = new double[] { 1.0, 2.0, 3.0 };
+            var list2 = new double[] { 2.0, 3.0, 5.0 };
+            var list3 = new double[] { 6.0, 7.0, 9.0 };
 
             predictor.Reset();
             PredictNextElement(predictor, list1);
@@ -79,7 +86,7 @@ namespace MySEProject
 
         private static void PredictNextElement(Predictor predictor, double[] list)
         {
-            Debug.WriteLine("------------------------------");
+            Console.WriteLine("------------------------------");
 
             foreach (var item in list)
             {
@@ -94,13 +101,13 @@ namespace MySEProject
 
                     var tokens = res.First().PredictedInput.Split('_');
                     var tokens2 = res.First().PredictedInput.Split('-');
-                    Debug.WriteLine($"Predicted Sequence: {tokens[0]}, predicted next element {tokens2.Last()}");
+                    Console.WriteLine($"Predicted Sequence: {tokens[0]}, predicted next element {tokens2.Last()}");
                 }
                 else
-                    Debug.WriteLine("Nothing predicted :(");
+                    Console.WriteLine("Nothing predicted :(");
             }
 
-            Debug.WriteLine("------------------------------");
+            Console.WriteLine("------------------------------");
         }
     }
 }

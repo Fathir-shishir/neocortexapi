@@ -22,7 +22,7 @@ namespace MySEProject
         /// <param name="sequences">Dictionary of sequences. KEY is the sewuence name, the VALUE is th elist of element of the sequence.</param>
         public Predictor Run(Dictionary<string, List<double>> sequences)
         {
-            Console.WriteLine($"Hello NeocortexApi! Experiment {nameof(MultiSequenceLearning)}");
+            //Console.WriteLine($"Hello NeocortexApi! Experiment {nameof(MultiSequenceLearning)}");
 
             int inputBits = 100;
             int numColumns = 1024;
@@ -93,7 +93,7 @@ namespace MySEProject
 
             CortexLayer<object, object> layer1 = new CortexLayer<object, object>("L1");
 
-            TemporalMemory tm = new TemporalMemory();
+
 
             // For more information see following paper: https://www.scitepress.org/Papers/2021/103142/103142.pdf
             HomeostaticPlasticityController hpc = new HomeostaticPlasticityController(mem, numUniqueInputs * 150, (isStable, numPatterns, actColAvg, seenInputs) =>
@@ -114,6 +114,8 @@ namespace MySEProject
 
 
             SpatialPoolerMT sp = new SpatialPoolerMT(hpc);
+            TemporalMemory tm = new TemporalMemory();
+
             sp.Init(mem);
             tm.Init(mem);
 
@@ -122,15 +124,15 @@ namespace MySEProject
             // In this stage we want that SP get boosted and see all elements before we start learning with TM.
             // All would also work fine with TM in layer, but it would work much slower.
             // So, to improve the speed of experiment, we first ommit the TM and then after the newborn-stage we add it to the layer.
+            
+            //understand encoder
             layer1.HtmModules.Add("encoder", encoder);
             layer1.HtmModules.Add("sp", sp);
 
-            //double[] inputs = inputValues.ToArray();
-            int[] prevActiveCols = new int[0];
-            
             int cycle = 0;
             int matches = 0;
 
+            //why?
             var lastPredictedValues = new List<string>(new string[] { "0"});
             
             int maxCycles = 3500;
@@ -172,6 +174,7 @@ namespace MySEProject
 
             //
             // Loop over all sequences.
+            //
             foreach (var sequenceKeyPair in sequences)
             {
                 Debug.WriteLine($"-------------- Sequences {sequenceKeyPair.Key} ---------------");
@@ -190,10 +193,7 @@ namespace MySEProject
 
                     cycle++;
 
-                    Debug.WriteLine("");
-
                     Debug.WriteLine($"-------------- Cycle {cycle} ---------------");
-                    Debug.WriteLine("");
 
                     foreach (var input in sequenceKeyPair.Value)
                     {
@@ -215,10 +215,12 @@ namespace MySEProject
                         if (previousInputs.Count < maxPrevInputs)
                             continue;
 
+                        //gets key used in learning
                         string key = GetKey(previousInputs, input, sequenceKeyPair.Key);
 
                         List<Cell> actCells;
 
+                        //select which cells are gonna be next active cells
                         if (lyrOut.ActiveCells.Count == lyrOut.WinnerCells.Count)
                         {
                             actCells = lyrOut.ActiveCells;
@@ -228,6 +230,7 @@ namespace MySEProject
                             actCells = lyrOut.WinnerCells;
                         }
 
+                        Console.WriteLine("Started learning...");
                         cls.Learn(key, actCells.ToArray());
 
                         Debug.WriteLine($"Col  SDR: {Helpers.StringifyVector(lyrOut.ActivColumnIndicies)}");
@@ -315,7 +318,7 @@ namespace MySEProject
                 //num += inputs.Value.Distinct().Count();
                 num += inputs.Value.Count;
             }
-
+            Console.WriteLine($"count: {num}");
             return num;
         }
 
@@ -340,7 +343,7 @@ namespace MySEProject
 
                 key += (prevInputs[i]);
             }
-
+            Console.WriteLine($"key: {key}");
             return $"{sequence}_{key}";
         }
     }

@@ -54,6 +54,7 @@ namespace MySEProject
                 PredictedSegmentDecrement = 0.1
             };
 
+            Console.WriteLine($"Init Max New Synapse Count: {cfg.MaxNewSynapseCount}");
             double max = 20;
 
             Dictionary<string, object> settings = new Dictionary<string, object>()
@@ -112,10 +113,12 @@ namespace MySEProject
             }, numOfCyclesToWaitOnChange: 50);
 
             TemporalMemory tm = new TemporalMemory();
+            Console.WriteLine($"After creating object for TM. Max New Synapse Count: {cfg.MaxNewSynapseCount}");
             SpatialPoolerMT sp = new SpatialPoolerMT(hpc);
 
             sp.Init(mem);
             tm.Init(mem);
+            Console.WriteLine($"After Init TM. Max New Synapse Count: {cfg.MaxNewSynapseCount}");
 
             // Please note that we do not add here TM in the layer.
             // This is omitted for practical reasons, because we first enter the newborn-stage of the algorithm
@@ -134,6 +137,8 @@ namespace MySEProject
             
             int maxCycles = 3500;
 
+
+            Console.WriteLine($"Before SP. Max New Synapse Count: {cfg.MaxNewSynapseCount}");
             //
             // Training SP to get stable. New-born stage.
             //
@@ -182,6 +187,7 @@ namespace MySEProject
                 //why?
                 previousInputs.Add("-1.0");
 
+                Console.WriteLine($"Before SP+TM. Max New Synapse Count: {cfg.MaxNewSynapseCount}");
                 //
                 // Now training with SP+TM. SP is pretrained on the given input pattern set.
                 for (int i = 0; i < maxCycles; i++)
@@ -296,6 +302,7 @@ namespace MySEProject
                 }
             }
 
+            Console.WriteLine($"After learning. Max New Synapse Count: {cfg.MaxNewSynapseCount}");
             Debug.WriteLine("------------ END ------------");
 
             return new Predictor(layer1, mem, cls);

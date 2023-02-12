@@ -54,6 +54,9 @@ namespace MySEProject
                 PredictedSegmentDecrement = 0.1
             };
 
+
+            Console.WriteLine($"Init Max New Synapse Count: {cfg.MaxNewSynapseCount}");
+
             double max = 20;
 
             Dictionary<string, object> settings = new Dictionary<string, object>()
@@ -84,6 +87,7 @@ namespace MySEProject
             int maxMatchCnt = 0;
 
             var mem = new Connections(cfg);
+            Console.WriteLine($"Connection() Max New Synapse Count: {cfg.MaxNewSynapseCount}");
 
             bool isInStableState = false;
 
@@ -93,7 +97,7 @@ namespace MySEProject
 
             CortexLayer<object, object> layer1 = new CortexLayer<object, object>("L1");
 
-
+            Console.WriteLine($"CortexLayer() Max New Synapse Count: {cfg.MaxNewSynapseCount}");
 
             // For more information see following paper: https://www.scitepress.org/Papers/2021/103142/103142.pdf
             HomeostaticPlasticityController hpc = new HomeostaticPlasticityController(mem, numUniqueInputs * 150, (isStable, numPatterns, actColAvg, seenInputs) =>
@@ -112,6 +116,7 @@ namespace MySEProject
                 //tm.Reset(mem);
             }, numOfCyclesToWaitOnChange: 50);
 
+            Console.WriteLine($"HPC() Max New Synapse Count: {cfg.MaxNewSynapseCount}");
 
             SpatialPoolerMT sp = new SpatialPoolerMT(hpc);
             TemporalMemory tm = new TemporalMemory();
@@ -137,6 +142,7 @@ namespace MySEProject
             
             int maxCycles = 3500;
 
+            Console.WriteLine($"Before training SP. Max New Synapse Count: {cfg.MaxNewSynapseCount}");
             //
             // Training SP to get stable. New-born stage.
             //
@@ -147,7 +153,7 @@ namespace MySEProject
 
                 cycle++;
 
-                Debug.WriteLine($"-------------- Newborn Cycle {cycle} ---------------");
+                Console.WriteLine($"-------------- Newborn Cycle {cycle} | Max New Synapse Count: {cfg.MaxNewSynapseCount}---------------");
 
                 foreach (var inputs in sequences)
                 {
@@ -172,6 +178,7 @@ namespace MySEProject
             // We activate here the Temporal Memory algorithm.
             layer1.HtmModules.Add("tm", tm);
 
+            Console.WriteLine($"Before training TM. Max New Synapse Count: {cfg.MaxNewSynapseCount}");
             //
             // Loop over all sequences.
             //
@@ -193,7 +200,7 @@ namespace MySEProject
 
                     cycle++;
 
-                    Debug.WriteLine($"-------------- Cycle {cycle} ---------------");
+                    Console.WriteLine($"-------------- Cycle {cycle} | Max New Synapse Count: {cfg.MaxNewSynapseCount}---------------");
 
                     foreach (var input in sequenceKeyPair.Value)
                     {
@@ -298,6 +305,7 @@ namespace MySEProject
                 }
             }
 
+            Console.WriteLine($"After training. Max New Synapse Count: {cfg.MaxNewSynapseCount}");
             Debug.WriteLine("------------ END ------------");
 
             return new Predictor(layer1, mem, cls);

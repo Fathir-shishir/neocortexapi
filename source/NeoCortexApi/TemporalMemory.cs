@@ -114,6 +114,7 @@ namespace NeoCortexApi
         /// <remarks>Note: PredictiveCells are not calculated here. They are calculated on demand from active segments.</remarks>
         public ComputeCycle Compute(int[] activeColumns, bool learn, int[] externalPredictiveInputsActive = null, int[] externalPredictiveInputsWinners = null)
         {
+            Console.WriteLine("Running TM.Compute() - Line(117)");
             //Stopwatch sw = new Stopwatch();
             //sw.Start();
 
@@ -180,6 +181,7 @@ namespace NeoCortexApi
 
         protected virtual ComputeCycle ActivateCells(Connections conn, int[] activeColumnIndices, bool learn)
         {
+            Console.WriteLine("Running ActivateCells() - Line(184)");
             ComputeCycle cycle = new ComputeCycle
             {
                 ActivColumnIndicies = activeColumnIndices
@@ -300,6 +302,7 @@ namespace NeoCortexApi
         /// <seealso cref="">https://github.com/htm-community/htm.core/blob/master/src/htm/algorithms/TemporalMemory.cpp</seealso>
         protected void ActivateDendrites(Connections conn, ComputeCycle cycle, bool learn, int[] externalPredictiveInputsActive = null, int[] externalPredictiveInputsWinners = null)
         {
+            Console.WriteLine("Runnning ActivateDendrites() - Line(305)");
             //if (externalPredictiveInputsActive != null)
             //    cycle.ActiveCells.AddRange(externalPredictiveInputsActive);
 
@@ -372,6 +375,7 @@ namespace NeoCortexApi
         /// <param name="connections"></param>
         public void Reset(Connections connections)
         {
+            Console.WriteLine("Running Rest() - Line(378)");
             connections.ActiveCells.Clear();
             connections.WinnerCells.Clear();
             connections.ActiveSegments.Clear();
@@ -422,6 +426,7 @@ namespace NeoCortexApi
             List<DistalDendrite> matchingSegments, ICollection<Cell> prevActiveCells, ICollection<Cell> prevWinnerCells,
                 double permanenceIncrement, double permanenceDecrement, bool learn)
         {
+            Console.WriteLine("Running ActivatePrefictedColumn() - Line(429)");
             // List of cells that owns active segments. These cells will be activated in this cycle.
             // In previous cycle they are depolarized.
             List<Cell> cellsOwnersOfActiveSegments = new List<Cell>();
@@ -522,6 +527,7 @@ namespace NeoCortexApi
             ICollection<Cell> prevActiveCells, ICollection<Cell> prevWinnerCells, double permanenceIncrement, double permanenceDecrement,
                 Random random, bool learn)
         {
+            Console.WriteLine("Running BurstColumn() - Line(530)");
             IList<Cell> cells = column.Cells;
             Cell leastUsedOrMaxPotentialCell = null;
 
@@ -584,6 +590,7 @@ namespace NeoCortexApi
         /// <returns></returns>
         private DistalDendrite GetSegmentwithHighesPotential(List<DistalDendrite> matchingSegments, ICollection<Cell> prevActiveCells)
         {
+            Console.WriteLine("Running GetSegmentwithHighesPotential() - Line(593)");
             DistalDendrite maxSeg = matchingSegments[0];
 
             for (int i = 0; i < matchingSegments.Count - 1; i++)
@@ -625,6 +632,7 @@ namespace NeoCortexApi
             List<DistalDendrite> matchingSegments, ICollection<Cell> prevActiveCells, ICollection<Cell> prevWinnerCells,
                double predictedSegmentDecrement)
         {
+            Console.WriteLine("Running PunishPredictedColumn() - Line(635)");
             Debug.Write("P");
             if (predictedSegmentDecrement > 0)
             {

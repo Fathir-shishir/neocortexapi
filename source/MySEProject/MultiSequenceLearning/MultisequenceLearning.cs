@@ -135,7 +135,7 @@ namespace MySEProject
 
             var lastPredictedValues = new List<string>(new string[] { "0"});
             
-            int maxCycles = 3500;
+            int maxCycles = 4500;
 
 
             Console.WriteLine($"Before SP. Max New Synapse Count: {cfg.MaxNewSynapseCount}");

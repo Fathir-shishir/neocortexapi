@@ -475,7 +475,7 @@ namespace NeoCortexApi
                     //}
 
                     int nGrowDesired = conn.HtmConfig.MaxNewSynapseCount - numActive;
-
+                    Console.WriteLine($"Line(478) - ActivatePredictedColumn() - nGrowDesired({nGrowDesired})");
                     if (nGrowDesired > 0)
                     {
                         // Create new synapses on the segment from winner (pre-synaptic cells) cells.
@@ -553,7 +553,7 @@ namespace NeoCortexApi
                     AdaptSegment(conn, maxPotentialSeg, prevActiveCells, permanenceIncrement, permanenceDecrement);
 
                     int nGrowDesired = conn.HtmConfig.MaxNewSynapseCount - this.LastActivity.PotentialSynapses[maxPotentialSeg.SegmentIndex];
-
+                    Console.WriteLine($"Line(556) - BurstColumn() - nGrowDesired({nGrowDesired})");
                     if (nGrowDesired > 0)
                     {
                         GrowSynapses(conn, prevWinnerCells, maxPotentialSeg, conn.HtmConfig.InitialPermanence, nGrowDesired, random);
@@ -570,6 +570,7 @@ namespace NeoCortexApi
                     // This can be optimized. Right now, we assume that every winner cell has a single synaptic connection to the segment.
                     // This is why we substract number of cells from the MaxNewSynapseCount.
                     int nGrowExact = Math.Min(conn.HtmConfig.MaxNewSynapseCount, prevWinnerCells.Count);
+                    Console.WriteLine($"Line(573) - BurstColumn() - nGrowExact({nGrowExact})");
                     if (nGrowExact > 0)
                     {
                         DistalDendrite newSegment = conn.CreateDistalSegment(leastUsedOrMaxPotentialCell);

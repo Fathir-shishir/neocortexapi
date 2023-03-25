@@ -54,7 +54,9 @@ namespace MySEProject
                 PredictedSegmentDecrement = 0.1
             };
 
+
             Console.WriteLine($"Init Max New Synapse Count: {cfg.MaxNewSynapseCount}");
+
             double max = 20;
 
             Dictionary<string, object> settings = new Dictionary<string, object>()
@@ -83,8 +85,11 @@ namespace MySEProject
             sw.Start();
 
             int maxMatchCnt = 0;
+            int previousCountLogger = 0;
+            List<String> report = new List<String>();
 
             var mem = new Connections(cfg);
+            Console.WriteLine($"Connection() Max New Synapse Count: {cfg.MaxNewSynapseCount}");
 
             bool isInStableState = false;
 
@@ -94,6 +99,8 @@ namespace MySEProject
             var numUniqueInputs = GetNumberOfInputs(sequences);
 
             CortexLayer<object, object> layer1 = new CortexLayer<object, object>("L1");
+
+            Console.WriteLine($"CortexLayer() Max New Synapse Count: {cfg.MaxNewSynapseCount}");
 
             // For more information see following paper: https://www.scitepress.org/Papers/2021/103142/103142.pdf
             HomeostaticPlasticityController hpc = new HomeostaticPlasticityController(mem, numUniqueInputs * 150, (isStable, numPatterns, actColAvg, seenInputs) =>
@@ -112,6 +119,9 @@ namespace MySEProject
                 //tm.Reset(mem);
             }, numOfCyclesToWaitOnChange: 50);
 
+            Console.WriteLine($"HPC() Max New Synapse Count: {cfg.MaxNewSynapseCount}");
+
+            SpatialPoolerMT sp = new SpatialPoolerMT(hpc);
             TemporalMemory tm = new TemporalMemory();
             Console.WriteLine($"After creating object for TM. Max New Synapse Count: {cfg.MaxNewSynapseCount}");
             SpatialPoolerMT sp = new SpatialPoolerMT(hpc);
@@ -121,24 +131,24 @@ namespace MySEProject
             Console.WriteLine($"After Init TM. Max New Synapse Count: {cfg.MaxNewSynapseCount}");
 
             // Please note that we do not add here TM in the layer.
-            // This is omitted for practical reasons, because we first enter the newborn-stage of the algorithm
+            // This is omitted for practical reasons, because we first eneter the newborn-stage of the algorithm
             // In this stage we want that SP get boosted and see all elements before we start learning with TM.
             // All would also work fine with TM in layer, but it would work much slower.
             // So, to improve the speed of experiment, we first ommit the TM and then after the newborn-stage we add it to the layer.
-
-            //understand encoding??
+            
+            //understand encoder
             layer1.HtmModules.Add("encoder", encoder);
             layer1.HtmModules.Add("sp", sp);
 
             int cycle = 0;
             int matches = 0;
 
+            //why?
             var lastPredictedValues = new List<string>(new string[] { "0"});
             
-            int maxCycles = 4500;
+            int maxCycles = 5000;
 
-
-            Console.WriteLine($"Before SP. Max New Synapse Count: {cfg.MaxNewSynapseCount}");
+            Console.WriteLine($"Before training SP. Max New Synapse Count: {cfg.MaxNewSynapseCount}");
             //
             // Training SP to get stable. New-born stage.
             //
@@ -149,7 +159,7 @@ namespace MySEProject
 
                 cycle++;
 
-                Debug.WriteLine($"-------------- Newborn Cycle {cycle} ---------------");
+                Console.WriteLine($"-------------- Newborn Cycle {cycle} of SP ---------------");
 
                 foreach (var inputs in sequences)
                 {
@@ -174,8 +184,10 @@ namespace MySEProject
             // We activate here the Temporal Memory algorithm.
             layer1.HtmModules.Add("tm", tm);
 
+            Console.WriteLine($"Before training TM. Max New Synapse Count: {cfg.MaxNewSynapseCount}");
             //
             // Loop over all sequences.
+            //
             foreach (var sequenceKeyPair in sequences)
             {
                 Debug.WriteLine($"-------------- Sequences {sequenceKeyPair.Key} ---------------");
@@ -196,7 +208,7 @@ namespace MySEProject
 
                     cycle++;
 
-                    Debug.WriteLine("");
+                    Console.WriteLine($"-------------- Cycle {cycle} of SP+TM ---------------");
 
                     Debug.WriteLine($"-------------- Cycle {cycle} ---------------");
                     Debug.WriteLine("");
@@ -221,10 +233,12 @@ namespace MySEProject
                         if (previousInputs.Count < maxPrevInputs)
                             continue;
 
+                        //gets key used in learning
                         string key = GetKey(previousInputs, input, sequenceKeyPair.Key);
 
                         List<Cell> actCells;
 
+                        //select which cells are gonna be next active cells
                         if (lyrOut.ActiveCells.Count == lyrOut.WinnerCells.Count)
                         {
                             actCells = lyrOut.ActiveCells;
@@ -234,7 +248,7 @@ namespace MySEProject
                             actCells = lyrOut.WinnerCells;
                         }
 
-                        //learning combination of key and SDR
+                        //Console.WriteLine("Started learning...");
                         cls.Learn(key, actCells.ToArray());
 
                         Debug.WriteLine($"Col  SDR: {Helpers.StringifyVector(lyrOut.ActivColumnIndicies)}");
@@ -268,6 +282,11 @@ namespace MySEProject
                             Debug.WriteLine($"NO CELLS PREDICTED for next cycle.");
                             lastPredictedValues = new List<string> ();
                         }
+                        if (tm.countLogger > previousCountLogger)
+                        {
+                            report.Add($"Cycle: {cycle}, Sequence: {sequenceKeyPair.Key}, {tm.Logger}");
+                            previousCountLogger = tm.countLogger;
+                        }
                     }
 
                     // The first element (a single element) in the sequence cannot be predicted
@@ -276,6 +295,9 @@ namespace MySEProject
                     double accuracy = (double)matches / (double)sequenceKeyPair.Value.Count * 100.0;
 
                     Debug.WriteLine($"Cycle: {cycle}\tMatches={matches} of {sequenceKeyPair.Value.Count}\t {accuracy}%");
+                    report.Add($"Cycle: {cycle}, Sequence: {sequenceKeyPair.Key}\tMatches={matches} of {sequenceKeyPair.Value.Count}\t Accuracy: {accuracy}%");
+
+                    
 
                     if (accuracy >= maxPossibleAccuraccy)
                     {
@@ -297,14 +319,19 @@ namespace MySEProject
                         maxMatchCnt = 0;
                     }
 
+                    
                     // This resets the learned state, so the first element starts allways from the beginning.
                     tm.Reset(mem);
                 }
             }
 
-            Console.WriteLine($"After learning. Max New Synapse Count: {cfg.MaxNewSynapseCount}");
+            Console.WriteLine($"After training. Max New Synapse Count: {cfg.MaxNewSynapseCount}");
+            
             Debug.WriteLine("------------ END ------------");
-
+            foreach (String item in report)
+            {
+                Console.WriteLine(item);
+            }
             return new Predictor(layer1, mem, cls);
         }
 
@@ -323,7 +350,7 @@ namespace MySEProject
                 //num += inputs.Value.Distinct().Count();
                 num += inputs.Value.Count;
             }
-
+            //Console.WriteLine($"count: {num}");
             return num;
         }
 
@@ -348,7 +375,7 @@ namespace MySEProject
 
                 key += (prevInputs[i]);
             }
-
+            //Console.WriteLine($"key: {key}");
             return $"{sequence}_{key}";
         }
     }

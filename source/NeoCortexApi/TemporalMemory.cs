@@ -27,6 +27,10 @@ namespace NeoCortexApi
 
         public string Name { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
+        public String Logger { get; set; }
+
+        public int countLogger { get; set; }
+
         /// <summary>
         /// Uses the specified <see cref="Connections"/> object to Build the structural  anatomy needed by this <see cref="TemporalMemory"/> 
         /// to implement its algorithms.<br/>
@@ -74,6 +78,8 @@ namespace NeoCortexApi
             //
             // This is the only initialization place for cells.
             this.connections.Cells = cells;
+            this.Logger = "";
+            this.countLogger = 0;
         }
 
         // Used fro performance testing.
@@ -480,12 +486,12 @@ namespace NeoCortexApi
                     //}
 
                     int nGrowDesired = conn.HtmConfig.MaxNewSynapseCount - numActive;
-
+                    //Console.WriteLine($"Line(478) - ActivatePredictedColumn() - nGrowDesired({nGrowDesired})");
                     if (nGrowDesired > 0)
                     {
                         // Create new synapses on the segment from winner (pre-synaptic cells) cells.
                         GrowSynapses(conn, prevWinnerCells, segment, conn.HtmConfig.InitialPermanence,
-                            nGrowDesired, conn.HtmConfig.Random);
+                            nGrowDesired, conn.HtmConfig.Random, "ActivatePredictedColumn");
                     }
                     else
                     {
@@ -559,10 +565,11 @@ namespace NeoCortexApi
                     AdaptSegment(conn, maxPotentialSeg, prevActiveCells, permanenceIncrement, permanenceDecrement);
 
                     int nGrowDesired = conn.HtmConfig.MaxNewSynapseCount - this.LastActivity.PotentialSynapses[maxPotentialSeg.SegmentIndex];
-
+                    //Console.WriteLine($"Line(556) - BurstColumn() - nGrowDesired({nGrowDesired})");
                     if (nGrowDesired > 0)
                     {
-                        GrowSynapses(conn, prevWinnerCells, maxPotentialSeg, conn.HtmConfig.InitialPermanence, nGrowDesired, random);
+                        GrowSynapses(conn, prevWinnerCells, maxPotentialSeg, conn.HtmConfig.InitialPermanence, 
+                            nGrowDesired, random, "BurstColumnWithMatchingSegments");
                     }
                 }
             }
@@ -576,11 +583,12 @@ namespace NeoCortexApi
                     // This can be optimized. Right now, we assume that every winner cell has a single synaptic connection to the segment.
                     // This is why we substract number of cells from the MaxNewSynapseCount.
                     int nGrowExact = Math.Min(conn.HtmConfig.MaxNewSynapseCount, prevWinnerCells.Count);
+                    //Console.WriteLine($"Line(573) - BurstColumn() - nGrowExact({nGrowExact})");
                     if (nGrowExact > 0)
                     {
                         DistalDendrite newSegment = conn.CreateDistalSegment(leastUsedOrMaxPotentialCell);
                         GrowSynapses(conn, prevWinnerCells, newSegment, conn.HtmConfig.InitialPermanence,
-                            nGrowExact, random);
+                            nGrowExact, random, "BurstColumnWithoutMatchingSegments");
                     }
                 }
             }
@@ -699,7 +707,7 @@ namespace NeoCortexApi
         /// <param name="requiredNewSynapses">Desired number of synapses to grow</param>
         /// <param name="random"><see cref="TemporalMemory"/> object used to generate random numbers</param>
         public void GrowSynapses(Connections conn, ICollection<Cell> prevWinnerCells, DistalDendrite segment,
-            double initialPermanence, int requiredNewSynapses, Random random)
+            double initialPermanence, int requiredNewSynapses, Random random, String calledBy)
         {
             //Console.WriteLine($"Running GrowSynapses(): requiredNewSynapses={requiredNewSynapses}");
             random = new Random();
@@ -741,6 +749,9 @@ namespace NeoCortexApi
                 conn.CreateSynapse(segment, winnersWithoutSynapticConnecctionToSegment[rndIndex], initialPermanence);
                 winnersWithoutSynapticConnecctionToSegment.RemoveAt(rndIndex);
             }
+
+            this.Logger = $"GrowSynapses(): calledBy: {calledBy}, requiredNewSynapses: {requiredNewSynapses}, numMissingSynapses: {numMissingSynapses}";
+            this.countLogger++;
         }
 
         /// <summary>

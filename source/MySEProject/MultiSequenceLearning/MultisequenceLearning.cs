@@ -85,6 +85,8 @@ namespace MySEProject
             sw.Start();
 
             int maxMatchCnt = 0;
+            int previousCountLogger = 0;
+            List<String> report = new List<String>();
 
             var mem = new Connections(cfg);
             Console.WriteLine($"Connection() Max New Synapse Count: {cfg.MaxNewSynapseCount}");
@@ -153,7 +155,7 @@ namespace MySEProject
 
                 cycle++;
 
-                Console.WriteLine($"-------------- Newborn Cycle {cycle} | Max New Synapse Count: {cfg.MaxNewSynapseCount}---------------");
+                Console.WriteLine($"-------------- Newborn Cycle {cycle} of SP ---------------");
 
                 foreach (var inputs in sequences)
                 {
@@ -200,7 +202,7 @@ namespace MySEProject
 
                     cycle++;
 
-                    Console.WriteLine($"-------------- Cycle {cycle} | Max New Synapse Count: {cfg.MaxNewSynapseCount}---------------");
+                    Console.WriteLine($"-------------- Cycle {cycle} of SP+TM ---------------");
 
                     foreach (var input in sequenceKeyPair.Value)
                     {
@@ -237,7 +239,7 @@ namespace MySEProject
                             actCells = lyrOut.WinnerCells;
                         }
 
-                        Console.WriteLine("Started learning...");
+                        //Console.WriteLine("Started learning...");
                         cls.Learn(key, actCells.ToArray());
 
                         Debug.WriteLine($"Col  SDR: {Helpers.StringifyVector(lyrOut.ActivColumnIndicies)}");
@@ -271,6 +273,11 @@ namespace MySEProject
                             Debug.WriteLine($"NO CELLS PREDICTED for next cycle.");
                             lastPredictedValues = new List<string> ();
                         }
+                        if (tm.countLogger > previousCountLogger)
+                        {
+                            report.Add($"Cycle: {cycle}, Sequence: {sequenceKeyPair.Key}, {tm.Logger}");
+                            previousCountLogger = tm.countLogger;
+                        }
                     }
 
                     // The first element (a single element) in the sequence cannot be predicted
@@ -279,6 +286,9 @@ namespace MySEProject
                     double accuracy = (double)matches / (double)sequenceKeyPair.Value.Count * 100.0;
 
                     Debug.WriteLine($"Cycle: {cycle}\tMatches={matches} of {sequenceKeyPair.Value.Count}\t {accuracy}%");
+                    report.Add($"Cycle: {cycle}, Sequence: {sequenceKeyPair.Key}\tMatches={matches} of {sequenceKeyPair.Value.Count}\t Accuracy: {accuracy}%");
+
+                    
 
                     if (accuracy >= maxPossibleAccuraccy)
                     {
@@ -300,14 +310,19 @@ namespace MySEProject
                         maxMatchCnt = 0;
                     }
 
+                    
                     // This resets the learned state, so the first element starts allways from the beginning.
                     tm.Reset(mem);
                 }
             }
 
             Console.WriteLine($"After training. Max New Synapse Count: {cfg.MaxNewSynapseCount}");
+            
             Debug.WriteLine("------------ END ------------");
-
+            foreach (String item in report)
+            {
+                Console.WriteLine(item);
+            }
             return new Predictor(layer1, mem, cls);
         }
 
@@ -326,7 +341,7 @@ namespace MySEProject
                 //num += inputs.Value.Distinct().Count();
                 num += inputs.Value.Count;
             }
-            Console.WriteLine($"count: {num}");
+            //Console.WriteLine($"count: {num}");
             return num;
         }
 
@@ -351,7 +366,7 @@ namespace MySEProject
 
                 key += (prevInputs[i]);
             }
-            Console.WriteLine($"key: {key}");
+            //Console.WriteLine($"key: {key}");
             return $"{sequence}_{key}";
         }
     }

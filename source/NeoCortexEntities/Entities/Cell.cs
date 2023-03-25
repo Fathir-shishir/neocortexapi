@@ -22,9 +22,10 @@ namespace NeoCortexApi.Entities
         /// Index of the cell.
         /// </summary>
         public int Index { get; set; }
-             
+
         /// <summary>
         /// The mini-column or cortical column, which owns this cell.
+        /// Used by <see cref="nameof(NeuralAssociationsAlgorithm)." />
         /// </summary>
         public string ParentAreaName { get; set; }
 
@@ -68,7 +69,7 @@ namespace NeoCortexApi.Entities
         /// Constructs a new <see cref="Cell"/> object
         /// </summary>
         /// <param name="parentColumnIndx"></param>
-        /// <param name="colSeq">the index of this <see cref="Cell"/> within its column</param>
+        /// <param name="colSeq">The index of this <see cref="Cell"/> within its column.</param>
         /// <param name="numCellsPerColumn"></param>
         /// <param name="cellId"></param>
         /// <param name="cellActivity"></param>

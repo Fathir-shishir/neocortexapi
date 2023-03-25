@@ -15,7 +15,6 @@ namespace NeoCortexApi
     /// </summary>
     public class TemporalMemory : IHtmAlgorithm<int[], ComputeCycle>/*, ISerializable*///: IComputeDecorator
     {
-        private static readonly double EPSILON = 0.00001;
 
         /// <summary>
         /// Stores each cycle's most recent activity
@@ -472,6 +471,14 @@ namespace NeoCortexApi
                     //
                     // Even if the segment is active, new synapses can be added that connect previously active cells with the segment.
                     int numActive = this.LastActivity.PotentialSynapses[segment.SegmentIndex];
+
+                    // it can be simplified with this code.
+                    //int numActive = segment.Synapses.Count;
+                    //if (numActive != segment.Synapses.Count)
+                    //{
+                    //    throw new System.Exception("Why??");
+                    //}
+
                     int nGrowDesired = conn.HtmConfig.MaxNewSynapseCount - numActive;
 
                     if (nGrowDesired > 0)
@@ -778,7 +785,7 @@ namespace NeoCortexApi
                 //
                 // permanence = new BigDecimal(permanence).setScale(1, RoundingMode.HALF_UP).doubleValue(); 
 
-                if (permanence < EPSILON)
+                if (permanence < HtmConfig.EPSILON)
                 {
                     synapsesToDestroy.Add(synapse);
                 }

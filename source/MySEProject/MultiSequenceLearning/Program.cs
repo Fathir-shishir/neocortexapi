@@ -1,9 +1,12 @@
-﻿using MySEProject;
+﻿using MultiSequenceLearning;
+using MySEProject;
 using NeoCortexApi;
 using NeoCortexApi.Encoders;
+using Org.BouncyCastle.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using static MySEProject.MultiSequenceLearning;
@@ -21,13 +24,17 @@ namespace MySEProject
         {
             Console.WriteLine("Running RunMultiSequenceLearningExperiment()");
             List<Report> reports = new List<Report>();
-            RunMultiSimpleSequenceLearningExperiment(reports);
-            Console.WriteLine($"{reports.Count}");
-            generateReport(reports);
-            //RunMultiSequenceLearningExperiment();
+            List<Analysis> analyses = new List<Analysis>();
+            RunMultiSimpleSequenceLearningExperiment(reports, analyses);
+            Console.WriteLine($"Reports: {reports.Count}");
+            Console.WriteLine($"Reports: {analyses.Count}");
+            String ticks = $"{DateTime.Now.Ticks}";
+            generateReport(reports, ticks);
+            generateAnalysis(analyses, ticks);
+            //RunMultiSequenceLearningExperiment(reports, analyses);
         }
 
-        private static void RunMultiSimpleSequenceLearningExperiment(List<Report> reports)
+        private static void RunMultiSimpleSequenceLearningExperiment(List<Report> reports, List<Analysis> analyses)
         {
             Dictionary<string, List<double>> sequences = new Dictionary<string, List<double>>();
 
@@ -38,7 +45,7 @@ namespace MySEProject
             //
             // Prototype for building the prediction engine.
             MultiSequenceLearning experiment = new MultiSequenceLearning();
-            var predictor = experiment.Run(sequences, reports);
+            var predictor = experiment.Run(sequences, reports, analyses);
         }
 
 
@@ -48,7 +55,7 @@ namespace MySEProject
         /// Second, three short sequences with three elements each are created und used for prediction. The predictor used by experiment privides to the HTM every element of every predicting sequence.
         /// The predictor tries to predict the next element.
         /// </summary>
-        private static void RunMultiSequenceLearningExperiment(List<Report> reports)
+        private static void RunMultiSequenceLearningExperiment(List<Report> reports, List<Analysis> analyses)
         {
             Dictionary<string, List<double>> sequences = new Dictionary<string, List<double>>();
 
@@ -62,7 +69,7 @@ namespace MySEProject
             //
             // Prototype for building the prediction engine.
             MultiSequenceLearning experiment = new MultiSequenceLearning();
-            var predictor = experiment.Run(sequences, reports);
+            var predictor = experiment.Run(sequences, reports, analyses);
 
             //
             // These list are used to see how the prediction works.
@@ -109,13 +116,13 @@ namespace MySEProject
             Console.WriteLine("------------------------------");
         }
 
-        public static string generateReport(List<Report> reports)
+        public static string generateReport(List<Report> reports, string ticks)
         {
             string BasePath = AppDomain.CurrentDomain.BaseDirectory;
             string reportFolder = Path.Combine(BasePath, "reports");
             if (!Directory.Exists(reportFolder))
                 Directory.CreateDirectory(reportFolder);
-            string reportPath = Path.Combine(reportFolder, $"{DateTime.Now.Ticks}.txt");
+            string reportPath = Path.Combine(reportFolder, $"report_{ticks}.txt");
 
             if (!File.Exists(reportPath))
             {
@@ -136,6 +143,33 @@ namespace MySEProject
 
              return reportPath;
 
+        }
+
+        public static string generateAnalysis(List<Analysis> analyses, string ticks)
+        {
+            string BasePath = AppDomain.CurrentDomain.BaseDirectory;
+            string reportFolder = Path.Combine(BasePath, "analysis");
+            if (!Directory.Exists(reportFolder))
+                Directory.CreateDirectory(reportFolder);
+            string reportPath = Path.Combine(reportFolder, $"analysis_{ticks}.csv");
+
+            if (!File.Exists(reportPath))
+            {
+                using (StreamWriter sw = File.CreateText(reportPath))
+                {
+                    //sw.WriteLine("SequenceName,Cycle,Accuracy,ActivatePredictedColumnCalls,ActivatePredictedColumnNewSynapseCount,BurstColumnWithMatchingSegmentsCalls ,BurstColumnWithMatchingSegmentsNewSynapseCount,BurstColumnWithoutMatchingSegmentsCalls,BurstColumnWithoutMatchingSegmentsNewSynapseCount");
+                    string previousSequenceName = "";
+                    foreach (Analysis analysis in analyses)
+                    {
+                        if (!analysis.SequenceName.Equals(previousSequenceName))
+                            sw.WriteLine("SequenceName,Cycle,Accuracy,ActivatePredictedColumnCalls,ActivatePredictedColumnNewSynapseCount,BurstColumnWithMatchingSegmentsCalls ,BurstColumnWithMatchingSegmentsNewSynapseCount,BurstColumnWithoutMatchingSegmentsCalls,BurstColumnWithoutMatchingSegmentsNewSynapseCount");
+                        previousSequenceName = analysis.SequenceName;
+                        sw.WriteLine($"{analysis.SequenceName},{analysis.Cycle},{analysis.Accuracy},{analysis.ActivatePredictedColumnCalls},{analysis.ActivatePredictedColumnNewSynapseCount},{analysis.BurstColumnWithMatchingSegmentsCalls},{analysis.BurstColumnWithMatchingSegmentsNewSynapseCount},{analysis.BurstColumnWithoutMatchingSegmentsCalls},{analysis.BurstColumnWithoutMatchingSegmentsNewSynapseCount}");
+                    }
+                }
+            }
+
+            return reportPath;
         }
     }
 }

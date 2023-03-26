@@ -1,4 +1,5 @@
-﻿using NeoCortexApi;
+﻿using MultiSequenceLearning;
+using NeoCortexApi;
 using NeoCortexApi.Classifiers;
 using NeoCortexApi.Encoders;
 using NeoCortexApi.Entities;
@@ -20,7 +21,7 @@ namespace MySEProject
         /// Runs the learning of sequences.
         /// </summary>
         /// <param name="sequences">Dictionary of sequences. KEY is the sewuence name, the VALUE is th elist of element of the sequence.</param>
-        public Predictor Run(Dictionary<string, List<double>> sequences, List<Report> reports)
+        public Predictor Run(Dictionary<string, List<double>> sequences, List<Report> reports, List<Analysis> analyses)
         {
             //Console.WriteLine($"Hello NeocortexApi! Experiment {nameof(MultiSequenceLearning)}");
 
@@ -33,13 +34,13 @@ namespace MySEProject
             
             EncoderBase encoder = getEncoder(inputBits);
 
-            return RunExperiment(inputBits, cfg, encoder, sequences, reports);
+            return RunExperiment(inputBits, cfg, encoder, sequences, reports, analyses);
         }
 
         /// <summary>
         ///
         /// </summary>
-        private Predictor RunExperiment(int inputBits, HtmConfig cfg, EncoderBase encoder, Dictionary<string, List<double>> sequences, List<Report> reports)
+        private Predictor RunExperiment(int inputBits, HtmConfig cfg, EncoderBase encoder, Dictionary<string, List<double>> sequences, List<Report> reports, List<Analysis> analyses)
         {
             Stopwatch sw = new Stopwatch();
             sw.Start();
@@ -154,6 +155,8 @@ namespace MySEProject
 
                 List<string> previousInputs = new List<string>();
 
+                
+
                 //why?
                 previousInputs.Add("-1.0");
 
@@ -167,8 +170,12 @@ namespace MySEProject
                     cycle++;
 
                     Report report = new Report();
+                    Analysis analysis = new Analysis();
+
                     report.cycle = cycle;
                     report.sequenceName = sequenceKeyPair.Key.ToString();
+                    analysis.Cycle = cycle;
+                    analysis.SequenceName = sequenceKeyPair.Key.ToString();
 
                     Console.WriteLine($"-------------- Cycle {cycle} of SP+TM ---------------");
 
@@ -250,6 +257,23 @@ namespace MySEProject
                             foreach(String item in tm.Logger)
                             {
                                 report.logs.Add($"{item}, input: {input}");
+                                string synapseCount = item.Split(", ")[1].Split(": ")[1];
+                                if (item.Contains("ActivatePredictedColumn"))
+                                {
+                                    analysis.ActivatePredictedColumnCalls++;
+                                    analysis.ActivatePredictedColumnNewSynapseCount += Int32.Parse(synapseCount);
+                                }
+                                else if (item.Contains("BurstColumnWithMatchingSegments"))
+                                {
+                                    analysis.BurstColumnWithMatchingSegmentsCalls++;
+                                    analysis.BurstColumnWithMatchingSegmentsNewSynapseCount += Int32.Parse(synapseCount);
+                                }
+                                else if (item.Contains("BurstColumnWithoutMatchingSegments"))
+                                {
+                                    analysis.BurstColumnWithoutMatchingSegmentsCalls++;
+                                    analysis.BurstColumnWithoutMatchingSegmentsNewSynapseCount += Int32.Parse(synapseCount);
+                                }
+
                             }
                             previousCountLogger = tm.countLogger;
                         }
@@ -263,7 +287,9 @@ namespace MySEProject
                     Debug.WriteLine($"Cycle: {cycle}\tMatches={matches} of {sequenceKeyPair.Value.Count}\t {accuracy}%");
                     //report.Add($"Cycle: {cycle}, Sequence: {sequenceKeyPair.Key}\tMatches={matches} of {sequenceKeyPair.Value.Count}\t Accuracy: {accuracy}%");
                     report.accuracy = accuracy;
-                    
+                    analysis.Accuracy = accuracy;
+                    reports.Add(report);
+                    analyses.Add(analysis);
 
                     if (accuracy >= maxPossibleAccuraccy)
                     {
@@ -289,7 +315,6 @@ namespace MySEProject
                     // This resets the learned state, so the first element starts allways from the beginning.
                     tm.Reset(mem);
 
-                    reports.Add(report);
                 }
             }
 

@@ -20,73 +20,33 @@ namespace MySEProject
         /// Runs the learning of sequences.
         /// </summary>
         /// <param name="sequences">Dictionary of sequences. KEY is the sewuence name, the VALUE is th elist of element of the sequence.</param>
-        public Predictor Run(Dictionary<string, List<double>> sequences)
+        public Predictor Run(Dictionary<string, List<double>> sequences, List<Report> reports)
         {
             //Console.WriteLine($"Hello NeocortexApi! Experiment {nameof(MultiSequenceLearning)}");
 
             int inputBits = 100;
             int numColumns = 1024;
 
-            HtmConfig cfg = new HtmConfig(new int[] { inputBits }, new int[] { numColumns })
-            {
-                Random = new ThreadSafeRandom(42),
-
-                CellsPerColumn = 25,
-                GlobalInhibition = true,
-                LocalAreaDensity = -1,
-                NumActiveColumnsPerInhArea = 0.02 * numColumns,
-                PotentialRadius = (int)(0.15 * inputBits),
-                //InhibitionRadius = 15,
-
-                MaxBoost = 10.0,
-                DutyCyclePeriod = 25,
-                MinPctOverlapDutyCycles = 0.75,
-                MaxSynapsesPerSegment = (int)(0.02 * numColumns),
-
-                ActivationThreshold = 15,
-                ConnectedPermanence = 0.5,
-
-                // Learning is slower than forgetting in this case.
-                PermanenceDecrement = 0.25,
-                PermanenceIncrement = 0.15,
-
-                // Used by punishing of segments.
-                PredictedSegmentDecrement = 0.1
-            };
-
-
+            HtmConfig cfg = getHTMConfig2(inputBits, numColumns);
+            
             Console.WriteLine($"Init Max New Synapse Count: {cfg.MaxNewSynapseCount}");
+            
+            EncoderBase encoder = getEncoder(inputBits);
 
-            double max = 20;
-
-            Dictionary<string, object> settings = new Dictionary<string, object>()
-            {
-                { "W", 15},
-                { "N", inputBits},
-                { "Radius", -1.0},
-                { "MinVal", 0.0},
-                { "Periodic", false},
-                { "Name", "scalar"},
-                { "ClipInput", false},
-                { "MaxVal", max}
-            };
-
-            EncoderBase encoder = new ScalarEncoder(settings);
-
-            return RunExperiment(inputBits, cfg, encoder, sequences);
+            return RunExperiment(inputBits, cfg, encoder, sequences, reports);
         }
 
         /// <summary>
         ///
         /// </summary>
-        private Predictor RunExperiment(int inputBits, HtmConfig cfg, EncoderBase encoder, Dictionary<string, List<double>> sequences)
+        private Predictor RunExperiment(int inputBits, HtmConfig cfg, EncoderBase encoder, Dictionary<string, List<double>> sequences, List<Report> reports)
         {
             Stopwatch sw = new Stopwatch();
             sw.Start();
 
             int maxMatchCnt = 0;
             int previousCountLogger = 0;
-            List<String> report = new List<String>();
+            //List<String> report = new List<String>();
 
             var mem = new Connections(cfg);
             Console.WriteLine($"Connection() Max New Synapse Count: {cfg.MaxNewSynapseCount}");
@@ -123,8 +83,6 @@ namespace MySEProject
 
             SpatialPoolerMT sp = new SpatialPoolerMT(hpc);
             TemporalMemory tm = new TemporalMemory();
-            Console.WriteLine($"After creating object for TM. Max New Synapse Count: {cfg.MaxNewSynapseCount}");
-            SpatialPoolerMT sp = new SpatialPoolerMT(hpc);
 
             sp.Init(mem);
             tm.Init(mem);
@@ -208,6 +166,10 @@ namespace MySEProject
 
                     cycle++;
 
+                    Report report = new Report();
+                    report.cycle = cycle;
+                    report.sequenceName = sequenceKeyPair.Key.ToString();
+
                     Console.WriteLine($"-------------- Cycle {cycle} of SP+TM ---------------");
 
                     Debug.WriteLine($"-------------- Cycle {cycle} ---------------");
@@ -284,7 +246,11 @@ namespace MySEProject
                         }
                         if (tm.countLogger > previousCountLogger)
                         {
-                            report.Add($"Cycle: {cycle}, Sequence: {sequenceKeyPair.Key}, {tm.Logger}");
+                            //report.Add($"Cycle: {cycle}, Sequence: {sequenceKeyPair.Key}, {tm.Logger}");
+                            foreach(String item in tm.Logger)
+                            {
+                                report.logs.Add($"{item}, input: {input}");
+                            }
                             previousCountLogger = tm.countLogger;
                         }
                     }
@@ -295,8 +261,8 @@ namespace MySEProject
                     double accuracy = (double)matches / (double)sequenceKeyPair.Value.Count * 100.0;
 
                     Debug.WriteLine($"Cycle: {cycle}\tMatches={matches} of {sequenceKeyPair.Value.Count}\t {accuracy}%");
-                    report.Add($"Cycle: {cycle}, Sequence: {sequenceKeyPair.Key}\tMatches={matches} of {sequenceKeyPair.Value.Count}\t Accuracy: {accuracy}%");
-
+                    //report.Add($"Cycle: {cycle}, Sequence: {sequenceKeyPair.Key}\tMatches={matches} of {sequenceKeyPair.Value.Count}\t Accuracy: {accuracy}%");
+                    report.accuracy = accuracy;
                     
 
                     if (accuracy >= maxPossibleAccuraccy)
@@ -322,16 +288,18 @@ namespace MySEProject
                     
                     // This resets the learned state, so the first element starts allways from the beginning.
                     tm.Reset(mem);
+
+                    reports.Add(report);
                 }
             }
 
             Console.WriteLine($"After training. Max New Synapse Count: {cfg.MaxNewSynapseCount}");
             
             Debug.WriteLine("------------ END ------------");
-            foreach (String item in report)
+            /*foreach (String item in report)
             {
                 Console.WriteLine(item);
-            }
+            }*/
             return new Predictor(layer1, mem, cls);
         }
 
@@ -377,6 +345,91 @@ namespace MySEProject
             }
             //Console.WriteLine($"key: {key}");
             return $"{sequence}_{key}";
+        }
+
+
+        private static HtmConfig getHTMConfig(int inputBits, int numColumns)
+        {
+            HtmConfig cfg = new HtmConfig(new int[] { inputBits }, new int[] { numColumns })
+            {
+                Random = new ThreadSafeRandom(42),
+
+                CellsPerColumn = 25,
+                GlobalInhibition = true,
+                LocalAreaDensity = -1,
+                NumActiveColumnsPerInhArea = 0.02 * numColumns,
+                PotentialRadius = (int)(0.15 * inputBits),
+                //InhibitionRadius = 15,
+
+                MaxBoost = 10.0,
+                DutyCyclePeriod = 25,
+                MinPctOverlapDutyCycles = 0.75,
+                MaxSynapsesPerSegment = (int)(0.02 * numColumns),
+
+                ActivationThreshold = 15,
+                ConnectedPermanence = 0.5,
+
+                // Learning is slower than forgetting in this case.
+                PermanenceDecrement = 0.25,
+                PermanenceIncrement = 0.15,
+
+                // Used by punishing of segments.
+                PredictedSegmentDecrement = 0.1
+            };
+
+            return cfg;
+        }
+
+        private static HtmConfig getHTMConfig2(int inputBits, int numColumns)
+        {
+            HtmConfig cfg = new HtmConfig(new int[] { inputBits }, new int[] { numColumns })
+            {
+                Random = new ThreadSafeRandom(42),
+
+                CellsPerColumn = 25,
+                GlobalInhibition = true,
+                LocalAreaDensity = -1,
+                NumActiveColumnsPerInhArea = 0.02 * numColumns,
+                PotentialRadius = (int)(0.15 * inputBits),
+                //InhibitionRadius = 15,
+
+                MaxBoost = 10.0,
+                DutyCyclePeriod = 25,
+                MinPctOverlapDutyCycles = 0.75,
+                MaxSynapsesPerSegment = (int)(0.03 * numColumns),
+
+                ActivationThreshold = 15,
+                ConnectedPermanence = 0.5,
+
+                // Learning is slower than forgetting in this case.
+                PermanenceDecrement = 0.25,
+                PermanenceIncrement = 0.15,
+
+                // Used by punishing of segments.
+                PredictedSegmentDecrement = 0.1
+            };
+
+            return cfg;
+        }
+
+        private static EncoderBase getEncoder(int inputBits)
+        {
+            double max = 20;
+            Dictionary<string, object> settings = new Dictionary<string, object>()
+            {
+                { "W", 15},
+                { "N", inputBits},
+                { "Radius", -1.0},
+                { "MinVal", 0.0},
+                { "Periodic", false},
+                { "Name", "scalar"},
+                { "ClipInput", false},
+                { "MaxVal", max}
+            };
+
+            EncoderBase encoder = new ScalarEncoder(settings);
+
+            return encoder;
         }
     }
 }

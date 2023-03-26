@@ -4,6 +4,7 @@ using NeoCortexApi.Encoders;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using static MySEProject.MultiSequenceLearning;
 
@@ -13,29 +14,31 @@ namespace MySEProject
     {
         /// <summary>
         /// SE Project: ML22/23-13	Investigate Influence of parameter MaxNewSynapseCount
+        /// Issue: https://github.com/UniversityOfAppliedSciencesFrankfurt/se-cloud-2022-2023/issues/67
         /// </summary>
         /// <param name="args"></param>
         static void Main(string[] args)
         {
-            
-            // RunMultiSimpleSequenceLearningExperiment();
-
             Console.WriteLine("Running RunMultiSequenceLearningExperiment()");
-            RunMultiSequenceLearningExperiment();
+            List<Report> reports = new List<Report>();
+            RunMultiSimpleSequenceLearningExperiment(reports);
+            Console.WriteLine($"{reports.Count}");
+            generateReport(reports);
+            //RunMultiSequenceLearningExperiment();
         }
 
-        private static void RunMultiSimpleSequenceLearningExperiment()
+        private static void RunMultiSimpleSequenceLearningExperiment(List<Report> reports)
         {
             Dictionary<string, List<double>> sequences = new Dictionary<string, List<double>>();
 
             sequences.Add("S1", new List<double>(new double[] { 0.0, 1.0, 2.0, 3.0, 4.0, 5.0, 7.0, 8.0, 11.0 }));
             sequences.Add("S2", new List<double>(new double[] { 0.0, 1.0, 2.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0 }));
-            //sequences.Add("S3", new List<double>(new double[] { 1.0, 2.0, 3.0, 5.0, 7.0, 8.0, 9.0, 10.0, 11.0 }));
+            sequences.Add("S3", new List<double>(new double[] { 1.0, 2.0, 3.0, 5.0, 7.0, 8.0, 9.0, 10.0, 11.0 }));
 
             //
             // Prototype for building the prediction engine.
             MultiSequenceLearning experiment = new MultiSequenceLearning();
-            var predictor = experiment.Run(sequences);
+            var predictor = experiment.Run(sequences, reports);
         }
 
 
@@ -45,7 +48,7 @@ namespace MySEProject
         /// Second, three short sequences with three elements each are created und used for prediction. The predictor used by experiment privides to the HTM every element of every predicting sequence.
         /// The predictor tries to predict the next element.
         /// </summary>
-        private static void RunMultiSequenceLearningExperiment()
+        private static void RunMultiSequenceLearningExperiment(List<Report> reports)
         {
             Dictionary<string, List<double>> sequences = new Dictionary<string, List<double>>();
 
@@ -59,7 +62,7 @@ namespace MySEProject
             //
             // Prototype for building the prediction engine.
             MultiSequenceLearning experiment = new MultiSequenceLearning();
-            var predictor = experiment.Run(sequences);
+            var predictor = experiment.Run(sequences, reports);
 
             //
             // These list are used to see how the prediction works.
@@ -104,6 +107,35 @@ namespace MySEProject
             }
 
             Console.WriteLine("------------------------------");
+        }
+
+        public static string generateReport(List<Report> reports)
+        {
+            string BasePath = AppDomain.CurrentDomain.BaseDirectory;
+            string reportFolder = Path.Combine(BasePath, "reports");
+            if (!Directory.Exists(reportFolder))
+                Directory.CreateDirectory(reportFolder);
+            string reportPath = Path.Combine(reportFolder, $"{DateTime.Now.Ticks}.txt");
+
+            if (!File.Exists(reportPath))
+            {
+                using (StreamWriter sw = File.CreateText(reportPath))
+                {
+                    foreach(Report report in reports)
+                    {
+                        sw.WriteLine($"----------------------------- Start of Cycle: {report.cycle} -----------------------------");
+                        sw.WriteLine($"Cycle: {report.cycle}, Sequence: {report.sequenceName}, Accuracy: {report.accuracy}");
+                        foreach(String log in report.logs)
+                        {
+                            sw.WriteLine($"\t{log}");
+                        }
+                        sw.WriteLine($"----------------------------- End of Cycle: {report.cycle} -----------------------------");
+                    }
+                }
+            }
+
+             return reportPath;
+
         }
     }
 }

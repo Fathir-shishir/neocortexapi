@@ -27,7 +27,7 @@ namespace NeoCortexApi
 
         public string Name { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
-        public String Logger { get; set; }
+        public List<String> Logger { get; set; }
 
         public int countLogger { get; set; }
 
@@ -78,7 +78,7 @@ namespace NeoCortexApi
             //
             // This is the only initialization place for cells.
             this.connections.Cells = cells;
-            this.Logger = "";
+            this.Logger = new List<String>();
             this.countLogger = 0;
         }
 
@@ -186,6 +186,8 @@ namespace NeoCortexApi
 
         protected virtual ComputeCycle ActivateCells(Connections conn, int[] activeColumnIndices, bool learn)
         {
+            this.Logger.Clear();
+
             //Console.WriteLine("Running ActivateCells() - Line(184)");
             ComputeCycle cycle = new ComputeCycle
             {
@@ -749,8 +751,7 @@ namespace NeoCortexApi
                 conn.CreateSynapse(segment, winnersWithoutSynapticConnecctionToSegment[rndIndex], initialPermanence);
                 winnersWithoutSynapticConnecctionToSegment.RemoveAt(rndIndex);
             }
-
-            this.Logger = $"GrowSynapses(): calledBy: {calledBy}, requiredNewSynapses: {requiredNewSynapses}, numMissingSynapses: {numMissingSynapses}";
+            this.Logger.Add($"GrowSynapses(): calledBy: {calledBy}, requiredNewSynapses: {requiredNewSynapses}, numMissingSynapses: {numMissingSynapses}");
             this.countLogger++;
         }
 

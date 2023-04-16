@@ -156,6 +156,28 @@ The all reports can be found here: [output/reports](output/reports/)
 We save number of calls made by ActivatePredictedColumn or BurstColumnWithMatchingSegments or BurstColumnWithMatchingSegments and the number of synapses increased for all sequence per cycle.
 The following image shows visual representation of change happening for a sequence in all its cycles. These are saved as CSV files.
 
+Below is an exmaple where analysis of S2 is done and the various times various function calls and toal number of synapse grown in the cycle is created from the CSV data when converted to line graph.
+
 ![image](images/S2_analysis.png)
 
+The X-axis has number of cycles of learning with SP+TM and the Y-axis is count for various values. The accuracy is limited to 100 and rest of the counts are the number of times the function is called and the number of synapse is added. 
+
+So if we want to evaluate the above image, burst column without matching segment is called initally and the synapse growth is high in earlier cycles and gradually it goes down. 
+
+
+Usually when burst column without matching segment is called the synapse count increasing per input is equal to MaxNewSynapseCount which can be observer in the report file.
+
 The all analysis can be found here: [output/analysis](output/analysis/)
+
+
+### Comparision between 2 different runs with same data
+
+|Sequence Name|Run 1|Run 2|
+|-|-|-|
+|S1|![Run1 for S1](./images/run/Run1S1.png)|![Run2 for S1](./images/run/Run2S1.png)|
+|S2|![Run1 for S2](./images/run/Run1S2.png)|![Run2 for S2](./images/run/Run2S2.png)|
+|S3|![Run1 for S3](./images/run/Run1S3.png)|![Run2 for S3](./images/run/Run2S3.png)|
+
+Above charts show the analysis for running and anlysing same data sequences but in differnt runs.
+
+S1 and S2 have shown similarity in changes in adding synapse and number of calls which were made, but in S3 its totally different even with same data. 

@@ -100,6 +100,7 @@ namespace NeoCortexApiSample
                     foreach (var pred in res)
                     {
                         Debug.WriteLine($"{pred.PredictedInput} - {pred.Similarity}");
+                        Debug.WriteLine(pred);
                     }
 
                     var tokens = res.First().PredictedInput.Split('_');

@@ -61,6 +61,8 @@ namespace NeoCortexApiSample
 
             sequences.Add("S1", new List<double>(new double[] { 0.0, 1.0, 2.0, 3.0, 4.0, 2.0, 5.0, }));
             sequences.Add("S2", new List<double>(new double[] { 8.0, 1.0, 2.0, 9.0, 10.0, 7.0, 11.00 }));
+            sequences.Add("S1", new List<double>(new double[] { 5.0, 7.0, 3.0, 1.0, 4.0, 2.0, 5.0, }));
+            sequences.Add("S2", new List<double>(new double[] { 8.0, 1.0, 7.0, 9.0, 10.0, 7.0, 15.00 }));
 
             //
             // Prototype for building the prediction engine.

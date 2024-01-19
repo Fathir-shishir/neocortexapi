@@ -7,9 +7,8 @@ using System.Threading.Tasks;
 namespace EffectMaxSynapseCount
 {
     public class MeasuringAccuracy
-    { 
-
-
+    {
+        public MeasuringAccuracy() { }
 
     }
 }

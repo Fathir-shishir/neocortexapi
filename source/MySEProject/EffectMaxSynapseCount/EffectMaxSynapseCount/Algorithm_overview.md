@@ -24,3 +24,18 @@ The Temporal Memory algorithm is implemented within the TemporalMemory class. Th
 	Add logging statements to capture the behavior of the Temporal Memory algorithm with varying MaxNewSynapseCount values.
 
 
+### Sample Code Modification
+```csharp
+int maxNewSynapseCount = Parameters.MaxNewSynapseCount; // Original value
+
+// Modified for Experimentation
+Parameters.MaxNewSynapseCount = 5; // Experiment with a different value
+// ...
+
+// Logging the Synapse Creation
+Debug.WriteLine($"Synapse creation with MaxNewSynapseCount = {Parameters.MaxNewSynapseCount}");
+```
+
+### Findings and Observations
+
+

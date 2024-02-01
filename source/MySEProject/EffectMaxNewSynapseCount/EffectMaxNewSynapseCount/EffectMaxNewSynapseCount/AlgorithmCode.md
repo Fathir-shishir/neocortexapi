@@ -1,5 +1,4 @@
-﻿```markdown
-# MultiSequenceLearning Experiment with Varying MaxNewSynapseCount
+﻿# MultiSequenceLearning Experiment with Varying MaxNewSynapseCount
 
 ## Steps:
 
@@ -36,3 +35,24 @@
    }
    ```
 
+3. **Implement `GetEncoder`:**
+   Implement the `GetEncoder` method to initialize and return the encoder.
+
+   ```csharp
+   private EncoderBase GetEncoder()
+   {
+       // Initialize and return the encoder
+       ...
+   }
+   ```
+
+4. **Reuse `RunExperiment`:**
+   Reuse the `RunExperiment` method from the existing code to run the experiment with the current `HtmConfig` and encoder.
+
+   ```csharp
+   private Predictor RunExperiment(int inputBits, HtmConfig cfg, EncoderBase encoder, Dictionary<string, List<double>> sequences)
+   {
+       // existing experiment code
+       ...
+   }
+   ```

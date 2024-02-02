@@ -56,3 +56,15 @@
        ...
    }
    ```
+
+5. **Run the Experiment:**
+   Call `RunWithVaryingMaxNewSynapseCount` with our sequences and the range of `MaxNewSynapseCount` values we want to test.
+
+   ```csharp
+   // Usage:
+   RunWithVaryingMaxNewSynapseCount(sequences, 10, 50, 5);
+   ```
+
+After completing these steps, our program will run multiple experiments, each with a different `MaxNewSynapseCount`, allowing us to observe and analyze how this parameter affects the learning process and prediction accuracy.
+```
+

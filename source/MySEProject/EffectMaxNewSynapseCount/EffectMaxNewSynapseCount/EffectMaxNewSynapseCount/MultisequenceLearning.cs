@@ -41,7 +41,7 @@ namespace NeoCortexApiSample
                 MaxBoost = 10.0,
                 DutyCyclePeriod = 25,
                 MinPctOverlapDutyCycles = 0.75,
-                MaxSynapsesPerSegment = (int)(0.015 * numColumns),
+                MaxSynapsesPerSegment = (int)(0.025 * numColumns),
 
                 ActivationThreshold = 15,
                 ConnectedPermanence = 0.5,

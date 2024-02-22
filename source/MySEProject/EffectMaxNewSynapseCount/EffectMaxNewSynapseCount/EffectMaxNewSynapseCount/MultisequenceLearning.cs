@@ -277,6 +277,7 @@ namespace NeoCortexApiSample
                         double maxPossibleAccuraccy = (double)((double)sequenceKeyPair.Value.Count - 1) / (double)sequenceKeyPair.Value.Count * 100.0;
 
                         double accuracy = (double)matches / (double)sequenceKeyPair.Value.Count * 100.0;
+                        writer.WriteLine($"Sequence: {sequenceKeyPair.Key}, Cycle: {cycle}, Matches: {matches}, Accuracy: {accuracy}%");
 
                         Debug.WriteLine($"Cycle: {cycle}\tMatches={matches} of {sequenceKeyPair.Value.Count}\t {accuracy}%");
 

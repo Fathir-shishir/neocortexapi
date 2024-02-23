@@ -5,7 +5,7 @@
 ### Step 1: Modify MaxSynapsesPerSegment
 At first, we modify the value of MaxSynapsesPerSegment in the HTM configuration. This parameter determines the maximum number of new synapses that can be created for each segment during learning. Adjusting this value affects the system's ability to form new connections and learn from input patterns.
 
-### Step 2: Introduce a Writer Interface
+### Step 2: Collect results in a log file
 Then, we introduce a writer interface to log the experimental results to a text file. This interface is responsible for recording key metrics such as the MaxSynapsesPerSegment value used, learning speed, prediction accuracy, and any other relevant information that will help in analyzing the system's performance.
 
 ### Step 3: Run Experiments with Varied MaxSynapsesPerSegment Values

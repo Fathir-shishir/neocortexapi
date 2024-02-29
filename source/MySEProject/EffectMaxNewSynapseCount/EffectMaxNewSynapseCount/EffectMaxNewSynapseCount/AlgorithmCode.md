@@ -2,69 +2,23 @@
 
 ## Steps:
 
-1. **Define the Experiment Method:**
-   Define a method `RunWithVaryingMaxNewSynapseCount` in the `MultiSequenceLearning` class.
-   
-   ```csharp
-   public void RunWithVaryingMaxNewSynapseCount(Dictionary<string, List<double>> sequences, int minSynapseCount, int maxSynapseCount, int step)
-   {
-       for (int synapseCount = minSynapseCount; synapseCount <= maxSynapseCount; synapseCount += step)
-       {
-           Console.WriteLine($"Running experiment with MaxNewSynapseCount: {synapseCount}");
-           
-           HtmConfig cfg = GetHtmConfig(synapseCount);
-           EncoderBase encoder = GetEncoder();
-           Predictor predictor = RunExperiment(cfg.InputBits, cfg, encoder, sequences);
-           
-           // Evaluate the predictor's performance and print or store the results.
-       }
-   }
-   ```
-   
-2. **Implement `GetHtmConfig`:**
-   Implement the `GetHtmConfig` method to initialize and return a new `HtmConfig` object with the specified `MaxNewSynapseCount`.
+### Step 1: Modify MaxSynapsesPerSegment
+At first, we modify the value of MaxSynapsesPerSegment in the HTM configuration. This parameter determines the maximum number of new synapses that can be created for each segment during learning. Adjusting this value affects the system's ability to form new connections and learn from input patterns.
 
-   ```csharp
-   private HtmConfig GetHtmConfig(int maxNewSynapseCount)
-   {
-       // Initialize and return a new HtmConfig object with MaxNewSynapseCount
-       ...
-       cfg.MaxSynapsesPerSegment = maxNewSynapseCount;
-       ...
-       return cfg;
-   }
-   ```
+### Step 2: Collect results in a log file
+Then, we introduce a writer interface to log the experimental results to a text file. This interface is responsible for recording key metrics such as the MaxSynapsesPerSegment value used, learning speed, prediction accuracy, and any other relevant information that will help in analyzing the system's performance.
 
-3. **Implement `GetEncoder`:**
-   Implement the `GetEncoder` method to initialize and return the encoder.
+### Step 3: Run Experiments with Varied MaxSynapsesPerSegment Values
+Next, we run multiple experiments, each time varying the MaxSynapsesPerSegment and test input data to observe how changes in this parameter affect the HTM system. For each experiment, the system is reset or reinitialized to ensure independent and unbiased results.
 
-   ```csharp
-   private EncoderBase GetEncoder()
-   {
-       // Initialize and return the encoder
-       ...
-   }
-   ```
+### Step 4: Log Results for Each Experiment
+For every experiment conducted, we log the results using the writer interface created in Step 2. This includes detailed information on the learning process, how quickly the system reaches a stable state, and the accuracy of its predictions.
 
-4. **Reuse `RunExperiment`:**
-   Reuse the `RunExperiment` method from the existing code to run the experiment with the current `HtmConfig` and encoder.
+### Step 5: Analyze the Logged Data
+After running the experiments, we analyze the logged data to understand the impact of different MaxNewSynapseCount values. We look for trends in learning speed and prediction accuracy, aiming to identify the optimal MaxNewSynapseCount setting for our HTM system.
 
-   ```csharp
-   private Predictor RunExperiment(int inputBits, HtmConfig cfg, EncoderBase encoder, Dictionary<string, List<double>> sequences)
-   {
-       // existing experiment code
-       ...
-   }
-   ```
+### Step 6: Adjust the HTM Configuration Based on Findings
+Based on the analysis, we adjust the MaxNewSynapseCount in the HTM configuration to the identified optimal value. This step may involve further experimentation and refinement to fine-tune the system's performance.
 
-5. **Run the Experiment:**
-   Call `RunWithVaryingMaxNewSynapseCount` with our sequences and the range of `MaxNewSynapseCount` values we want to test.
-
-   ```csharp
-   // Usage:
-   RunWithVaryingMaxNewSynapseCount(sequences, 10, 50, 5);
-   ```
-
-After completing these steps, our program will run multiple experiments, each with a different `MaxNewSynapseCount`, allowing us to observe and analyze how this parameter affects the learning process and prediction accuracy.
-```
+### Step 7: Document the Experimentation Process and Results
 

@@ -78,8 +78,7 @@ namespace NeoCortexApiSample
             // By providing more elements to the prediction, the predictor delivers more precise result.
             var list1 = new double[] { 1.0, 0.0, 2.0, 3.0, 4.0, 5.0, 6.0, 5.0, 4.0, 3.0, 7.0, 1.0, 9.0 };
             var list2 = new double[] { 0.8, 2.0, 0.0, 3.0, 3.0, 4.0 };
-            var list3 = new double[] { 0.8, 2.0, 0.0 };
-            var list4 = new double[] { 5.0, 6.0, 5.0, 4.0, 3.0, 7.0, 1.0, 9.0 };
+            var list3 = new double[] { 5.0, 6.0, 5.0, 4.0, 3.0, 7.0, 1.0, 9.0 };
 
             predictor.Reset();
             PredictNextElement(predictor, list1);
@@ -89,9 +88,6 @@ namespace NeoCortexApiSample
 
             predictor.Reset();
             PredictNextElement(predictor, list3);
-
-            predictor.Reset();
-            PredictNextElement(predictor, list4);
         }
 
         private static void PredictNextElement(Predictor predictor, double[] list)

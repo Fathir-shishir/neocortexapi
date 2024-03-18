@@ -33,11 +33,10 @@ namespace NeoCortexApiSample
 
             // RunMultiSimpleSequenceLearningExperiment();
 
-
-            RunMultiSequenceLearningExperiment();
+            RunMultiSequenceLearningExperiment(20);
         }
 
-        private static void RunMultiSimpleSequenceLearningExperiment()
+        private static void RunMultiSimpleSequenceLearningExperiment(int MaxNewSynapseCount)
         {
             Dictionary<string, List<double>> sequences = new Dictionary<string, List<double>>();
 
@@ -46,7 +45,7 @@ namespace NeoCortexApiSample
 
             //
             // Prototype for building the prediction engine.
-            MultiSequenceLearning experiment = new MultiSequenceLearning();
+            MultiSequenceLearning experiment = new MultiSequenceLearning(MaxNewSynapseCount);
             var predictor = experiment.Run(sequences);
         }
 
@@ -57,7 +56,7 @@ namespace NeoCortexApiSample
         /// Second, three short sequences with three elements each are created und used for prediction. The predictor used by experiment privides to the HTM every element of every predicting sequence.
         /// The predictor tries to predict the next element.
         /// </summary>
-        private static void RunMultiSequenceLearningExperiment()
+        private static void RunMultiSequenceLearningExperiment(int MaxNewSynapseCount)
         {
             Dictionary<string, List<double>> sequences = new Dictionary<string, List<double>>();
 
@@ -69,7 +68,7 @@ namespace NeoCortexApiSample
 
             //
             // Prototype for building the prediction engine.
-            MultiSequenceLearning experiment = new MultiSequenceLearning();
+            MultiSequenceLearning experiment = new MultiSequenceLearning(MaxNewSynapseCount);
             var predictor = experiment.Run(sequences);
 
             //

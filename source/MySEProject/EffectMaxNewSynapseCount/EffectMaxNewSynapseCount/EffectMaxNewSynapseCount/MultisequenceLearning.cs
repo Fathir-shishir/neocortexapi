@@ -16,6 +16,14 @@ namespace NeoCortexApiSample
     /// </summary>
     public class MultiSequenceLearning
     {
+        private int maxNewSynapseCount;
+
+        // Constructor that allows setting MaxNewSynapseCount
+        public MultiSequenceLearning(int maxNewSynapseCount)
+        {
+            this.maxNewSynapseCount = maxNewSynapseCount;
+        }
+
         /// <summary>
         /// Runs the learning of sequences.
         /// </summary>
@@ -42,7 +50,7 @@ namespace NeoCortexApiSample
                 DutyCyclePeriod = 25,
                 MinPctOverlapDutyCycles = 0.75,
                 MaxSynapsesPerSegment = (int)(0.40 * numColumns),
-                MaxNewSynapseCount= (int)(0.05 * numColumns),
+                MaxNewSynapseCount = this.maxNewSynapseCount,
 
                 ActivationThreshold = 15,
                 ConnectedPermanence = 0.5,

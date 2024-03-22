@@ -1,4 +1,4 @@
-# ML22/23-13	Investigate Influence of parameter MaxNewSynapseCount
+# ML22/23-13 Investigate Influence of parameter MaxNewSynapseCount
 
 ## Introduction
 

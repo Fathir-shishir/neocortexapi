@@ -130,7 +130,7 @@ namespace EffectSynapseCountTest
 
 
         /// <summary>
-        /// Evaluates the prediction accuracy of a Hierarchical Temporal Memory (HTM) network for a given set of sequences and a specified MaxNewSynapseCount.
+        /// Evaluates the prediction accuracy of a MultiSequenceLearning run for a given set of sequences and a specified MaxNewSynapseCount.
         /// This method initializes the HTM network with the specified MaxNewSynapseCount, runs the learning experiment with the provided sequences,
         /// and calculates the accuracy based on the number of correct predictions out of the total predictions made.
         /// </summary>
@@ -217,7 +217,7 @@ namespace EffectSynapseCountTest
         }
 
         /// <summary>
-        /// Tests the learning speed of a Hierarchical Temporal Memory (HTM) network by comparing the number of learning cycles required to reach a specified accuracy threshold with two different MaxNewSynapseCount settings. This method aims to identify which setting allows the network to learn more efficiently, providing insights into how the MaxNewSynapseCount parameter influences the speed of learning in HTM networks.
+        /// Tests the learning speed of a MultiSequenceLearning by comparing the number of learning cycles required to reach a specified accuracy threshold with two different MaxNewSynapseCount settings. This method aims to identify which setting allows the network to learn more efficiently, providing insights into how the MaxNewSynapseCount parameter influences the speed of learning in HTM networks.
         /// </summary>
         [TestMethod]
         public void CompareLearningSpeedWithDifferentSynapseCounts()
@@ -274,7 +274,7 @@ namespace EffectSynapseCountTest
 
 
         /// <summary>
-        /// Determines the number of learning cycles required for an HTM network, configured with a specific MaxNewSynapseCount, 
+        /// Determines the number of learning cycles required for an MultiSequenceLearning, configured with a specific MaxNewSynapseCount, 
         /// to reach or exceed a predefined accuracy threshold. This method iteratively trains the network on a set of sequences, 
         /// evaluating its prediction accuracy after each learning cycle. The process continues until the network's accuracy meets 
         /// or surpasses the desired threshold, at which point the method returns the number of cycles taken to achieve this goal. 

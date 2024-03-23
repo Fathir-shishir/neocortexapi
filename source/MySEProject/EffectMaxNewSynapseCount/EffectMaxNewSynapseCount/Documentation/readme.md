@@ -135,8 +135,6 @@ After the project run is complete go to the directory EffectMaxNewSynapseCount->
 
 ![9](images/9th_image.png)
 ![10](images/10th_image.png)
-![11](images/11th_image.png)
-![12](images/12th_image.png)
 
 Now choose the text file named `experiment_results_20.txt` because we run the project at 20 MaxNewSynapseCount, the file name changes accordingly with this parameter value
 
@@ -151,6 +149,62 @@ Now to run the automated tests by which we can compare which MaxNewSynapseCount 
 ![15](images/15th_image.png)
 
 ## Results
+
+The results we have found after running the MultiSequenceLearning Algorithm are given below for Given S1, S2 values:
+
+```
+{ "S1", new List<double>(new double[] { 0.0, 1.0, 0.0, 2.0, 3.0, 4.0, 5.0, 6.0, 5.0, 4.0, 3.0, 7.0, 1.0, 9.0, 12.0, 11.0, 12.0, 13.0, 14.0, 11.0, 12.0, 14.0 }) },
+{ "S2", new List<double>(new double[] { 0.8, 2.0, 0.0, 3.0, 3.0, 4.0, 5.0, 6.0, 5.0, 7.0, 2.0, 7.0, 1.0, 9.0, 11.0, 11.0, 10.0, 13.0, 14.0, 11.0, 7.0, 6.0 }) }
+```
+
+| MaxNewSynapseCount | Cycles to Stabilize |
+|--------------------|---------------------|
+| 10                 | Leraning didn't happen|
+| 20                 | 230                 |
+| 30                 | 267                 |
+| 40                 | 301                 |
+| 50                 | 234                 |
+
+| MaxNewSynapseCount | Accuracy (%) |
+|--------------------|--------------|
+| 10                 | didn't learn |
+| 20                 | 85.7         |
+| 30                 | 83.2         |
+| 40                 | 85.7         |
+| 50                 | 85.7         |
+
+Here we can see in terms of Cycle count and accuracy, `MaxNewSynapseCount` value `20` performs better
+
+for given input of S1, S2 values changed we get a different results
+```
+{ "S1", new List<double>(new double[] { 0.0, 1.0, 0.0, 2.0, 3.0, 4.0, 5.0 }) }, 
+{ "S2", new List<double>(new double[] { 8.0, 1.0, 2.0, 9.0, 10.0, 7.0, 11.00 }) }
+```
+
+| MaxNewSynapseCount | Cycles to Stabilize |
+|--------------------|---------------------|
+| 10                 | 256                 |
+| 20                 | 238                 |
+| 30                 | 216                 |
+| 40                 | 234                 |
+| 50                 | 227                 |
+
+| MaxNewSynapseCount | Accuracy (%) |
+|--------------------|--------------|
+| 10                 | 93.3         |
+| 20                 | 93.7         |
+| 30                 | 90.2         |
+| 40                 | 93.7         |
+| 50                 | 93.7         |
+
+Here from the above result we can see that almost all the parameter performs identically when given a small input to learn. So in terms of the optimal parameter value of `MaxNewSynapseCount` 50 looks better.
+
+
+
+
+
+
+
 
 
 

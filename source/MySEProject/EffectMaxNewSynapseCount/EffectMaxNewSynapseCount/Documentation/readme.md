@@ -150,7 +150,7 @@ Now to run the automated tests by which we can compare which MaxNewSynapseCount 
 
 ## Results
 
-The results we have found after running the MultiSequenceLearning Algorithm are given below for Given S1, S2 values:
+The results we have found after running the MultiSequenceLearning Algorithm are given below for S1, S2 values:
 
 ```
 { "S1", new List<double>(new double[] { 0.0, 1.0, 0.0, 2.0, 3.0, 4.0, 5.0, 6.0, 5.0, 4.0, 3.0, 7.0, 1.0, 9.0, 12.0, 11.0, 12.0, 13.0, 14.0, 11.0, 12.0, 14.0 }) },

@@ -18,17 +18,30 @@ namespace NeoCortexApiSample
     {
         private int maxNewSynapseCount;
 
-        // Constructor that allows setting MaxNewSynapseCount
+        /// <summary>
+        /// Initializes a new instance of the MultiSequenceLearning class with a specified MaxNewSynapseCount.
+        /// This constructor allows dynamic adjustment of the MaxNewSynapseCount parameter, which dictates
+        /// the maximum number of synapses that can be newly formed to unconnected cells during the learning process.
+        /// Adjusting this parameter enables the exploration of its impact on the learning efficiency and
+        /// prediction accuracy of Hierarchical Temporal Memory (HTM) networks.
+        /// </summary>
+        /// <param name="maxNewSynapseCount">The maximum number of new synapses that can be formed to previously unconnected cells.</param>
         public MultiSequenceLearning(int maxNewSynapseCount)
         {
             this.maxNewSynapseCount = maxNewSynapseCount;
         }
 
         /// <summary>
-        /// Runs the learning of sequences.
+        /// Executes the sequence learning experiment using the configured HTM network. This method sets up
+        /// the HTM network with the specified MaxNewSynapseCount and other necessary configurations. It then
+        /// processes a series of input sequences, facilitating the network's learning. Upon completion, the method
+        /// returns a Predictor object, which can be used to predict future sequence elements based on the learned patterns.
+        /// This process is crucial for assessing the effects of MaxNewSynapseCount on the network's ability to
+        /// learn and make accurate predictions.
         /// </summary>
-        /// <param name="sequences">Dictionary of sequences. KEY is the sewuence name, the VALUE is th elist of element of the sequence.</param>
-        public Predictor Run(Dictionary<string, List<double>> sequences)
+        /// <param name="sequences">A dictionary containing the sequences to be learned. Each key represents a sequence identifier, and its corresponding value is a list of double values constituting the sequence.</param>
+        /// <returns>A Predictor object configured for making predictions based on the learned sequences.</returns>
+        public Predictor Run(Dictionary<string, List<double>> sequences, double defaultMaxSynapsesPerSegment = 0.40)
         {
             Console.WriteLine($"Hello NeocortexApi! Experiment {nameof(MultiSequenceLearning)}");
 
@@ -49,7 +62,7 @@ namespace NeoCortexApiSample
                 MaxBoost = 10.0,
                 DutyCyclePeriod = 25,
                 MinPctOverlapDutyCycles = 0.75,
-                MaxSynapsesPerSegment = (int)(0.40 * numColumns),
+                MaxSynapsesPerSegment = (int)(defaultMaxSynapsesPerSegment * numColumns),
                 MaxNewSynapseCount = this.maxNewSynapseCount,
 
                 ActivationThreshold = 15,

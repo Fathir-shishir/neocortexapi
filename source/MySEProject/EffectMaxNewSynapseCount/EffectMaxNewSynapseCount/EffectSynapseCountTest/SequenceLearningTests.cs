@@ -266,7 +266,7 @@ namespace EffectSynapseCountTest
             var bestCount = cyclesForLowCount > cyclesForHighCount ? 40 : 20; // Identifies which MaxNewSynapseCount was more efficient.
 
             // Logs the optimal MaxNewSynapseCount value and the associated minimum cycle count needed for achieving the accuracy threshold.
-            Debug.WriteLine($"Best cycles achieved: {bestEfficientCycles} with MaxNewSynapseCount {bestCount}");
+            Console.WriteLine($"Best cycles achieved: {bestEfficientCycles} with MaxNewSynapseCount {bestCount}");
 
             // Verifies that the learning process was successful by ensuring a positive cycle count was required to meet the accuracy threshold.
             Assert.IsTrue(bestEfficientCycles > 0, "Expected a positive cycle value indicating a successful learning outcome.");
@@ -355,5 +355,69 @@ namespace EffectSynapseCountTest
 
             return cycles; // Return the number of cycles required to meet the accuracy threshold.
         }
+
+        [TestMethod]
+        public void TestLearningEfficiencyWithMaxNewSynapseAndSynapsesPerSegment()
+        {
+            // Example sequences for testing.
+            var sequences = GetTestSequences1(); // Assuming this method retrieves your test sequences.
+
+            // Define ranges or specific values for MaxNewSynapseCount and MaxSynapsesPerSegment to test their interaction.
+            int[] maxNewSynapseCounts = { 10, 20, 30, 40 };
+            double maxSynapsesPerSegment = 0.10; // Example fixed value to analyze interaction effects.
+            try {
+                foreach (var maxNewSynapseCount in maxNewSynapseCounts)
+                {
+                    try {
+                        // Assuming MultiSequenceLearning can be initialized with MaxSynapsesPerSegment, or that it can be set separately.
+                        MultiSequenceLearning msl = new MultiSequenceLearning(maxNewSynapseCount);
+
+                        // Run the learning experiment.
+                        var predictor = msl.Run(sequences, maxSynapsesPerSegment);
+
+                        Console.WriteLine(maxSynapsesPerSegment);
+
+                        int totalPredictions = 0;
+                        int correctPredictions = 0;
+
+                        // Iterate over sequences to calculate accuracy.
+                        foreach (var sequence in sequences)
+                        {
+                            List<double> sequenceValues = sequence.Value;
+
+                            for (int i = 0; i < sequenceValues.Count - 1; i++)
+                            {
+                                double currentInput = sequenceValues[i];
+                                string nextInput = sequenceValues[i + 1].ToString();
+
+                                var predictions = predictor.Predict(currentInput);
+
+                                // Check prediction accuracy.
+                                bool isCorrectPrediction = predictions.Any(pred => pred.PredictedInput.Contains(nextInput));
+                                if (isCorrectPrediction)
+                                {
+                                    correctPredictions++;
+                                }
+
+                                totalPredictions++;
+                            }
+                        }
+
+                        double accuracy = totalPredictions > 0 ? (double)correctPredictions / totalPredictions : 0;
+
+                        // Log or analyze the accuracy for this configuration.
+                        Console.WriteLine($"Accuracy with MaxNewSynapseCount={maxNewSynapseCount} and MaxSynapsesPerSegment={maxSynapsesPerSegment}: {accuracy}");
+                    } catch (Exception ex)
+                    {
+                        Console.WriteLine(ex.ToString());
+                        Console.WriteLine(maxNewSynapseCount.ToString()+" "+maxSynapsesPerSegment.ToString());
+                    }
+                    
+                }
+            } catch(Exception ex) {
+                Console.WriteLine(ex.ToString());
+            }
+        }
+
     }
 }

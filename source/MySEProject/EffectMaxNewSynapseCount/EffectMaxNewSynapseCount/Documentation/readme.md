@@ -146,7 +146,7 @@ After opening the txt file we can see the logs and results of predictions and ho
 
 Now to run the automated tests by which we can compare which MaxNewSynapseCount is better than which just go to Visual Studio and Open the Test explorer and run any given tests. Here you can see between the parameter value 5 and 20, 20 is better which is shown in the test results
 
-![15](images/15th_image.png)
+![15](images/all_test_passed.png)
 
 ## Results
 
@@ -198,6 +198,9 @@ for given input of S1, S2 values changed we get a different results
 | 50                 | 93.7         |
 
 Here from the above result we can see that almost all the parameter performs identically when given a small input to learn. So in terms of the optimal parameter value of `MaxNewSynapseCount` 50 looks better.
+We have also used Unit tests to automate the results and compare which value of MaxNewSynapseCount is best along with MaxSynapsePersegment. 
+
+#### All test cases can be found [here](https://github.com/Fathir-shishir/neocortexapi/blob/team_AS/source/MySEProject/EffectMaxNewSynapseCount/EffectMaxNewSynapseCount/EffectSynapseCountTest/SequenceLearningTests.cs).
 
 
 

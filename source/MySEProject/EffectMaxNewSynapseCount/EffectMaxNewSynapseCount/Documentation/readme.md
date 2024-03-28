@@ -159,7 +159,7 @@ The results we have found after running the MultiSequenceLearning Algorithm are 
 
 | MaxNewSynapseCount | Cycles to Stabilize |
 |--------------------|---------------------|
-| 10                 | Leraning didn't happen|
+| 10                 | Learning didn't happen|
 | 20                 | 230                 |
 | 30                 | 267                 |
 | 40                 | 301                 |
@@ -202,6 +202,36 @@ We have also used Unit tests to automate the results and compare which value of 
 
 #### All test cases can be found [here](https://github.com/Fathir-shishir/neocortexapi/blob/team_AS/source/MySEProject/EffectMaxNewSynapseCount/EffectMaxNewSynapseCount/EffectSynapseCountTest/SequenceLearningTests.cs).
 
+Additionally, we have run this experiment multiple times with different values and input. For such an input ```0.0, 1.0, 0.0, 2.0, 3.0, 4.0, 5.0, 6.0, 5.0, 4.0, 3.0, 7.0, 1.0, 9.0, 12.0, 11.0, 12.0, 13.0, 14.0, 11.0, 12.0, 14.0, 5.0, 7.0, 6.0, 9.0, 3.0, 4.0, 3.0, 4.0, 3.0, 4.0``` we show the result below:
+
+| MaxNewSynapseCount | Cycles to Stabilize | Accuracy | Test duration |
+|--------------------|---------------------|----------|---------------|
+| 10                 | Learning didn't happen | nothing | 00:15:01.1904401 |
+| 20                 | 342                 | 96.875 |                       |
+| 30                 | 216                 |         |                       |
+| 40                 | 234                 |          |                      |
+| 50                 | 227                 |           |                     |
+
+
+For another Input, ```0.0, 1.0, 0.0, 2.0, 3.0, 4.0, 5.0, 6.0, 5.0, 4.0, 3.0, 7.0, 1.0, 9.0, 12.0, 11.0, 12.0, 13.0, 14.0, 11.0, 12.0, 14.0, 5.0, 7.0, 6.0, 9.0, 3.0, 4.0, 3.0, 4.0, 3.0, 4.0``` we show the result below:
+
+| MaxNewSynapseCount | Cycles to Stabilize | Accuracy | Test duration |
+|--------------------|---------------------|----------|---------------|
+| 10                 | Learning didn't happen | nothing | 00:15:01.1904401 |
+| 20                 | 342                 | 96.875 |                       |
+| 30                 | 216                 |         |                       |
+| 40                 | 234                 |          |                      |
+| 50                 | 227                 |           |                     |
+
+For another Input, ```0.0, 1.0, 0.0, 2.0, 3.0, 4.0, 5.0, 6.0, 5.0, 4.0, 3.0, 7.0, 1.0, 9.0, 12.0, 11.0, 12.0, 13.0, 14.0, 11.0, 12.0, 14.0, 5.0, 7.0, 6.0, 9.0, 3.0, 4.0, 3.0, 4.0, 3.0, 4.0``` we show the result below:
+
+| MaxNewSynapseCount | Cycles to Stabilize | Accuracy | Test duration |
+|--------------------|---------------------|----------|---------------|
+| 10                 | Learning didn't happen | nothing | 00:15:01.1904401 |
+| 20                 | 342                 | 96.875 |                       |
+| 30                 | 216                 |         |                       |
+| 40                 | 234                 |          |                      |
+| 50                 | 227                 |           |                     |
 
 
 

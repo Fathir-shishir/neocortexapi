@@ -206,11 +206,11 @@ Additionally, we have run this experiment multiple times with different values a
 
 | MaxNewSynapseCount | Cycles to Stabilize | Accuracy | Test duration |
 |--------------------|---------------------|----------|---------------|
-| 10                 | Learning didn't happen | nothing |  |
+| 10                 | Learning didn't happen | nothing |  no timestamp|
 | 20                 | 342                 | 96.875 |  00:15:01.1904401 |
 | 30                 | 355                |    96.875     | 00:07:32.9017324|
 | 40                 | 264                |   96.875       |   00:05:10.8580845|
-| 50                 | 227                 |           |                     |
+| 50                 | 279                |    96.875       |  00:06:13.0061530 |
 
 
 For another Input, ```0.0, 1.0, 0.0, 2.0, 3.0, 4.0, 5.0, 6.0, 5.0, 4.0, 3.0, 7.0, 1.0, 9.0, 12.0, 11.0, 12.0, 13.0, 14.0, 11.0, 12.0, 14.0, 5.0, 7.0, 6.0, 9.0, 3.0, 4.0, 3.0, 4.0, 3.0, 4.0``` we show the result below:

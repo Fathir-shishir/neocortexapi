@@ -206,10 +206,10 @@ Additionally, we have run this experiment multiple times with different values a
 
 | MaxNewSynapseCount | Cycles to Stabilize | Accuracy | Test duration |
 |--------------------|---------------------|----------|---------------|
-| 10                 | Learning didn't happen | nothing | 00:15:01.1904401 |
-| 20                 | 342                 | 96.875 |                       |
-| 30                 | 216                 |         |                       |
-| 40                 | 234                 |          |                      |
+| 10                 | Learning didn't happen | nothing |  |
+| 20                 | 342                 | 96.875 |  00:15:01.1904401 |
+| 30                 | 355                |    96.875     | 00:07:32.9017324|
+| 40                 | 264                |   96.875       |   00:05:10.8580845|
 | 50                 | 227                 |           |                     |
 
 
@@ -217,8 +217,8 @@ For another Input, ```0.0, 1.0, 0.0, 2.0, 3.0, 4.0, 5.0, 6.0, 5.0, 4.0, 3.0, 7.0
 
 | MaxNewSynapseCount | Cycles to Stabilize | Accuracy | Test duration |
 |--------------------|---------------------|----------|---------------|
-| 10                 | Learning didn't happen | nothing | 00:15:01.1904401 |
-| 20                 | 342                 | 96.875 |                       |
+| 10                 | Learning didn't happen | nothing |  |
+| 20                 | 342                 |  |                       |
 | 30                 | 216                 |         |                       |
 | 40                 | 234                 |          |                      |
 | 50                 | 227                 |           |                     |
@@ -228,8 +228,8 @@ For another Input, ```0.0, 1.0, 0.0, 2.0, 3.0, 4.0, 5.0, 6.0, 5.0, 4.0, 3.0, 7.0
 | MaxNewSynapseCount | Cycles to Stabilize | Accuracy | Test duration |
 |--------------------|---------------------|----------|---------------|
 | 10                 | Learning didn't happen | nothing |  
-| 20                 | 342                 | 96.875 |    00:15:01.1904401   |
-| 30                 | 255                 | 96.875 |    00:07:32.9017324                    |
+| 20                 | 342                 |  |       |
+| 30                 | 255                 | |                      |
 | 40                 | 234                 |          |                      |
 | 50                 | 227                 |           |                     |
 

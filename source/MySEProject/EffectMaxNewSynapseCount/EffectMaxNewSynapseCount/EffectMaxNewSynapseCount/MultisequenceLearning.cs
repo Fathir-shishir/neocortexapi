@@ -96,8 +96,16 @@ namespace NeoCortexApiSample
         }
 
         /// <summary>
-        ///
+        /// Executes a comprehensive learning experiment with the specified Hierarchical Temporal Memory (HTM) configuration and sequences. 
+        /// This method sets up an HTM network using a given configuration, processes a set of input sequences through the network, 
+        /// and evaluates the network's learning and prediction capabilities. The experiment's progress and results are logged, 
+        /// including the start and end times, configuration details, and the accuracy of predictions made after each learning cycle.
         /// </summary>
+        /// <param name="inputBits">The number of bits in the input representation for the encoder.</param>
+        /// <param name="cfg">Configuration settings for the HTM network, including parameters like MaxNewSynapseCount.</param>
+        /// <param name="encoder">The encoder used to transform raw input into a binary representation suitable for the HTM network.</param>
+        /// <param name="sequences">A collection of input sequences that the network will learn and predict. Each sequence is a list of double values.</param>
+        /// <returns>A Predictor object that can be used to make predictions based on the learned model.</returns>
         private Predictor RunExperiment(int inputBits, HtmConfig cfg, EncoderBase encoder, Dictionary<string, List<double>> sequences)
         {
             string filePath = "experiment_results.txt";
@@ -278,6 +286,9 @@ namespace NeoCortexApiSample
 
                             if (lyrOut.PredictiveCells.Count > 0)
                             {
+                     
+                                
+                                
                                 //var predictedInputValue = cls.GetPredictedInputValue(lyrOut.PredictiveCells.ToArray());
                                 var predictedInputValues = cls.GetPredictedInputValues(lyrOut.PredictiveCells.ToArray(), 3);
 

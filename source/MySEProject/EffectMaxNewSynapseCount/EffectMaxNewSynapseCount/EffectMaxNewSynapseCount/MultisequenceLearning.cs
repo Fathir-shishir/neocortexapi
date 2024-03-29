@@ -108,7 +108,9 @@ namespace NeoCortexApiSample
         /// <returns>A Predictor object that can be used to make predictions based on the learned model.</returns>
         private Predictor RunExperiment(int inputBits, HtmConfig cfg, EncoderBase encoder, Dictionary<string, List<double>> sequences)
         {
-            string filePath = "experiment_results.txt";
+            Random rnd = new Random();
+            int num = rnd.Next();
+            string filePath = "experiment_results"+"_"+num.ToString()+"_"+this.maxNewSynapseCount.ToString()+".txt";
             CortexLayer<object, object> layer1 = new CortexLayer<object, object>("L1");
             var mem = new Connections(cfg);
             HtmClassifier<string, ComputeCycle> cls = new HtmClassifier<string, ComputeCycle>();

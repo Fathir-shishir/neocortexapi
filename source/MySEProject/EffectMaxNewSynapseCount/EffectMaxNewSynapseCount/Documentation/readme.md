@@ -213,25 +213,6 @@ Additionally, we have run this experiment multiple times with different values a
 | 50                 | 279                |    96.875       |  00:06:13.0061530 |
 
 
-For another Input, ```0.0, 1.0, 0.0, 2.0, 3.0, 4.0, 5.0, 6.0, 5.0, 4.0, 3.0, 7.0, 1.0, 9.0, 12.0, 11.0, 12.0, 13.0, 14.0, 11.0, 12.0, 14.0, 5.0, 7.0, 6.0, 9.0, 3.0, 4.0, 3.0, 4.0, 3.0, 4.0``` we show the result below:
-
-| MaxNewSynapseCount | Cycles to Stabilize | Accuracy | Test duration |
-|--------------------|---------------------|----------|---------------|
-| 10                 | Learning didn't happen | nothing |  |
-| 20                 | 342                 |  |                       |
-| 30                 | 216                 |         |                       |
-| 40                 | 234                 |          |                      |
-| 50                 | 227                 |           |                     |
-
-For another Input, ```0.0, 1.0, 0.0, 2.0, 3.0, 4.0, 5.0, 6.0, 5.0, 4.0, 3.0, 7.0, 1.0, 9.0, 12.0, 11.0, 12.0, 13.0, 14.0, 11.0, 12.0, 14.0, 5.0, 7.0, 6.0, 9.0, 3.0, 4.0, 3.0, 4.0, 3.0, 4.0``` we show the result below:
-
-| MaxNewSynapseCount | Cycles to Stabilize | Accuracy | Test duration |
-|--------------------|---------------------|----------|---------------|
-| 10                 | Learning didn't happen | nothing |  
-| 20                 | 342                 |  |       |
-| 30                 | 255                 | |                      |
-| 40                 | 234                 |          |                      |
-| 50                 | 227                 |           |                     |
 
 
 

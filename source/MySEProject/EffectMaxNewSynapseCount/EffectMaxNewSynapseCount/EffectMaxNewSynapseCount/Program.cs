@@ -33,7 +33,7 @@ namespace NeoCortexApiSample
 
             // RunMultiSimpleSequenceLearningExperiment();
 
-            RunMultiSequenceLearningExperiment(20);
+            RunMultiSequenceLearningExperiment(60);
         }
 
 

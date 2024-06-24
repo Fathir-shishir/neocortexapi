@@ -28,6 +28,7 @@ namespace MyExperiment
             this.storageProvider = storageProvider;
             this.logger = log;
 
+            //ICOnfig need to be changed here
             config = new MyConfig();
             configSection.Bind(config);
         }

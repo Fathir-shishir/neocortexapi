@@ -23,7 +23,7 @@ namespace MyExperiment
 
         private MyConfig config;
 
-        public Experiment(IConfigurationSection configSection, IStorageProvider storageProvider, ILogger log)
+        public Experiment(IConfigurationSection configSection, IStorageProvider storageProvider, string projectName, ILogger log)
         {
             this.storageProvider = storageProvider;
             this.logger = log;

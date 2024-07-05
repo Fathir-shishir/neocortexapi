@@ -23,7 +23,7 @@ namespace MyExperiment
 
         private MyConfig config;
 
-        public Experiment(IConfigurationSection configSection, IStorageProvider storageProvider, ILogger log)
+        public Experiment(IConfigurationSection configSection, IStorageProvider storageProvider, string projectName, ILogger log)
         {
             this.storageProvider = storageProvider;
             this.logger = log;
@@ -84,17 +84,24 @@ namespace MyExperiment
                         ExerimentRequestMessage request = JsonSerializer.Deserialize<ExerimentRequestMessage>(msgTxt);
 
                         // Step 4.
-                        var inputFile = await this.storageProvider.DownloadInputFile(request.InputFile);
+                        //var inputFile = await this.storageProvider.DownloadInputFile(request.InputFile);
+                        var inputFile = request.InputFile;
 
                         // Here is your SE Project code started.(Between steps 4 and 5).
                         IExperimentResult result = await this.Run(inputFile);
 
                         // Step 4 (oposite direction)
                         //TODO. do serialization of the result.
-                        await storageProvider.UploadResultFile("outputfile.txt", null);
+                        //await storageProvider.UploadResultFile("outputfile.txt", null);
 
                         // Step 5.
+                        this.logger?.LogInformation($"{DateTime.Now} -  UploadExperimentResultFile...");
+                        await storageProvider.UploadResultFile($"Test_data_{DateTime.UtcNow.ToString("yyyyMMddHHmmssfff")}.txt", result.TestData);
+
+
+                        this.logger?.LogInformation($"{DateTime.Now} -  UploadExperimentResult...");
                         await storageProvider.UploadExperimentResult(result);
+                        this.logger?.LogInformation($"{DateTime.Now} -  Experiment Completed Successfully...");
 
                         await queueClient.DeleteMessageAsync(message.MessageId, message.PopReceipt);
                     }

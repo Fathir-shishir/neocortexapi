@@ -24,5 +24,3 @@ Based on the analysis, we adjust the MaxNewSynapseCount in the HTM configuration
 
 ### Step 8: Import the SE project
 
-### Step 9: Export all projects
-

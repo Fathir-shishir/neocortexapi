@@ -13,6 +13,8 @@ namespace MyExperiment.Utilities
         {
             BlobServiceClient blobServiceClient = new BlobServiceClient(config.StorageConnectionString);
             BlobContainerClient containerClient = blobServiceClient.GetBlobContainerClient(config.TrainingContainer);
+            var blobClient = containerClient.GetBlobClient(fileName);
+           
         }
     }
 }

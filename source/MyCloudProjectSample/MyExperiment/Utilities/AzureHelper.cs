@@ -7,4 +7,11 @@ using System.Threading.Tasks;
 
 namespace MyExperiment.Utilities
 {
+    public class AzureHelper
+    {
+        public class AzureHelperClass
+        {
+            
+        }
+    }
 }

@@ -19,5 +19,16 @@ namespace MyExperiment.Utilities
             return Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
                 localFilePath);
         }
+
+        /// <summary>
+        /// Reading text from file 
+        /// </summary>
+        /// <param name="localfilePath"></param>
+        /// <returns> return content </returns>
+        public static string ReadFile(string localFilePath)
+        {
+            string jsonString = File.ReadAllText(localFilePath);
+            return jsonString;
+        }
     }
 }

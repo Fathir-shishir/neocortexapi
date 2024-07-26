@@ -9,7 +9,7 @@ namespace MyExperiment.Utilities
 {
     public class AzureHelper
     {
-        public class AzureHelperClass
+        public static Task<string> GetInputFileUrl(string fileName, MyConfig config)
         {
             
         }

@@ -30,5 +30,41 @@ namespace MyExperiment.Utilities
             string jsonString = File.ReadAllText(localFilePath);
             return jsonString;
         }
+
+        
+        public static void WriteDataInFile(string localfilePath, int[] data, int[] inputdata)
+        {
+            // Creating local file in the ./data/ directory 
+
+            if (!File.Exists(localfilePath))
+            {
+                File.Create(localfilePath).Close();
+            }
+
+            StreamWriter sw = File.AppendText(localfilePath);
+
+            try
+            {
+                sw.WriteLine();
+                sw.WriteLine("*************--Processing started--************");
+                int i = 0;
+                foreach (var d in data)
+                {
+                    sw.Write("For input index : " + inputdata[i] + " -> ");
+                    sw.Write(d + "  ");
+                    i++;
+                }
+            }
+            finally
+            {
+                sw.WriteLine();
+                sw.WriteLine("*************--Processing ended--************");
+                sw.WriteLine();
+                sw.Flush();
+                sw.Close();
+            }
+
+
+        }
     }
 }

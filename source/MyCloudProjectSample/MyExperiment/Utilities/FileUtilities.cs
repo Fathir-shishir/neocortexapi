@@ -31,7 +31,9 @@ namespace MyExperiment.Utilities
             return jsonString;
         }
 
-        
+        /// <summary>
+        /// Put content in file
+        /// </summary>
         public static void WriteDataInFile(string localfilePath, int[] data, int[] inputdata)
         {
             // Creating local file in the ./data/ directory 

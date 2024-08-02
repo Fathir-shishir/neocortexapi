@@ -12,6 +12,7 @@ namespace MyExperiment.Utilities
         public static Task<string> GetInputFileUrl(string fileName, MyConfig config)
         {
             BlobServiceClient blobServiceClient = new BlobServiceClient(config.StorageConnectionString);
+            BlobContainerClient containerClient = blobServiceClient.GetBlobContainerClient(config.TrainingContainer);
         }
     }
 }

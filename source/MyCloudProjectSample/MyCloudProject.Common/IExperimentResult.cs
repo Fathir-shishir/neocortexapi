@@ -12,12 +12,13 @@ namespace MyCloudProject.Common
         string Name { get; set; }
 
         string Description { get; set; }
-        
+
         DateTime? StartTimeUtc { get; set; }
 
         DateTime? EndTimeUtc { get; set; }
 
         byte[] TestData { get; set; }
+
     }
 
 }

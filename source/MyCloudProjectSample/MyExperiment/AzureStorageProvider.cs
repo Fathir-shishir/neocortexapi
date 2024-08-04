@@ -47,7 +47,6 @@ namespace MyExperiment
 
                 Accuracy = (float)0.5,
             };
-
          
             await client.UpsertEntityAsync((ExperimentResult)result);
 

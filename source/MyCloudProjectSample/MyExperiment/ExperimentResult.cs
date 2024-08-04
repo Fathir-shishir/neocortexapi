@@ -43,7 +43,6 @@ namespace MyExperiment
         // Your properties related to experiment.
 
         public float Accuracy { get; set; }
-
-
+        public byte[] TestData { get ; set ; }
     }
 }

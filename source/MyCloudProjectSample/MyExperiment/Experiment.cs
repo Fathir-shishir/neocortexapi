@@ -81,7 +81,7 @@ namespace MyExperiment
                         this.logger?.LogInformation($"Received the message {msgTxt}");
 
                         // The message in the step 3 on architecture picture.
-                        ExerimentRequestMessage request = JsonSerializer.Deserialize<ExerimentRequestMessage>(msgTxt);
+                        ExerimentRequestMessage request = JsonSerializer.Deserialize<ExerimentRequestMessage>(msgTxt); 
 
                         // Step 4.
                         //var inputFile = await this.storageProvider.DownloadInputFile(request.InputFile);

@@ -22,3 +22,5 @@ Based on the analysis, we adjust the MaxNewSynapseCount in the HTM configuration
 
 ### Step 7: Document the Experimentation Process and Results
 
+### Step 8: Import the SE project
+

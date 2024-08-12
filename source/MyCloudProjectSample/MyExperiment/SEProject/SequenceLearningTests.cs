@@ -1,13 +1,10 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using NeoCortexApi;
-using NeoCortexApi.Entities;
-using SEProject;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 
-namespace EffectSynapseCountTest
+namespace SEProject
 {
     [TestClass]
     public class SequenceLearningTests

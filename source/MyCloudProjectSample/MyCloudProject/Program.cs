@@ -14,10 +14,9 @@ namespace MyCloudProject
         /// Your project ID from the last semester.
         /// </summary>
 
-        string test;
         private static string projectName = "ML23-24.:";
 
-        static async Task Main(string[] args)
+        public static async Task Main(string[] args)
         {
             CancellationTokenSource tokeSrc = new CancellationTokenSource();
 

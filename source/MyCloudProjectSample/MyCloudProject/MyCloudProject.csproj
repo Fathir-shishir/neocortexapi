@@ -16,7 +16,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\EffectMaxNewSynapseCount\EffectMaxNewSynapseCount\EffectMaxNewSynapseCount\EffectMaxNewSynapseCount.csproj" />
     <ProjectReference Include="..\MyCloudProject.Common\MyCloudProject.Common.csproj" />
     <ProjectReference Include="..\MyExperiment\MyExperiment.csproj" />
   </ItemGroup>

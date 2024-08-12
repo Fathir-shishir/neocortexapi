@@ -4,14 +4,11 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using static NeoCortexApiSample.MultiSequenceLearning;
+using static SEProject.MultiSequenceLearning;
 
-namespace NeoCortexApiSample
+namespace SEProject
 {
-
-    #if !LIBRARY
-
-    class Program
+    class Program1
     {
         /// <summary>
         /// This sample shows a typical experiment code for SP and TM.
@@ -19,25 +16,25 @@ namespace NeoCortexApiSample
         /// and TM.
         /// </summary>
         /// <param name="args"></param>
-        static void Mains(string[] args)
-        {
-            //
-            // Starts experiment that demonstrates how to learn spatial patterns.
-            //SpatialPatternLearning experiment = new SpatialPatternLearning();
-            //experiment.Run();
+        //static void Main12(string[] args)
+        //{
+        //    //
+        //    // Starts experiment that demonstrates how to learn spatial patterns.
+        //    //SpatialPatternLearning experiment = new SpatialPatternLearning();
+        //    //experiment.Run();
 
-            //
-            // Starts experiment that demonstrates how to learn spatial patterns.
-            //SequenceLearning experiment = new SequenceLearning();
-            //experiment.Run();
+        //    //
+        //    // Starts experiment that demonstrates how to learn spatial patterns.
+        //    //SequenceLearning experiment = new SequenceLearning();
+        //    //experiment.Run();
 
-            //GridCellSamples gridCells = new GridCellSamples();
-            //gridCells.Run();
+        //    //GridCellSamples gridCells = new GridCellSamples();
+        //    //gridCells.Run();
 
-            // RunMultiSimpleSequenceLearningExperiment();
+        //    // RunMultiSimpleSequenceLearningExperiment();
 
-            RunMultiSequenceLearningExperiment(60);
-        }
+        //    RunMultiSequenceLearningExperiment(60);
+        //}
 
 
         /// <summary>
@@ -124,8 +121,5 @@ namespace NeoCortexApiSample
 
             Debug.WriteLine("------------------------------");
         }
-
-    #endif
-
     }
 }

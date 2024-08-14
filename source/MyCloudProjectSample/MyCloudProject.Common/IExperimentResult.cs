@@ -19,6 +19,7 @@ namespace MyCloudProject.Common
 
         byte[] TestData { get; set; }
 
+
     }
 
 }

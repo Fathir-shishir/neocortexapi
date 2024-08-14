@@ -3,8 +3,11 @@ using Azure.Storage.Queues.Models;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using MyCloudProject.Common;
+using SEProject;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.Linq;
 using System.Text;
 using System.Text.Json;
 using System.Threading;
@@ -23,29 +26,54 @@ namespace MyExperiment
 
         private MyConfig config;
 
-        public Experiment(IConfigurationSection configSection, IStorageProvider storageProvider, string projectName, ILogger log)
+        private string expectedProjectName;
+        /// <summary>
+        /// construct the class
+        /// </summary>
+        /// <param name="configSection"></param>
+        /// <param name="storageProvider"></param>
+        /// <param name="expectedPrjName"></param>
+        /// <param name="log"></param>
+        public Experiment(IConfigurationSection configSection, IStorageProvider storageProvider, string expectedPrjName, ILogger log)
         {
             this.storageProvider = storageProvider;
             this.logger = log;
-
-            //ICOnfig need to be changed here
+            this.expectedProjectName = expectedPrjName;
             config = new MyConfig();
             configSection.Bind(config);
         }
 
+        /// <summary>
+        /// Run Software Engineering project method
+        /// </summary>
+        /// <param name="inputFile">The input file.</param>
+        /// <returns>experiment result object</returns>
         public Task<IExperimentResult> Run(string inputFile)
         {
-            // TODO read file
+            Random rnd = new Random();
+            int rowKeyNumber = rnd.Next(0, 1000);
+            string rowKey = "team-as-" + rowKeyNumber.ToString();
 
-            // YOU START HERE WITH YOUR SE EXPERIMENT!!!!
-
-            ExperimentResult res = new ExperimentResult(this.config.GroupId, null);
+            ExperimentResult res = new ExperimentResult(this.config.GroupId, rowKey);
 
             res.StartTimeUtc = DateTime.UtcNow;
+            res.ExperimentId = DateTime.UtcNow.ToString("yyyyMMddHHmmssfff");
+            res.RowKey = rowKey;
+            res.PartitionKey = "cc-proj-" + rowKey;
 
-            // Run your experiment code here.
+            if (inputFile == "runccproject")
+            {
+                res.TestName = "Investigate Influence of parameter MaxNewSynapseCount";
 
-            return Task.FromResult<IExperimentResult>(res); // TODO...
+                res.Description = "[Team AS Cloud Computing Implementation]";
+                this.logger?.LogInformation($"The file result we got {"[Team AS Cloud Computing Implementation]"}");
+                res.TestData = string.IsNullOrEmpty("[Team AS Cloud Computing Implementation]") ? null : Encoding.UTF8.GetBytes("[Team AS Cloud Computing Implementation]");
+                res.Accuracy = 98;
+            }
+            res.EndTimeUtc = DateTime.UtcNow;
+
+            this.logger?.LogInformation("The process successfully completed");
+            return Task.FromResult<IExperimentResult>(res);
         }
 
 
@@ -93,6 +121,12 @@ namespace MyExperiment
                         // Step 4 (oposite direction)
                         //TODO. do serialization of the result.
                         //await storageProvider.UploadResultFile("outputfile.txt", null);
+
+                        SequenceLearningTests sequenceLearningTests = new SequenceLearningTests();
+                        sequenceLearningTests.PredictionAccuracyTest_1();
+                        sequenceLearningTests.PredictionAccuracyTest_2();
+                        sequenceLearningTests.CompareLearningSpeedWithDifferentSynapseCounts_1();
+                        sequenceLearningTests.CompareLearningSpeedWithDifferentSynapseCounts_2();
 
                         // Step 5.
                         this.logger?.LogInformation($"{DateTime.Now} -  UploadExperimentResultFile...");

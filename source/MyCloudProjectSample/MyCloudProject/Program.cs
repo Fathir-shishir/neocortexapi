@@ -14,9 +14,9 @@ namespace MyCloudProject
         /// Your project ID from the last semester.
         /// </summary>
 
-        private static string projectName = "ML23-24.:";
+        private static string projectName = "ML22/23-13 Investigate Influence of parameter MaxNewSynapseCount";
 
-        public static async Task Main(string[] args)
+        static async Task Main(string[] args)
         {
             CancellationTokenSource tokeSrc = new CancellationTokenSource();
 

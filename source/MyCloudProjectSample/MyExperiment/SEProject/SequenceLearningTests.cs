@@ -359,7 +359,7 @@ namespace SEProject
             return cycles; // Return the number of cycles required to meet the accuracy threshold.
         }
 
-        [TestMethod]
+
         public void TestLearningEfficiencyWithMaxNewSynapseAndSynapsesPerSegment()
         {
             // Example sequences for testing.

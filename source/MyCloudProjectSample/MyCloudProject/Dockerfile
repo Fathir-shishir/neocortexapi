@@ -6,7 +6,6 @@ WORKDIR /app
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
 COPY ["MyCloudProject/MyCloudProject.csproj", "MyCloudProject/"]
-COPY ["EffectMaxNewSynapseCount/EffectMaxNewSynapseCount/EffectMaxNewSynapseCount/EffectMaxNewSynapseCount.csproj", "EffectMaxNewSynapseCount/EffectMaxNewSynapseCount/EffectMaxNewSynapseCount/"]
 COPY ["MyCloudProject.Common/MyCloudProject.Common.csproj", "MyCloudProject.Common/"]
 COPY ["MyExperiment/MyExperiment.csproj", "MyExperiment/"]
 RUN dotnet restore "MyCloudProject/MyCloudProject.csproj"

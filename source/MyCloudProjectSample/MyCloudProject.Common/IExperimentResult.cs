@@ -17,9 +17,13 @@ namespace MyCloudProject.Common
 
         DateTime? EndTimeUtc { get; set; }
 
+        int MaxNewSynapseCount1 { get; set; }
+
+        int MaxNewSynapseCount2 { get; set; }
+
         byte[] TestData { get; set; }
 
-
+        string TestName { get; set; }
     }
 
 }

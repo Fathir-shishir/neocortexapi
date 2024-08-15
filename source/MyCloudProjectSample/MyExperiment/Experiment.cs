@@ -5,11 +5,13 @@ using Microsoft.Extensions.Logging;
 using MyCloudProject.Common;
 using SEProject;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Text.Json;
+using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -48,7 +50,7 @@ namespace MyExperiment
         /// </summary>
         /// <param name="inputFile">The input file.</param>
         /// <returns>experiment result object</returns>
-        public Task<IExperimentResult> Run(string inputFile)
+        public Task<IExperimentResult> Run(string inputFile, byte[] resultByte, int mnsc1, int mnsc2)
         {
             Random rnd = new Random();
             int rowKeyNumber = rnd.Next(0, 1000);
@@ -61,14 +63,16 @@ namespace MyExperiment
             res.RowKey = rowKey;
             res.PartitionKey = "cc-proj-" + rowKey;
 
-            if (inputFile == "runccproject")
+            if (inputFile == "run-team-as-project")
             {
                 res.TestName = "Investigate Influence of parameter MaxNewSynapseCount";
 
                 res.Description = "[Team AS Cloud Computing Implementation]";
                 this.logger?.LogInformation($"The file result we got {"[Team AS Cloud Computing Implementation]"}");
-                res.TestData = string.IsNullOrEmpty("[Team AS Cloud Computing Implementation]") ? null : Encoding.UTF8.GetBytes("[Team AS Cloud Computing Implementation]");
-                res.Accuracy = 98;
+
+                res.TestData = resultByte;
+                res.MaxNewSynapseCount1 = mnsc1;
+                res.MaxNewSynapseCount2 = mnsc2;
             }
             res.EndTimeUtc = DateTime.UtcNow;
 
@@ -114,24 +118,33 @@ namespace MyExperiment
                         // Step 4.
                         //var inputFile = await this.storageProvider.DownloadInputFile(request.InputFile);
                         var inputFile = request.InputFile;
+                        var fileOne = request.file1;
+                        var fileTwo = request.file2;
+
+
 
                         // Here is your SE Project code started.(Between steps 4 and 5).
-                        IExperimentResult result = await this.Run(inputFile);
+
+                        List<string> resultOfTests = await this.runSEProject(fileOne);
+                        ExperimentData experimentData = await this.getAndDeserializeDataFromBlobContainerAsync(fileOne);
+                        string resultJsonString = JsonSerializer.Serialize(resultOfTests);
+
+                        // Convert the JSON string to a byte array
+                        byte[] resultByteArray = Encoding.UTF8.GetBytes(resultJsonString);
 
                         // Step 4 (oposite direction)
                         //TODO. do serialization of the result.
                         //await storageProvider.UploadResultFile("outputfile.txt", null);
 
-                        SequenceLearningTests sequenceLearningTests = new SequenceLearningTests();
-                        sequenceLearningTests.PredictionAccuracyTest_1();
-                        sequenceLearningTests.PredictionAccuracyTest_2();
-                        sequenceLearningTests.CompareLearningSpeedWithDifferentSynapseCounts_1();
-                        sequenceLearningTests.CompareLearningSpeedWithDifferentSynapseCounts_2();
-
                         // Step 5.
-                        this.logger?.LogInformation($"{DateTime.Now} -  UploadExperimentResultFile...");
-                        await storageProvider.UploadResultFile($"Test_data_{DateTime.UtcNow.ToString("yyyyMMddHHmmssfff")}.txt", result.TestData);
-
+                        //this.logger?.LogInformation($"{DateTime.Now} -  UploadExperimentResultFile...");
+                        await storageProvider.UploadResultFile($"Test_data_{DateTime.UtcNow.ToString("yyyyMMddHHmmssfff")}.txt", resultByteArray);
+                        IExperimentResult result = await this.Run(
+                            inputFile, 
+                            resultByteArray, 
+                            experimentData.MaxNewSynapseCount1, 
+                            experimentData.MaxNewSynapseCount2
+                        );
 
                         this.logger?.LogInformation($"{DateTime.Now} -  UploadExperimentResult...");
                         await storageProvider.UploadExperimentResult(result);
@@ -156,6 +169,46 @@ namespace MyExperiment
 
 
         #region Private Methods
+        private async Task<List<string>> runSEProject(string fileName) {
+
+            SequenceLearningTests sequenceLearningTests = new SequenceLearningTests();
+            ExperimentData experimentData = await this.getAndDeserializeDataFromBlobContainerAsync(fileName); 
+
+            string test1 = sequenceLearningTests.PredictionAccuracyTest(
+                    experimentData.Sequences, 
+                    experimentData.MaxNewSynapseCount1, 
+                    experimentData.MaxNewSynapseCount2
+                );
+
+            string test2 = sequenceLearningTests.CompareLearningSpeedWithDifferentSynapseCounts(
+                    experimentData.Sequences,
+                    experimentData.MaxNewSynapseCount1,
+                    experimentData.MaxNewSynapseCount2
+                );
+            List<string> result = new List<string>
+            {
+                test1,
+                test2
+            };
+            await Task.Delay(500);
+            return result;
+        }
+
+        private async Task<ExperimentData> getAndDeserializeDataFromBlobContainerAsync(string fileName) 
+        {
+
+            string jsonString = await storageProvider.DownloadInputFile(fileName);
+            var experimentData = await DeserializeExperimentData(jsonString);
+
+            return experimentData;
+
+        }
+
+        private static async Task<ExperimentData> DeserializeExperimentData(string jsonString)
+        {
+            var experimentData = JsonSerializer.Deserialize<ExperimentData>(jsonString);
+            return experimentData;
+        }
 
 
         #endregion

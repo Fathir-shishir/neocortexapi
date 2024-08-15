@@ -1,11 +1,13 @@
 ﻿using Azure;
 using Azure.Data.Tables;
 using Azure.Storage.Blobs;
+using Azure.Storage.Blobs.Models;
 using Microsoft.Extensions.Configuration;
 using MyCloudProject.Common;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -23,17 +25,28 @@ namespace MyExperiment
 
         public async Task<string> DownloadInputFile(string fileName)
         {
-            BlobContainerClient container = new BlobContainerClient("read from config", "sample-container TODO. Read from config");
+            BlobContainerClient container = new BlobContainerClient(this.config.StorageConnectionString, this.config.TrainingContainer);
             await container.CreateIfNotExistsAsync();
 
             // Get a reference to a blob named "sample-file"
             BlobClient blob = container.GetBlobClient(fileName);
 
-            //throw if not exists:
-            //blob.ExistsAsync
+            // Check if the blob exists
+            if (await blob.ExistsAsync())
+            {
+                // Download the blob content as a stream
+                BlobDownloadInfo download = await blob.DownloadAsync();
 
-            // return "../myinputfilexy.csv"
-            throw new NotImplementedException();
+                // Read the content from the stream and return it as a string
+                using (StreamReader reader = new StreamReader(download.Content))
+                {
+                    return await reader.ReadToEndAsync();
+                }
+            }
+            else
+            {
+                throw new FileNotFoundException($"The file '{fileName}' does not exist in the blob container.");
+            }
         }
 
         public async Task UploadExperimentResult(IExperimentResult result)
@@ -52,6 +65,8 @@ namespace MyExperiment
                 StartTimeUtc = result.StartTimeUtc,
                 EndTimeUtc = result.EndTimeUtc,
                 TestData = result.TestData,
+                MaxNewSynapseCount1 = result.MaxNewSynapseCount1,
+                MaxNewSynapseCount2= result.MaxNewSynapseCount2,
             };
             Console.WriteLine($"Upload ExperimentResult to table: {this.config.ResultTable}");
             var client = new TableClient(this.config.StorageConnectionString, this.config.ResultTable);
@@ -78,18 +93,35 @@ namespace MyExperiment
             BlobContainerClient containerClient = blobServiceClient.GetBlobContainerClient(this.config.ResultContainer);
 
             // Write encoded data to text file
-            byte[] testData = data;
+            byte[] dataAsBytes = data;
 
             string blobName = experimentLabel;
 
             // Upload the text data to the blob container
             BlobClient blobClient = containerClient.GetBlobClient(blobName);
-            using (MemoryStream memoryStream = new MemoryStream(testData))
+            using (MemoryStream memoryStream = new MemoryStream(dataAsBytes))
             {
                 await blobClient.UploadAsync(memoryStream);
             }
 
         }
+        
+        public async Task UploadResultFile(string fileName, MemoryStream memoryStream)
+        {
+            var experimentLabel = fileName;
+
+            BlobServiceClient blobServiceClient = new BlobServiceClient(this.config.StorageConnectionString);
+            BlobContainerClient containerClient = blobServiceClient.GetBlobContainerClient(this.config.ResultContainer);
+
+            string blobName = experimentLabel;
+
+            // Upload the text data to the blob container
+            BlobClient blobClient = containerClient.GetBlobClient(blobName);
+            await blobClient.UploadAsync(memoryStream);
+
+        }
+
+
 
     }
 

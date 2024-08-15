@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -18,6 +19,7 @@ namespace MyCloudProject.Common
         Task<string> DownloadInputFile(string fileName);
 
         Task UploadResultFile(string fileName, byte[] data);
+        Task UploadResultFile(string fileName, MemoryStream memoryStream);
 
         /// <summary>
         /// Uploads results of the experiment as the entoty of the table storage.

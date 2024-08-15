@@ -42,9 +42,12 @@ namespace MyExperiment
         public string[] OutputFiles { get; set; }
         // Your properties related to experiment.
 
-        public float Accuracy { get; set; }
+        public int MaxNewSynapseCount1 { get; set; }
 
-        public byte[] TestData { get ; set ; }
+        public int MaxNewSynapseCount2 { get; set; }
+
+        public byte[] TestData { get; set; }
         public string TestName { get; set; }
+
     }
 }

@@ -11,10 +11,9 @@ namespace MyExperiment
         public string InputFile { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
-        public List<double> sequences1 { get; set; }
-        public List<double> sequences2 { get; set; }
-        public List<double> sequences3{ get; set; }
         public int maxNewSynapseCount { get; set; }
+        public string file1 { get; set; }
+        public string file2 { get; set; }
 
 
     }

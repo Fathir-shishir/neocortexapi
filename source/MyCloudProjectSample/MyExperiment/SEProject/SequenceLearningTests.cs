@@ -1,8 +1,11 @@
 using Microsoft.Extensions.Logging;
+using MyExperiment;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Text.Json;
+using System.Threading.Tasks;
 
 namespace SEProject
 {
@@ -68,15 +71,12 @@ namespace SEProject
         /// the test aims to identify which setting yields better accuracy, thereby
         /// providing insights into optimal configuration for sequence prediction tasks.
         /// </summary>
-        public void PredictionAccuracyTest_1()
+        public string PredictionAccuracyTest(Dictionary<string, List<double>> sequence, int maxNewSynapseCount1, int maxNewSynapseCount2)
         {
-            // Retrieve a set of predefined sequences for the test.
-            var sequences = GetTestSequences1();
-
             // Evaluate prediction accuracy with a low MaxNewSynapseCount value.
-            var lowCountAccuracy = TestWithMaxNewSynapseCount(sequences, 5);
+            var lowCountAccuracy = TestWithMaxNewSynapseCount(sequence, maxNewSynapseCount1);
             // Evaluate prediction accuracy with a higher MaxNewSynapseCount value for comparison.
-            var highCountAccuracy = TestWithMaxNewSynapseCount(sequences, 20);
+            var highCountAccuracy = TestWithMaxNewSynapseCount(sequence, maxNewSynapseCount2);
 
             // Determine the higher accuracy between the two tested MaxNewSynapseCount values.
             var bestAccuracy = Math.Max(lowCountAccuracy, highCountAccuracy);
@@ -85,37 +85,7 @@ namespace SEProject
 
             // Log the best accuracy achieved and its corresponding MaxNewSynapseCount value.
             logger?.LogInformation($"Best accuracy achieved: {bestAccuracy} with MaxNewSynapseCount {bestCount}");
-        }
-
-
-        public void PredictionAccuracyTest_2()
-        {
-            // Retrieves a set of sequences from the method GetTestSequences2. These sequences are more complex than those in GetTestSequences1,
-            // intended to provide a challenging test scenario for assessing the HTM model's prediction accuracy.
-            var sequences = GetTestSequences2();
-
-            // Evaluates the prediction accuracy of the HTM model with a 'MaxNewSynapseCount' value set to 20.
-            // This 'lowCountAccuracy' variable holds the accuracy percentage, allowing us to assess the effectiveness
-            // of the model's learning and prediction capabilities at a relatively lower synapse count.
-            var lowCountAccuracy = TestWithMaxNewSynapseCount(sequences, 20);
-
-            // Similar to 'lowCountAccuracy', this evaluates the prediction accuracy but with a 'MaxNewSynapseCount' value set to 40.
-            // The 'highCountAccuracy' variable is used to determine how increasing the synapse count affects the model's accuracy,
-            // aiming to identify if a higher synapse count leads to better prediction outcomes.
-            var highCountAccuracy = TestWithMaxNewSynapseCount(sequences, 40);
-
-            // Determines the higher accuracy between the low and high MaxNewSynapseCount settings.
-            // The 'bestAccuracy' variable holds the value of the better accuracy outcome, providing a direct comparison
-            // between the two tested settings to ascertain which synapse count configuration yields superior prediction performance.
-            var bestAccuracy = Math.Max(lowCountAccuracy, highCountAccuracy);
-
-            // Identifies which MaxNewSynapseCount value (20 or 40) resulted in the best accuracy.
-            // This conditional operation assigns the corresponding MaxNewSynapseCount value to 'bestCount',
-            // effectively pinpointing the more optimal synapse count setting based on the achieved accuracies.
-            var bestCount = lowCountAccuracy > highCountAccuracy ? 20 : 40;
-
-            // Log the best accuracy achieved and its corresponding MaxNewSynapseCount value.
-            logger?.LogInformation($"Best accuracy achieved: {bestAccuracy} with MaxNewSynapseCount {bestCount}");
+            return $"PredictionAccuracyTest: Best accuracy achieved: {bestAccuracy} with MaxNewSynapseCount {bestCount}\n";
         }
 
 
@@ -209,7 +179,7 @@ namespace SEProject
         /// <summary>
         /// Tests the learning speed of a MultiSequenceLearning by comparing the number of learning cycles required to reach a specified accuracy threshold with two different MaxNewSynapseCount settings. This method aims to identify which setting allows the network to learn more efficiently, providing insights into how the MaxNewSynapseCount parameter influences the speed of learning in HTM networks.
         /// </summary>
-        public void CompareLearningSpeedWithDifferentSynapseCounts_1()
+        public string CompareLearningSpeedWithDifferentSynapseCounts(Dictionary<string, List<double>> sequence, int maxNewSynapseCount1, int maxNewSynapseCount2)
         {
             // Retrieves a set of sequences from GetTestSequences1, which will be used as the dataset for the learning experiments.
             var sequences = GetTestSequences1();
@@ -217,41 +187,18 @@ namespace SEProject
             double accuracyThreshold = 0.9;
 
             // Executes the learning experiment with a low MaxNewSynapseCount value (5) and calculates the number of cycles needed to reach the accuracy threshold.
-            int cyclesForLowCount = GetCyclesToReachAccuracy(sequences, 5, accuracyThreshold);
+            int cyclesForLowCount = GetCyclesToReachAccuracy(sequences, maxNewSynapseCount1, accuracyThreshold);
             // Executes the learning experiment with a higher MaxNewSynapseCount value (20) and calculates the number of cycles needed to reach the accuracy threshold.
-            int cyclesForHighCount = GetCyclesToReachAccuracy(sequences, 20, accuracyThreshold);
+            int cyclesForHighCount = GetCyclesToReachAccuracy(sequences, maxNewSynapseCount2, accuracyThreshold);
 
             // Determines the lower of the two cycle counts, indicating the most efficient learning performance.
             var bestEfficientCycles = Math.Min(cyclesForLowCount, cyclesForHighCount);
             // Identifies which MaxNewSynapseCount value resulted in the best (lowest) cycle count, indicating faster learning.
-            var bestCount = cyclesForLowCount > cyclesForHighCount ? 20 : 5;
+            var bestCount = cyclesForLowCount > cyclesForHighCount ? maxNewSynapseCount2 : maxNewSynapseCount1;
 
             // Logs the best learning efficiency achieved, indicating the number of cycles and the corresponding MaxNewSynapseCount value.
             logger?.LogInformation($"Best cycles achieved: {bestEfficientCycles} with MaxNewSynapseCount {bestCount}");
-        }
-
-
-        /// <summary>
-        /// Evaluates the MultiSequenceLearning efficiency using a more complex set of sequences and higher MaxNewSynapseCount values. 
-        /// By comparing the number of learning cycles required to reach a 90% accuracy threshold at different synaptic creation capacities, 
-        /// this test aims to further refine our understanding of how MaxNewSynapseCount influences learning speed in more demanding scenarios. 
-        /// The test identifies the optimal MaxNewSynapseCount for efficient learning, contributing to the fine-tuning of HTM network configurations.
-        /// </summary>
-        public void CompareLearningSpeedWithDifferentSynapseCounts_2()
-        {
-            var sequences = GetTestSequences2(); // Retrieves a set of more complex sequences to challenge the HTM network.
-            double accuracyThreshold = 0.9; // The desired accuracy threshold set for this experiment.
-
-            // Compares the learning efficiency at moderate (20) and higher (40) MaxNewSynapseCount values with the complex sequences.
-            int cyclesForLowCount = GetCyclesToReachAccuracy(sequences, 20, accuracyThreshold);
-            int cyclesForHighCount = GetCyclesToReachAccuracy(sequences, 40, accuracyThreshold);
-
-            // Determines the most efficient learning configuration based on the minimum number of cycles to reach the accuracy threshold.
-            var bestEfficientCycles = Math.Min(cyclesForLowCount, cyclesForHighCount);
-            var bestCount = cyclesForLowCount > cyclesForHighCount ? 40 : 20; // Identifies which MaxNewSynapseCount was more efficient.
-
-            // Logs the optimal MaxNewSynapseCount value and the associated minimum cycle count needed for achieving the accuracy threshold.
-            logger?.LogInformation($"Best cycles achieved: {bestEfficientCycles} with MaxNewSynapseCount {bestCount}");
+            return $"CompareLearningSpeedWithDifferentSynapseCounts: Best cycles achieved: {bestEfficientCycles} with MaxNewSynapseCount {bestCount}\n";
         }
 
 

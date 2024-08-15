@@ -4,5 +4,7 @@
   "Description": "Team AS Cloud Computing Implementation",
   "ProjectName": "ML22/23-13 Investigate Influence of parameter MaxNewSynapseCount",
   "GroupName": "team-as",
-  "Students": [ "Fathir Shishir", "Akash Saha" ]
+  "Students": [ "Fathir Shishir", "Akash Saha" ],
+  "file1": "file_1.json",
+  "file2": "file_2.json"
 }

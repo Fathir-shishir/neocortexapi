@@ -46,7 +46,7 @@ namespace MyExperiment
 
         public int MaxNewSynapseCount2 { get; set; }
 
-        public byte[] TestData { get; set; }
+        public string TestData { get; set; }
         public string TestName { get; set; }
 
     }

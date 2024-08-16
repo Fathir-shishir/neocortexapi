@@ -21,7 +21,7 @@ namespace MyCloudProject.Common
 
         int MaxNewSynapseCount2 { get; set; }
 
-        byte[] TestData { get; set; }
+        string TestData { get; set; }
 
         string TestName { get; set; }
     }

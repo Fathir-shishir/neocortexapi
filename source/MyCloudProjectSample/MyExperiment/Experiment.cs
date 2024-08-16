@@ -50,7 +50,7 @@ namespace MyExperiment
         /// </summary>
         /// <param name="inputFile">The input file.</param>
         /// <returns>experiment result object</returns>
-        public Task<IExperimentResult> Run(string inputFile, byte[] resultByte, int mnsc1, int mnsc2)
+        public Task<IExperimentResult> Run(string inputFile, string result, int mnsc1, int mnsc2)
         {
             Random rnd = new Random();
             int rowKeyNumber = rnd.Next(0, 1000);
@@ -70,7 +70,7 @@ namespace MyExperiment
                 res.Description = "[Team AS Cloud Computing Implementation]";
                 this.logger?.LogInformation($"The file result we got {"[Team AS Cloud Computing Implementation]"}");
 
-                res.TestData = resultByte;
+                res.TestData = result;
                 res.MaxNewSynapseCount1 = mnsc1;
                 res.MaxNewSynapseCount2 = mnsc2;
             }
@@ -129,7 +129,6 @@ namespace MyExperiment
                         ExperimentData experimentData = await this.getAndDeserializeDataFromBlobContainerAsync(fileOne);
                         string resultJsonString = JsonSerializer.Serialize(resultOfTests);
 
-                        // Convert the JSON string to a byte array
                         byte[] resultByteArray = Encoding.UTF8.GetBytes(resultJsonString);
 
                         // Step 4 (oposite direction)
@@ -140,8 +139,8 @@ namespace MyExperiment
                         //this.logger?.LogInformation($"{DateTime.Now} -  UploadExperimentResultFile...");
                         await storageProvider.UploadResultFile($"Test_data_{DateTime.UtcNow.ToString("yyyyMMddHHmmssfff")}.txt", resultByteArray);
                         IExperimentResult result = await this.Run(
-                            inputFile, 
-                            resultByteArray, 
+                            inputFile,
+                            resultJsonString, 
                             experimentData.MaxNewSynapseCount1, 
                             experimentData.MaxNewSynapseCount2
                         );

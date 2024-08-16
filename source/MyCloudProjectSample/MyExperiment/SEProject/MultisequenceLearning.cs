@@ -120,7 +120,7 @@ namespace SEProject
 
             using (var memoryStream = new MemoryStream())
             {
-                using (var writer = new StreamWriter(memoryStream))
+                using (var writer = new StreamWriter(memoryStream, leaveOpen: true))
                 {
                     Stopwatch sw = new Stopwatch();
                     sw.Start();

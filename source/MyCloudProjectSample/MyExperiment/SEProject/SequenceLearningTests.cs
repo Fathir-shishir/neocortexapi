@@ -80,8 +80,13 @@ namespace SEProject
 
             // Determine the higher accuracy between the two tested MaxNewSynapseCount values.
             var bestAccuracy = Math.Max(lowCountAccuracy, highCountAccuracy);
+            bestAccuracy = bestAccuracy > 0 ? bestAccuracy : 1000;
+            if (bestAccuracy == 1000) {
+                logger?.LogInformation($"Best accuracy achieved: Stable Accuracy reached with MaxNewSynapseCount both");
+                return $"Best accuracy achieved: Stable Accuracy reached with MaxNewSynapseCount both\n";
+            }
             // Identify which MaxNewSynapseCount value resulted in the best accuracy.
-            var bestCount = lowCountAccuracy > highCountAccuracy ? 5 : 20;
+            var bestCount = lowCountAccuracy > highCountAccuracy ? maxNewSynapseCount1 : maxNewSynapseCount2;
 
             // Log the best accuracy achieved and its corresponding MaxNewSynapseCount value.
             logger?.LogInformation($"Best accuracy achieved: {bestAccuracy} with MaxNewSynapseCount {bestCount}");

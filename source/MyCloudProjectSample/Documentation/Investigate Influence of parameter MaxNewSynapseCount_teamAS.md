@@ -1,50 +1,101 @@
-#### Exercise I 
+# ML22/23-13 Investigate Influence of parameter MaxNewSynapseCount - Azure Cloud Implementation
+## Introduction
+Temporal memory algorithms have gained popularity as a promising approach for modeling temporal sequences in machine learning. The objective of this project is to explore the effects of varying the MaxNewSynapseCount parameter within a temporal memory algorithm. This algorithm, inspired by the principles of cortical columns and the neocortex, plays a critical role in sequence learning and prediction by leveraging sparse distributed representations (SDR). Our goal is to analyze how different settings of this parameter influence the algorithm's accuracy and learning speed, particularly in complex, multi-sequence learning scenarios.
 
-- To confirm that azure cli is being installed properly I wrote the command ``az --version``, than I used ``az login`` command to login to my account, 
-- To show the account details I need this command- ``az account show``,
-- It shows all the availabe subscriptions one account have - ``az account list`` 
-- To find about a command I need to type this command -  ``az find vm`` or ``az find "az vm"``
+To enhance the reliability and scalability of our experiments, we are executing this project on the Azure Cloud. Running the analysis in a cloud environment offers several advantages over traditional local execution. Azure's scalable infrastructure allows us to process large datasets and execute computationally intensive tasks with greater efficiency. The cloud also facilitates seamless integration of various services, such as data storage, real-time monitoring, and automated deployments, which are crucial for handling extensive experimentation and data analysis.
 
-[Here, Scripts URL](https://github.com/UniversityOfAppliedSciencesFrankfurt/se-cloud-2023-2024/blob/Akash_Saha/MyWork/Cloud%20Exercise%20-%20%2001/Ex1scripts.bat)
+Moreover, by leveraging Azure's distributed computing capabilities, we can parallelize our experiments, leading to faster iteration cycles and more comprehensive exploration of the parameter space. This approach not only improves the robustness of our findings but also ensures that our methodology can be easily scaled and adapted to future research initiatives.
 
+In summary, implementing this project on Azure Cloud provides us with the computational power, flexibility, and scalability required to conduct a thorough investigation of the MaxNewSynapseCount parameter's impact, ultimately contributing to a deeper understanding of temporal memory algorithms in machine learning.
 
-#### Exercise 2 - Docker in Azure
+## Recap (Software Engineering Project)
+If you need to obtain a copy of our project on your own system, use these links in order to carry out development and testing. Look at the notes on how to deploy the project and experiment with it on a live system. These are the relevant links:
 
-1. [Here is the URL to the docker file](https://github.com/UniversityOfAppliedSciencesFrankfurt/se-cloud-2022-2023/blob/Akash_Saha/MyWork/Cloud%20Exercise%20-%2002/ConsoleAppDocker/ConsoleAppDocker/Dockerfile) 
-2. [Here is  the URL to the publish image in the Docker Hub](https://hub.docker.com/layers/akash_saha/cloudcomputing/1st/images/sha256-afb0e7328313f2cb768325f56ce0f31d87eaa74394bde951fad08252e74e42ff?context=repo)
-3. [URL to the image in the Azure Registry](https://github.com/UniversityOfAppliedSciencesFrankfurt/se-cloud-2023-2024/blob/Akash_Saha/MyWork/Cloud%20Exercise%20-%2002/ConsoleAppDocker/AzureContainerRegistry.png)
+- Project Documentation: [Documentation](https://github.com/Fathir-shishir/neocortexapi/blob/team_AS/source/MySEProject/EffectMaxNewSynapseCount/EffectMaxNewSynapseCount/Documentation/ML22_23-1%20Investigate%20Influence%20of%20parameter%20MaxNewSynapseCount-Team_AS.pdf) 
 
-#### Exercise 3 - Host a web application with Azure App service
+- Unit Test Cases: [here](https://github.com/Fathir-shishir/neocortexapi/tree/team_AS/source/MySEProject/EffectMaxNewSynapseCount/EffectMaxNewSynapseCount/EffectSynapseCountTest)
 
-1.[The public URL of the webapplication](https://exercie03.azurewebsites.net/)
+## What is this experiment about
+In this experiment we have implemented our Software Engineering project in Azure cloud. Below is the total algorithm of the project:
 
-2.[The URL to the source code of the hosted application](https://github.com/UniversityOfAppliedSciencesFrankfurt/se-cloud-2023-2024/blob/Akash_Saha/MyWork/Cloud%20Exercise-%2003/CloudProject/Program.cs)
+![image](images/teamas_diagram.png)
 
-3.[AZ scripts](https://github.com/UniversityOfAppliedSciencesFrankfurt/se-cloud-2023-2024/blob/Akash_Saha/MyWork/Cloud%20Exercise-%2003/sahascripts.bat)
+## Information about our Azure accounts and their components
 
-#### Exercise 4 - Deploy and run the containerized app in AppService
+|  |  |  |
+| --- | --- | --- |
+| Resource Group | ```RG-teamAS``` | --- |
+| Container Registry | ```teamascr``` | --- |
+| Container Registry server | ```teamascr.azurecr.io``` | --- |
+| Container Instance | ```teamas10th``` | --- |
+| Storage account | ```teamas2storage``` | --- |
+| Queue storage | ```teamasqueue``` | Queue which containes trigger message |
+| Training container | ```teamastrainingcontainer``` | Container used to store training data|
+| Result container | ```teamasresultcontainer``` | Container used to store result data|
+| Table storage | ```teamastable``` | Table used to store all output datas and results |
 
-1. Created a resource group named ``learn-deploy-container-acr-rg``
-2. created a registry ``ex4container`` under the resource group name ``learn-deploy-container-acr-rg``
-3. created a sperated directory in ``https://github.com/UniversityOfAppliedSciencesFrankfurt/se-cloud-2023-2024/tree/Akash_Saha/MyWork/Cloud%20Exercise%20-%20%2004``
-4. logged in to azure account in ``powershell`` in  and cloned a simple webapp from ``https://github.com/MicrosoftDocs/mslearn-deploy-run-container-app-service.git`` in the directory.
-5. then go to the directory by running command in powershell ``cd mslearn-deploy-run-container-app-service/dotnet`` 
-6. then run the command ``az acr build --registry ex4container --image webimage .``
-7. The Docker file contains the step-by-step instructions for building a Docker image from the source code for the web app. Container Registry runs these steps to build the image, and as each step completes, a message is generated. The build process should finish after a couple of minutes without any errors or warnings.
+The experiment Docker image can be pulled from the Azure Container Registry using the instructions below.
+~~~
+docker login teamascr.azurecr.io -u teamascr -p tLBIdMrZP+obaZewqvnIX3eh2SiRKtQnpr3INkSOwl+ACRBp60xL
+~~~
+~~~
+docker pull teamascr.azurecr.io/mycloudproject:teamas
+~~~
 
-#### Exercise 5 - Blob Storage
+then run 
+~~~
+docker-compose build
+~~~ 
 
-- [Input
-Container link](https://blbstrg5.blob.core.windows.net/inputcontainer?sp=r&st=2023-06-20T12:08:05Z&se=2023-10-20T20:08:05Z&spr=https&sv=2022-11-02&sr=c&sig=HXbAPPmjOaBimOzp%2BjY4XVAf3Kbxim6%2FbMz%2FfhOtPZk%3D)
-- [Input container image url](https://github.com/UniversityOfAppliedSciencesFrankfurt/se-cloud-2023-2024/blob/Akash_Saha/MyWork/Cloud%20Exercise%20-%2005/input_container.png)
-- [Output
-Container link](https://blbstrg5.blob.core.windows.net/outputcontainer?sp=r&st=2023-06-20T12:06:54Z&se=2023-10-20T20:06:54Z&spr=https&sv=2022-11-02&sr=c&sig=C4fMuwFtnY7BwLVv1r349JE2q3AgVngWvgIXll8FHo4%3D)
-- [Output container image url](https://github.com/UniversityOfAppliedSciencesFrankfurt/se-cloud-2023-2024/blob/Akash_Saha/MyWork/Cloud%20Exercise%20-%2005/output_container.png)
+The docker image will be build
 
-- [File 1 link](https://blbstrg5.blob.core.windows.net/outputcontainer/App%20Service.pptx?sp=r&st=2023-06-20T12:09:09Z&se=2024-06-20T20:09:09Z&spr=https&sv=2022-11-02&sr=b&sig=BGBp3YDbYwIyaxC3TI6K7%2F%2FXqwvfKnmW8kFAOgoZDZk%3D)  [File 2 link](https://blbstrg5.blob.core.windows.net/outputcontainer/Azure.pptx?sp=r&st=2023-06-20T12:10:28Z&se=2024-06-20T20:10:28Z&spr=https&sv=2022-11-02&sr=b&sig=KNt%2FJ1z10PxWTxIM%2BAN%2Fw%2BqYTxb%2B3NwPOERpY6Jm2So%3D)  [File 3 link](https://blbstrg5.blob.core.windows.net/outputcontainer/Cloud%20Project%20Architecture.pptx?sp=r&st=2023-06-20T12:11:05Z&se=2024-06-20T20:11:05Z&spr=https&sv=2022-11-02&sr=b&sig=IxmMbFumliwKNG4hJYA9AaKEW3ZQ4Zr80TswuAtlfVg%3D) with 1 year time.
+![image](images/docker_image_build_acr.png)
 
-#### Exercise 6 - Table Storage
+## How to run the experiment
+## Step1 : Message input from azure portal
+at a message to queues inside Azure storage account.
+p.s Uncheck "Encode the message body in Base64"
 
-- [URL for table storage](https://blbstrg5.table.core.windows.net/?sv=2022-11-02&ss=bfqt&srt=sco&sp=rwdlacupiytfx&se=2023-10-20T20:11:56Z&st=2023-06-20T12:11:56Z&spr=https&sig=NWns%2FsdyNDnqM9EMU8Stlaj95xnJ2zPRoZGiBdOa8U8%3D)
+**How to add message :** 
 
-- [URL of table storage image](https://github.com/UniversityOfAppliedSciencesFrankfurt/se-cloud-2023-2024/blob/Akash_Saha/MyWork/Cloud%20Exercise%20-06/table.png)
+Azure portal > Home > RG-teamAS | Queues > teamasqueue> Add message
+![image](images/queue_message.png)
+
+### Queue Message that will trigger the experiment:
+~~~json
+{
+  "ExperimentId": "1",
+  "InputFile": "run-team-as-project",
+  "Description": "Team AS Cloud Computing Implementation",
+  "ProjectName": "ML22/23-13 Investigate Influence of parameter MaxNewSynapseCount",
+  "GroupName": "team-as",
+  "Students": [ "Fathir Shishir", "Akash Saha" ],
+  "file1": "file_1.json",
+  "file2": "file_2.json"
+}
+~~~
+
+Go to "teamas10th," "Containers," and "logs" to make sure the experiment is being run from a container instance.
+
+when the experiment  is successful bellow message(Experiment complete successfully) will be shown. Experiment successfully
+
+![image](images/project_run.png)
+
+## Step2: Describe the Experiment Training Input Container
+
+Before the experiments are starting, the input files are stored in ``` teamastrainingcontainer``` 
+
+After the queue message received, this files are read from the container and the project is started.
+
+![image](images/training_container.png)
+
+## Step3: Describe the Experiment Result Output Container
+
+after the experiments are completed, the result file is stored in Azure storage blob containers 
+
+![image](images/ResultContainer.png)
+
+the result data are also subsequently uploaded into a database table named "teamastable"
+
+![image](images/result_table.png)
+

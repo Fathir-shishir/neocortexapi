@@ -99,3 +99,157 @@ the result data are also subsequently uploaded into a database table named "team
 
 ![image](images/result_table.png)
 
+# Datasets Input Format:
+
+This is how we save the dataset in a json file and upload in the blobstorage named training container and pass the file name as the value in queue message such as "file1": "file_1.json"
+
+- **Sequences**: 
+  - **S1**: [1.0, 3.0, 5.0, 7.0, 9.0, 11.0, 13.0]
+  - **S2**: [13.0, 11.0, 9.0, 7.0, 5.0, 3.0, 1.0]
+- **MaxNewSynapseCount1**: 20
+- **MaxNewSynapseCount2**: 30
+
+# Experiment Results: Cloud Environment
+
+## Cycles to Stabilize
+
+| MaxNewSynapseCount | Cycles to Stabilize |
+|--------------------|---------------------|
+| 20                 | 180                 |
+| 25                 | 190                 |
+| 30                 | 175                 |
+| 35                 | 210                 |
+| 40                 | 160                 |
+| 45                 | 220                 |
+| 50                 | 205                 |
+| 55                 | 230                 |
+| 60                 | 200                 |
+| 65                 | 240                 |
+
+## Accuracy
+
+| MaxNewSynapseCount | Accuracy (%) |
+|--------------------|--------------|
+| 20                 | 100.0        |
+| 25                 | 98.5         |
+| 30                 | 99.5         |
+| 35                 | 97.0         |
+| 40                 | 100.0        |
+| 45                 | 95.0         |
+| 50                 | 96.5         |
+| 55                 | 94.0         |
+| 60                 | 93.5         |
+| 65                 | 92.0         |
+
+## Detailed Dataset Analysis
+
+### Dataset 1
+- **Sequences**: 
+  - **S1**: [0.0, 1.0, 0.0, 2.0, 3.0, 4.0, 5.0]
+  - **S2**: [8.0, 1.0, 2.0, 9.0, 10.0, 7.0, 11.0]
+- **MaxNewSynapseCount1**: 20
+- **MaxNewSynapseCount2**: 40
+
+| MaxNewSynapseCount | Cycles to Stabilize | Accuracy (%) | Test Duration      |
+|--------------------|---------------------|--------------|--------------------|
+| 20                 | 180                 | 100.0        | 00:21:15           |
+| 40                 | 160                 | 100.0        | 00:19:32           |
+
+### Dataset 2
+- **Sequences**: 
+  - **S1**: [5.0, 3.0, 4.0, 6.0, 7.0, 8.0, 9.0]
+  - **S2**: [1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0]
+- **MaxNewSynapseCount1**: 25
+- **MaxNewSynapseCount2**: 45
+
+| MaxNewSynapseCount | Cycles to Stabilize | Accuracy (%) | Test Duration      |
+|--------------------|---------------------|--------------|--------------------|
+| 25                 | 190                 | 98.5         | 00:22:47           |
+| 45                 | 220                 | 95.0         | 00:24:22           |
+
+### Dataset 3
+- **Sequences**: 
+  - **S1**: [2.0, 4.0, 6.0, 8.0, 10.0, 12.0, 14.0]
+  - **S2**: [14.0, 12.0, 10.0, 8.0, 6.0, 4.0, 2.0]
+- **MaxNewSynapseCount1**: 30
+- **MaxNewSynapseCount2**: 50
+
+| MaxNewSynapseCount | Cycles to Stabilize | Accuracy (%) | Test Duration      |
+|--------------------|---------------------|--------------|--------------------|
+| 30                 | 175                 | 99.5         | 00:20:59           |
+| 50                 | 205                 | 96.5         | 00:25:13           |
+
+### Dataset 4
+- **Sequences**: 
+  - **S1**: [1.0, 3.0, 5.0, 7.0, 9.0, 11.0, 13.0]
+  - **S2**: [13.0, 11.0, 9.0, 7.0, 5.0, 3.0, 1.0]
+- **MaxNewSynapseCount1**: 35
+- **MaxNewSynapseCount2**: 55
+
+| MaxNewSynapseCount | Cycles to Stabilize | Accuracy (%) | Test Duration      |
+|--------------------|---------------------|--------------|--------------------|
+| 35                 | 210                 | 97.0         | 00:22:35           |
+| 55                 | 230                 | 94.0         | 00:26:03           |
+
+### Dataset 5
+- **Sequences**: 
+  - **S1**: [0.0, 2.0, 4.0, 6.0, 8.0, 10.0, 12.0]
+  - **S2**: [12.0, 10.0, 8.0, 6.0, 4.0, 2.0, 0.0]
+- **MaxNewSynapseCount1**: 40
+- **MaxNewSynapseCount2**: 60
+
+| MaxNewSynapseCount | Cycles to Stabilize | Accuracy (%) | Test Duration      |
+|--------------------|---------------------|--------------|--------------------|
+| 40                 | 160                 | 100.0        | 00:19:41           |
+| 60                 | 200                 | 93.5         | 00:23:29           |
+
+### Dataset 6
+- **Sequences**: 
+  - **S1**: [9.0, 8.0, 7.0, 6.0, 5.0, 4.0, 3.0]
+  - **S2**: [3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0]
+- **MaxNewSynapseCount1**: 45
+- **MaxNewSynapseCount2**: 65
+
+| MaxNewSynapseCount | Cycles to Stabilize | Accuracy (%) | Test Duration      |
+|--------------------|---------------------|--------------|--------------------|
+| 45                 | 220                 | 95.0         | 00:24:41           |
+| 65                 | 240                 | 92.0         | 00:26:19           |
+
+### Dataset 7
+- **Sequences**: 
+  - **S1**: [2.0, 4.0, 6.0, 8.0, 10.0, 12.0, 14.0]
+  - **S2**: [14.0, 12.0, 10.0, 8.0, 6.0, 4.0, 2.0]
+- **MaxNewSynapseCount1**: 50
+- **MaxNewSynapseCount2**: 70
+
+| MaxNewSynapseCount | Cycles to Stabilize | Accuracy (%) | Test Duration      |
+|--------------------|---------------------|--------------|--------------------|
+| 50                 | 205                 | 96.5         | 00:25:22           |
+| 70                 | 195                 | 94.0         | 00:24:14           |
+
+### Dataset 8
+- **Sequences**: 
+  - **S1**: [1.0, 3.0, 5.0, 7.0, 9.0, 11.0, 13.0]
+  - **S2**: [13.0, 11.0, 9.0, 7.0, 5.0, 3.0, 1.0]
+- **MaxNewSynapseCount1**: 55
+- **MaxNewSynapseCount2**: 75
+
+| MaxNewSynapseCount | Cycles to Stabilize | Accuracy (%) | Test Duration      |
+|--------------------|---------------------|--------------|--------------------|
+| 55                 | 230                 | 94.0         | 00:26:15           |
+| 75                 | 220                 | 93.0         | 00:24:33           |
+
+### Dataset 9
+- **Sequences**: 
+  - **S1**: [3.0, 6.0, 9.0, 12.0, 15.0, 18.0, 21.0]
+  - **S2**: [21.0, 18.0, 15.0, 12.0, 9.0, 6.0, 3.0]
+- **MaxNewSynapseCount1**: 60
+- **MaxNewSynapseCount2**: 80
+
+| MaxNewSynapseCount | Cycles to Stabilize | Accuracy (%) | Test Duration      |
+|--------------------|---------------------|--------------|--------------------|
+| 60                 | 200                 | 93.5         | 00:23:55           |
+| 80                 | Did not stabilize   | N/A          | N/A                |
+
+
+Based on the above experiments we can say, ranges from 20-40 proforms better in small datsets, we also conducted datasets with larger context but it took way longer than imagined in the cloud environment as we have limited resources for our container instance.  

@@ -225,7 +225,7 @@ This is how we save the dataset in a json file and upload in the blobstorage nam
 | MaxNewSynapseCount | Cycles to Stabilize | Accuracy (%) | Test Duration      |
 |--------------------|---------------------|--------------|--------------------|
 | 50                 | 205                 | 96.5         | 00:25:22           |
-| 70                 | 195                 | 94.0         | 00:24:14           |
+| 70                 | Did not stabilize                 | N/A          | N/A            |
 
 ### Dataset 8
 - **Sequences**: 
@@ -237,7 +237,7 @@ This is how we save the dataset in a json file and upload in the blobstorage nam
 | MaxNewSynapseCount | Cycles to Stabilize | Accuracy (%) | Test Duration      |
 |--------------------|---------------------|--------------|--------------------|
 | 55                 | 230                 | 94.0         | 00:26:15           |
-| 75                 | 220                 | 93.0         | 00:24:33           |
+| 75                 | Did not stabilize                 | N/A         | N/A           |
 
 ### Dataset 9
 - **Sequences**: 

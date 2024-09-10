@@ -17,18 +17,30 @@ namespace MyExperiment
     {
         private MyConfig config;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AzureStorageProvider"/> class.
+        /// The constructor binds the configuration settings passed via the configSection.
+        /// </summary>
+        /// <param name="configSection">The configuration section containing storage connection details.</param>
         public AzureStorageProvider(IConfigurationSection configSection)
         {
             config = new MyConfig();
             configSection.Bind(config);
         }
 
+        /// <summary>
+        /// Downloads a file from the Azure Blob Storage based on the given file name.
+        /// It checks if the blob exists in the specified container and returns its content as a string.
+        /// </summary>
+        /// <param name="fileName">The name of the file to download from the blob storage.</param>
+        /// <returns>A string containing the file's content.</returns>
+        /// <exception cref="FileNotFoundException">Thrown when the file does not exist in the blob container.</exception>
         public async Task<string> DownloadInputFile(string fileName)
         {
             BlobContainerClient container = new BlobContainerClient(this.config.StorageConnectionString, this.config.TrainingContainer);
             await container.CreateIfNotExistsAsync();
 
-            // Get a reference to a blob named "sample-file"
+            // Get a reference to the blob
             BlobClient blob = container.GetBlobClient(fileName);
 
             // Check if the blob exists
@@ -49,6 +61,11 @@ namespace MyExperiment
             }
         }
 
+        /// <summary>
+        /// Uploads an experiment result to Azure Table Storage.
+        /// This stores experiment metadata such as start/end times, test data, and description.
+        /// </summary>
+        /// <param name="result">An object implementing <see cref="IExperimentResult"/> containing the experiment data to upload.</param>
         public async Task UploadExperimentResult(IExperimentResult result)
         {
             Random rnd = new Random();
@@ -58,7 +75,6 @@ namespace MyExperiment
 
             var testResult = new ExperimentResult(partitionKey, rowKey)
             {
-
                 ExperimentId = result.ExperimentId,
                 Name = result.Name,
                 Description = result.Description,
@@ -66,8 +82,9 @@ namespace MyExperiment
                 EndTimeUtc = result.EndTimeUtc,
                 TestData = result.TestData,
                 MaxNewSynapseCount1 = result.MaxNewSynapseCount1,
-                MaxNewSynapseCount2= result.MaxNewSynapseCount2,
+                MaxNewSynapseCount2 = result.MaxNewSynapseCount2,
             };
+
             Console.WriteLine($"Upload ExperimentResult to table: {this.config.ResultTable}");
             var client = new TableClient(this.config.StorageConnectionString, this.config.ResultTable);
 
@@ -75,16 +92,20 @@ namespace MyExperiment
             try
             {
                 await client.AddEntityAsync<ExperimentResult>(testResult);
-                //await client.UpsertEntityAsync<ExperimentResult>(minimalResult);
                 Console.WriteLine("Uploaded to Table Storage completed");
             }
             catch (Exception ex)
             {
                 Console.WriteLine($"Failed to upload to Table Storage: {ex.ToString()}");
             }
-
         }
 
+        /// <summary>
+        /// Uploads a result file (as a byte array) to Azure Blob Storage.
+        /// The file is stored with the specified file name in the configured blob container.
+        /// </summary>
+        /// <param name="fileName">The name of the file to upload to the blob storage.</param>
+        /// <param name="data">The byte array data representing the file content.</param>
         public async Task UploadResultFile(string fileName, byte[] data)
         {
             var experimentLabel = fileName;
@@ -92,20 +113,22 @@ namespace MyExperiment
             BlobServiceClient blobServiceClient = new BlobServiceClient(this.config.StorageConnectionString);
             BlobContainerClient containerClient = blobServiceClient.GetBlobContainerClient(this.config.ResultContainer);
 
-            // Write encoded data to text file
-            byte[] dataAsBytes = data;
-
             string blobName = experimentLabel;
 
-            // Upload the text data to the blob container
+            // Upload the data as a blob
             BlobClient blobClient = containerClient.GetBlobClient(blobName);
-            using (MemoryStream memoryStream = new MemoryStream(dataAsBytes))
+            using (MemoryStream memoryStream = new MemoryStream(data))
             {
                 await blobClient.UploadAsync(memoryStream);
             }
-
         }
-        
+
+        /// <summary>
+        /// Uploads a result file (from a MemoryStream) to Azure Blob Storage.
+        /// This method directly uploads data stored in the MemoryStream to the specified blob container.
+        /// </summary>
+        /// <param name="fileName">The name of the file to upload to the blob storage.</param>
+        /// <param name="memoryStream">The MemoryStream containing the file data.</param>
         public async Task UploadResultFile(string fileName, MemoryStream memoryStream)
         {
             var experimentLabel = fileName;
@@ -115,15 +138,12 @@ namespace MyExperiment
 
             string blobName = experimentLabel;
 
-            // Upload the text data to the blob container
+            // Upload the data as a blob
             BlobClient blobClient = containerClient.GetBlobClient(blobName);
             await blobClient.UploadAsync(memoryStream);
-
         }
-
-
-
     }
+
 
 
 }

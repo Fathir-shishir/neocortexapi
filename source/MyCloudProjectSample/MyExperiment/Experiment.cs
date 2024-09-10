@@ -82,7 +82,14 @@ namespace MyExperiment
 
 
 
-        /// <inheritdoc/>
+        /// <summary>
+        /// This method listens for incoming messages from the Azure Queue and processes each message by 
+        /// running SE Project tests, uploading the test results and experiment data to Azure Blob Storage, 
+        /// and updating the experiment result in Table Storage. It continuously checks the queue for new messages
+        /// and stops processing when a cancellation request is triggered via the CancellationToken.
+        /// </summary>
+        /// <param name="cancelToken">The CancellationToken that signals when to stop listening to the queue.</param>
+        /// <returns>A Task representing the asynchronous operation of processing messages from the queue.</returns>
         public async Task RunQueueListener(CancellationToken cancelToken)
         {
             //ExperimentResult res = new ExperimentResult("damir", "123")
@@ -168,45 +175,65 @@ namespace MyExperiment
 
 
         #region Private Methods
-        private async Task<List<string>> runSEProject(string fileName) {
 
+        /// <summary>
+        /// Runs a series of SE Project tests using the provided file name.
+        /// Extracts sequence learning results for different synapse counts.
+        /// </summary>
+        /// <param name="fileName">The name of the file containing experiment data.</param>
+        /// <returns>A list of test result strings.</returns>
+        private async Task<List<string>> runSEProject(string fileName)
+        {
+            // Create a new instance of SequenceLearningTests to run tests.
             SequenceLearningTests sequenceLearningTests = new SequenceLearningTests();
-            ExperimentData experimentData = await this.getAndDeserializeDataFromBlobContainerAsync(fileName); 
 
+            // Retrieve experiment data from the file in blob storage.
+            ExperimentData experimentData = await this.getAndDeserializeDataFromBlobContainerAsync(fileName);
+
+            // Run prediction accuracy test.
             string test1 = sequenceLearningTests.PredictionAccuracyTest(
-                    experimentData.Sequences, 
-                    experimentData.MaxNewSynapseCount1, 
-                    experimentData.MaxNewSynapseCount2
-                );
+                experimentData.Sequences,
+                experimentData.MaxNewSynapseCount1,
+                experimentData.MaxNewSynapseCount2
+            );
 
+            // Run synapse count comparison test.
             string test2 = sequenceLearningTests.CompareLearningSpeedWithDifferentSynapseCounts(
-                    experimentData.Sequences,
-                    experimentData.MaxNewSynapseCount1,
-                    experimentData.MaxNewSynapseCount2
-                );
-            List<string> result = new List<string>
-            {
-                test1,
-                test2
-            };
+                experimentData.Sequences,
+                experimentData.MaxNewSynapseCount1,
+                experimentData.MaxNewSynapseCount2
+            );
+
+            // Collect test results into a list.
+            List<string> result = new List<string> { test1, test2 };
+
+            // Simulate a delay before returning the results.
             await Task.Delay(500);
             return result;
         }
 
-        private async Task<ExperimentData> getAndDeserializeDataFromBlobContainerAsync(string fileName) 
+        /// <summary>
+        /// Downloads and deserializes the experiment data from a blob container.
+        /// </summary>
+        /// <param name="fileName">The name of the file in the blob container.</param>
+        /// <returns>An ExperimentData object containing the deserialized data.</returns>
+        private async Task<ExperimentData> getAndDeserializeDataFromBlobContainerAsync(string fileName)
         {
-
+            // Download the JSON file from blob storage.
             string jsonString = await storageProvider.DownloadInputFile(fileName);
-            var experimentData = await DeserializeExperimentData(jsonString);
 
-            return experimentData;
-
+            // Deserialize the JSON content into an ExperimentData object.
+            return await DeserializeExperimentData(jsonString);
         }
 
+        /// <summary>
+        /// Deserializes the experiment data from a JSON string.
+        /// </summary>
+        /// <param name="jsonString">The JSON string containing experiment data.</param>
+        /// <returns>A deserialized ExperimentData object.</returns>
         private static async Task<ExperimentData> DeserializeExperimentData(string jsonString)
         {
-            var experimentData = JsonSerializer.Deserialize<ExperimentData>(jsonString);
-            return experimentData;
+            return JsonSerializer.Deserialize<ExperimentData>(jsonString);
         }
 
 

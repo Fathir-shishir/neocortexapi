@@ -111,36 +111,6 @@ This is how we save the dataset in a json file and upload in the blobstorage nam
 
 # Experiment Results: Cloud Environment
 
-## Cycles to Stabilize
-
-| MaxNewSynapseCount | Cycles to Stabilize |
-|--------------------|---------------------|
-| 20                 | 180                 |
-| 25                 | 190                 |
-| 30                 | 175                 |
-| 35                 | 210                 |
-| 40                 | 160                 |
-| 45                 | 220                 |
-| 50                 | 205                 |
-| 55                 | 230                 |
-| 60                 | 200                 |
-| 65                 | 240                 |
-
-## Accuracy
-
-| MaxNewSynapseCount | Accuracy (%) |
-|--------------------|--------------|
-| 20                 | 100.0        |
-| 25                 | 98.5         |
-| 30                 | 99.5         |
-| 35                 | 97.0         |
-| 40                 | 100.0        |
-| 45                 | 95.0         |
-| 50                 | 96.5         |
-| 55                 | 94.0         |
-| 60                 | 93.5         |
-| 65                 | 92.0         |
-
 ## Detailed Dataset Analysis
 
 ### Understanding the Chart

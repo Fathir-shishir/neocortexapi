@@ -143,6 +143,14 @@ This is how we save the dataset in a json file and upload in the blobstorage nam
 
 ## Detailed Dataset Analysis
 
+### Understanding the Chart
+
+The chart represents the relationship between `maxNewSynapseCount` and three key metrics: **Accuracy** (blue), **Cycles to Stabilize** (green), and **Test Duration** (red).
+
+- **Accuracy (blue)**: Indicates how well the model performed on the dataset. Higher values are better. You can observe how accuracy decreases slightly as `maxNewSynapseCount` increases.
+- **Cycles to Stabilize (green)**: Reflects how quickly the model reaches a stable state. Fewer cycles mean faster stabilization. As `maxNewSynapseCount` increases, the cycles to stabilize generally decrease.
+- **Test Duration (red)**: Measures the time taken for the model to run. Typically, fewer cycles result in shorter durations. Test duration corresponds closely to the number of cycles to stabilize.
+
 ### Dataset 1
 - **Sequences**: 
   - **S1**: [1.0, 3.0, 5.0, 7.0, 9.0, 11.0, 13.0, 15.0, 8.0]
@@ -159,6 +167,7 @@ This is how we save the dataset in a json file and upload in the blobstorage nam
 | 50                 | 151                 | 95.0        | 00:19:57           |
 
 Chart for better understanding:
+
 ![image](images/dataset_chart_1.png)
 
 ### Dataset 2
@@ -177,6 +186,7 @@ Chart for better understanding:
 | 50                 | 227                 | 93.0         | 00:20:13           |
 
 Chart for better understanding:
+
 ![image](images/dataset_chart_2.png)
 
 ### Dataset 3
@@ -195,6 +205,7 @@ Chart for better understanding:
 | 50                 | 210                 | 90.0         | 00:21:12           |
 
 Chart for better understanding:
+
 ![image](images/dataset_chart_3.png)
 
 ### Dataset 4
@@ -213,6 +224,7 @@ Chart for better understanding:
 | 50                 | 334                 | 91.7         | 00:27:19           |
 
 Chart for better understanding:
+
 ![image](images/dataset_chart_4.png)
 
 ### Dataset 5
@@ -231,6 +243,7 @@ Chart for better understanding:
 | 50                 | 251                 | 91.2         | 00:20:11           |
 
 Chart for better understanding:
+
 ![image](images/dataset_chart_5.png)
 
 ### Dataset 6
@@ -249,6 +262,7 @@ Chart for better understanding:
 | 50                 | 272                 | 92.1         | 00:22:12           |
 
 Chart for better understanding:
+
 ![image](images/dataset_chart_6.png)
 
 ### Dataset 7
@@ -267,6 +281,7 @@ Chart for better understanding:
 | 50                 | 266                 | 91.5         | 00:22:37           |
 
 Chart for better understanding:
+
 ![image](images/dataset_chart_7.png)
 
 ### Dataset 8
@@ -285,6 +300,7 @@ Chart for better understanding:
 | 50                 | 239                 | 92.0         | 00:23:29           |
 
 Chart for better understanding:
+
 ![image](images/dataset_chart_8.png)
 
 ### Dataset 9
@@ -303,6 +319,7 @@ Chart for better understanding:
 | 50                 | 260                 | 91           | 00:23:45           |
 
 Chart for better understanding:
+
 ![image](images/dataset_chart_9.png)
 
 ### Dataset 10
@@ -321,6 +338,7 @@ Chart for better understanding:
 | 50                 | 367                 | 90.0         | 00:28:10           |
 
 Chart for better understanding:
+
 ![image](images/dataset_chart_10.png)
 
 ### Dataset 11
@@ -339,6 +357,7 @@ Chart for better understanding:
 | 50                 | 375                 | 89.0         | 00:28:55           |
 
 Chart for better understanding:
+
 ![image](images/dataset_chart_11.png)
 
 ### Dataset 12
@@ -357,6 +376,7 @@ Chart for better understanding:
 | 50                 | 355                 | 90.0         | 00:27:14           |
 
 Chart for better understanding:
+
 ![image](images/dataset_chart_12.png)
 
 ### Dataset 13
@@ -375,6 +395,7 @@ Chart for better understanding:
 | 50                 | 246                 | 91.0         | 00:20:32           |
 
 Chart for better understanding:
+
 ![image](images/dataset_chart_13.png)
 
 ### Dataset 14
@@ -393,6 +414,7 @@ Chart for better understanding:
 | 50                 | 370                 | 100.0         | 00:27:20           |
 
 Chart for better understanding:
+
 ![image](images/dataset_chart_14.png)
 
 ### Dataset 15
@@ -411,6 +433,7 @@ Chart for better understanding:
 | 50                 | 380                 | 91.0         | 00:28:30           |
 
 Chart for better understanding:
+
 ![image](images/dataset_chart_15.png)
 
 ### Dataset 16
@@ -430,6 +453,7 @@ Chart for better understanding:
 
 
 Chart for better understanding:
+
 ![image](images/dataset_chart_16.png)
 
 ### Dataset 17
@@ -449,6 +473,7 @@ Chart for better understanding:
 
 
 Chart for better understanding:
+
 ![image](images/dataset_chart_17.png)
 
 ### Dataset 18
@@ -468,6 +493,7 @@ Chart for better understanding:
 
 
 Chart for better understanding:
+
 ![image](images/dataset_chart_18.png)
 
 ### Dataset 19
@@ -487,6 +513,7 @@ Chart for better understanding:
 
 
 Chart for better understanding:
+
 ![image](images/dataset_chart_19.png)
 
 ### Dataset 20
@@ -506,6 +533,7 @@ Chart for better understanding:
 
 
 Chart for better understanding:
+
 ![image](images/dataset_chart_20.png)
 
 

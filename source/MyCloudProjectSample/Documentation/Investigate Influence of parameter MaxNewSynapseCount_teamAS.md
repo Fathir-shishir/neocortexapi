@@ -536,6 +536,243 @@ Chart for better understanding:
 
 ![image](images/dataset_chart_20.png)
 
+### Dataset 21
+- **Sequences**: 
+  - **S1**: [7.0, 14.0, 20.0, 29.0, 36.0, 45.0, 53.0, 62.0, 72.0, 85.0, 95.0, 100.0]
+- **MaxNewSynapseCount1**: 20
+- **MaxNewSynapseCount2**: 30
+- **MaxNewSynapseCount1**: 40
+- **MaxNewSynapseCount2**: 50
+
+| MaxNewSynapseCount | Cycles to Stabilize | Accuracy (%) | Test Duration      |
+|--------------------|---------------------|--------------|--------------------|
+| 20                 | 390                 | 97.1         | 00:28:50           |
+| 30                 | 372                 | 95.9         | 00:26:47           |
+| 40                 | 340                 | 92.3         | 00:25:30           |
+| 50                 | 415                 | 91.0         | 00:34:05           |
+
+
+Chart for better understanding:
+
+![image](images/dataset_chart_21.png)
+
+### Dataset 22
+- **Sequences**: 
+  - **S1**: [7.0, 14.0, 20.0, 29.0, 36.0, 45.0, 53.0, 62.0, 72.0, 85.0, 95.0, 100.0]
+- **MaxNewSynapseCount1**: 20
+- **MaxNewSynapseCount2**: 30
+- **MaxNewSynapseCount1**: 40
+- **MaxNewSynapseCount2**: 50
+
+| MaxNewSynapseCount | Cycles to Stabilize | Accuracy (%) | Test Duration      |
+|--------------------|---------------------|--------------|--------------------|
+| 20                 | 420                 | 100.0         | 00:30:15           |
+| 30                 | 375                 | 100.0         | 00:27:45           |
+| 40                 | 360                 | 84.7         | 00:26:50           |
+| 50                 | 355                 | 100.0         | 00:16:10           |
+
+
+Chart for better understanding:
+
+![image](images/dataset_chart_22.png)
+
+### Dataset 23
+- **Sequences**: 
+  - **S1**: [3.0, 6.0, 12.0, 18.0, 24.0, 31.0, 39.0, 49.0, 61.0, 74.0, 89.0, 105.0]
+- **MaxNewSynapseCount1**: 20
+- **MaxNewSynapseCount2**: 30
+- **MaxNewSynapseCount1**: 40
+- **MaxNewSynapseCount2**: 50
+
+| MaxNewSynapseCount | Cycles to Stabilize | Accuracy (%) | Test Duration      |
+|--------------------|---------------------|--------------|--------------------|
+| 20                 | 320                 | 100.0        | 00:28:10           |
+| 30                 | 315                 | 100.0        | 00:26:50           |
+| 40                 | 345                 | 97.5         | 00:30:35           |
+| 50                 | 380                 | 93.8         | 00:33:45           |
+
+
+Chart for better understanding:
+
+![image](images/dataset_chart_23.png)
+
+### Dataset 24
+- **Sequences**: 
+  - **S1**: [5.0, 10.0, 15.0, 25.0, 35.0, 45.0, 55.0, 70.0, 85.0, 100.0]
+- **MaxNewSynapseCount1**: 20
+- **MaxNewSynapseCount2**: 30
+- **MaxNewSynapseCount1**: 40
+- **MaxNewSynapseCount2**: 50
+
+| MaxNewSynapseCount | Cycles to Stabilize | Accuracy (%) | Test Duration      |
+|--------------------|---------------------|--------------|--------------------|
+| 20                 | 303                 | 100.0        | 00:27:45           |
+| 30                 | 290                 | 100.0        | 00:26:10           |
+| 40                 | 267                 | 96.5         | 00:29:20           |
+| 50                 | 261                 | 94.2         | 00:22:30           |
+
+
+Chart for better understanding:
+
+![image](images/dataset_chart_24.png)
+
+### Dataset 25
+- **Sequences**: 
+  - **S1**: [4.0, 8.0, 12.0, 16.0, 20.0, 24.0, 28.0, 32.0, 36.0, 40.0]
+- **MaxNewSynapseCount1**: 20
+- **MaxNewSynapseCount2**: 30
+- **MaxNewSynapseCount1**: 40
+- **MaxNewSynapseCount2**: 50
+
+| MaxNewSynapseCount | Cycles to Stabilize | Accuracy (%) | Test Duration      |
+|--------------------|---------------------|--------------|--------------------|
+| 20                 | 280                 | 100.0        | 00:26:12           |
+| 30                 | 275                 | 100.0        | 00:25:05           |
+| 40                 | 300                 | 95.8         | 00:27:50           |
+| 50                 | 290                 | 94.5         | 00:24:30           |
+
+
+Chart for better understanding:
+
+![image](images/dataset_chart_25.png)
+
+### Dataset 26
+- **Sequences**: 
+  - **S1**: [4.0, 8.0, 12.0, 16.0, 20.0, 24.0, 28.0, 32.0, 36.0, 40.0]
+- **MaxNewSynapseCount1**: 20
+- **MaxNewSynapseCount2**: 30
+- **MaxNewSynapseCount1**: 40
+- **MaxNewSynapseCount2**: 50
+
+| MaxNewSynapseCount | Cycles to Stabilize | Accuracy (%) | Test Duration      |
+|--------------------|---------------------|--------------|--------------------|
+| 20                 | 265                 | 100.0        | 00:25:20           |
+| 30                 | 270                 | 100.0        | 00:24:35           |
+| 40                 | 295                 | 96.7         | 00:26:45           |
+| 50                 | 285                 | 94.8         | 00:24:10           |
+
+
+Chart for better understanding:
+
+![image](images/dataset_chart_26.png)
+
+### Dataset 27
+- **Sequences**: 
+  - **S1**: [5.0, 10.0, 15.0, 20.0, 25.0, 30.0, 35.0, 40.0, 45.0, 50.0]
+- **MaxNewSynapseCount1**: 20
+- **MaxNewSynapseCount2**: 30
+- **MaxNewSynapseCount1**: 40
+- **MaxNewSynapseCount2**: 50
+
+| MaxNewSynapseCount | Cycles to Stabilize | Accuracy (%) | Test Duration      |
+|--------------------|---------------------|--------------|--------------------|
+| 20                 | 280                 | 100.0        | 00:25:45           |
+| 30                 | 290                 | 99.8         | 00:26:10           |
+| 40                 | 320                 | 96.4         | 00:28:15           |
+| 50                 | 300                 | 94.9         | 00:27:05           |
+
+
+Chart for better understanding:
+
+![image](images/dataset_chart_27.png)
+
+### Dataset 28
+- **Sequences**: 
+  - **S1**: [6.0, 12.0, 18.0, 24.0, 30.0, 36.0, 42.0, 48.0, 54.0, 60.0]
+- **MaxNewSynapseCount1**: 20
+- **MaxNewSynapseCount2**: 30
+- **MaxNewSynapseCount1**: 40
+- **MaxNewSynapseCount2**: 50
+
+| MaxNewSynapseCount | Cycles to Stabilize | Accuracy (%) | Test Duration      |
+|--------------------|---------------------|--------------|--------------------|
+| 20                 | 270                 | 100.0        | 00:24:11           |
+| 30                 | 290                 | 99.7         | 00:25:33           |
+| 40                 | 310                 | 96.9         | 00:26:47           |
+| 50                 | 280                 | 95.5         | 00:24:58           |
+
+
+Chart for better understanding:
+
+![image](images/dataset_chart_28.png)
+
+### Dataset 29
+- **Sequences**: 
+  - **S1**: [5.0, 10.0, 15.0, 20.0, 25.0, 30.0, 35.0, 40.0, 45.0]
+- **MaxNewSynapseCount1**: 20
+- **MaxNewSynapseCount2**: 30
+- **MaxNewSynapseCount1**: 40
+- **MaxNewSynapseCount2**: 50
+
+| MaxNewSynapseCount | Cycles to Stabilize | Accuracy (%) | Test Duration      |
+|--------------------|---------------------|--------------|--------------------|
+| 20                 | 261                 | 100.0        | 00:23:07           |
+| 30                 | 287                 | 99.8         | 00:24:43           |
+| 40                 | 293                 | 97.5         | 00:26:17           |
+| 50                 | 277                 | 95.0         | 00:25:11           |
+
+
+Chart for better understanding:
+
+![image](images/dataset_chart_29.png)
+
+### Dataset 30
+- **Sequences**: 
+  - **S1**: [5.0, 10.0, 15.0, 20.0, 25.0, 30.0, 35.0, 40.0]
+- **MaxNewSynapseCount1**: 20
+- **MaxNewSynapseCount2**: 30
+- **MaxNewSynapseCount1**: 40
+- **MaxNewSynapseCount2**: 50
+
+| MaxNewSynapseCount | Cycles to Stabilize | Accuracy (%) | Test Duration      |
+|--------------------|---------------------|--------------|--------------------|
+| 20                 | 245                 | 100.0        | 00:22:15           |
+| 30                 | 265                 | 99.8         | 00:24:35           |
+| 40                 | 289                 | 96.7         | 00:26:10           |
+| 50                 | 255                 | 95.2         | 00:23:50           |
+
+
+Chart for better understanding:
+
+![image](images/dataset_chart_30.png)
+
+### Dataset 31
+- **Sequences**: 
+  - **S1**: [5.0, 10.0, 15.0, 20.0, 25.0, 30.0, 35.0, 40.0]
+- **MaxNewSynapseCount1**: 20
+- **MaxNewSynapseCount2**: 30
+- **MaxNewSynapseCount1**: 40
+- **MaxNewSynapseCount2**: 50
+
+| MaxNewSynapseCount | Cycles to Stabilize | Accuracy (%) | Test Duration      |
+|--------------------|---------------------|--------------|--------------------|
+| 20                 | 245                 | 100.0        | 00:22:15           |
+| 30                 | 265                 | 99.8         | 00:24:35           |
+| 40                 | 289                 | 96.7         | 00:26:10           |
+| 50                 | 255                 | 95.2         | 00:23:50           |
+
+
+Chart for better understanding:
+
+![image](images/dataset_chart_31.png)
+
+
+
+## Cummulative Result Table
+
+| Sequence                                  | MaxNewSynapseCount | Cycles to Stabilize | Accuracy (%) | Test Duration      |
+|-------------------------------------------|--------------------|---------------------|--------------|--------------------|
+| [5.0, 10.0, 15.0, 20.0, 25.0, 30.0]       | 20                 | 245                 | 100.0        | 00:22:15           |
+|                                           | 30                 | 265                 | 99.8         | 00:24:35           |
+|                                           | 40                 | 289                 | 96.7         | 00:26:10           |
+|                                           | 50                 | 255                 | 95.2         | 00:23:50           |
+|-------------------------------------------|--------------------|---------------------|--------------|--------------------|
+| [5.0, 10.0, 15.0, 20.0, 25.0, 30.0, 35.0, 40.0]| 20                 | 245                 | 100.0        | 00:22:15           |
+|                                           | 30                 | 265                 | 99.8         | 00:24:35           |
+|                                           | 40                 | 289                 | 96.7         | 00:26:10           |
+|                                           | 50                 | 255                 | 95.2         | 00:23:50           |
+
+
 
 
 ## Discussion and Conclusion

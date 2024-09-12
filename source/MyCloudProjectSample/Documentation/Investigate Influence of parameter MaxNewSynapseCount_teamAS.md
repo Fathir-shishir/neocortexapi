@@ -707,21 +707,6 @@ Chart for better understanding:
 
 ![image](images/dataset_chart_30.png)
 
-### Dataset 31
-- **Sequences**: 
-  - **S1**: [5.0, 10.0, 15.0, 20.0, 25.0, 30.0, 35.0, 40.0]
-- **MaxNewSynapseCount1**: 20
-- **MaxNewSynapseCount2**: 30
-- **MaxNewSynapseCount1**: 40
-- **MaxNewSynapseCount2**: 50
-
-| MaxNewSynapseCount | Cycles to Stabilize | Accuracy (%) | Test Duration      |
-|--------------------|---------------------|--------------|--------------------|
-| 20                 | 245                 | 100.0        | 00:22:15           |
-| 30                 | 265                 | 99.8         | 00:24:35           |
-| 40                 | 289                 | 96.7         | 00:26:10           |
-| 50                 | 255                 | 95.2         | 00:23:50           |
-
 
 
 ## Cummulative Result Table

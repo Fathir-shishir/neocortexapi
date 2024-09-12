@@ -723,13 +723,10 @@ Chart for better understanding:
 | 50                 | 255                 | 95.2         | 00:23:50           |
 
 
-Chart for better understanding:
-
-![image](images/dataset_chart_31.png)
-
-
 
 ## Cummulative Result Table
+
+Here we provide 120 variants of sequences with 4 different maxNewSynapseCount values to evaluate the influence of maxNewSynapseCount
 
 | Sequence                                    | MaxNewSynapseCount | Cycles to Stabilize | Accuracy (%) | Test Duration      |
 |---------------------------------------------|--------------------|---------------------|--------------|--------------------|

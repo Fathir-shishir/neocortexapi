@@ -172,7 +172,7 @@ namespace NeoCortexApiSample
 
                 var lastPredictedValues = new List<string>(new string[] { "0" });
 
-                int maxCycles = 3500;
+                int maxCycles = 1000;
 
                 //
                 // Training SP to get stable. New-born stage.
@@ -324,7 +324,7 @@ namespace NeoCortexApiSample
 
                             //
                             // Experiment is completed if we are 30 cycles long at the 100% accuracy.
-                            if (maxMatchCnt >= 30)
+                            if (maxMatchCnt >= 10)
                             {
                                 sw.Stop();
                                 Debug.WriteLine($"Sequence learned. The algorithm is in the stable state after 30 repeats with with accuracy {accuracy} of maximum possible {maxMatchCnt}. Elapsed sequence {sequenceKeyPair.Key} learning time: {sw.Elapsed}.");

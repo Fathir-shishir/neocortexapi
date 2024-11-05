@@ -13,17 +13,16 @@ namespace MyExperiment
         public ExperimentResult(string partitionKey, string rowKey)
         {
             this.PartitionKey = partitionKey;
-            this.RowKey= rowKey;
+            this.RowKey = rowKey;
         }
 
         public string PartitionKey { get; set; }
-        
-        public string RowKey { get; set; }
-       
-        public DateTimeOffset? Timestamp { get ; set ; }
-        
-        public ETag ETag { get; set; }
 
+        public string RowKey { get; set; }
+
+        public DateTimeOffset? Timestamp { get; set; }
+
+        public ETag ETag { get; set; }
 
         public string ExperimentId { get; set; }
 
@@ -42,12 +41,8 @@ namespace MyExperiment
         public string[] OutputFiles { get; set; }
         // Your properties related to experiment.
 
-        public int MaxNewSynapseCount1 { get; set; }
+        public float Accuracy { get; set; }
 
-        public int MaxNewSynapseCount2 { get; set; }
-
-        public string TestData { get; set; }
-        public string TestName { get; set; }
-
+        public TimeSpan Duration { get; set; }
     }
 }

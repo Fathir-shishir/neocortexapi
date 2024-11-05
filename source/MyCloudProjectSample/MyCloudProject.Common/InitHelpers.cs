@@ -12,7 +12,8 @@ namespace MyCloudProject.Common
     public static class InitHelpers
     {
         /// <summary>
-        /// Create Logging infrastructure in the Trainer Workload
+        /// Create Logging infrastructure in the Trainer Workload.
+        /// Todo: Make sure that the logging level can be configured on start of the application.
         /// </summary>
         /// <returns></returns>
         public static ILoggerFactory InitLogging(IConfigurationRoot configRoot)
@@ -51,7 +52,9 @@ namespace MyCloudProject.Common
 
             if (args != null)
                 builder.AddCommandLine(args);
+
             builder.AddEnvironmentVariables();
+
             var configRoot = builder.Build();
 
            

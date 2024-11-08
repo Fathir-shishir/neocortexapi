@@ -11,7 +11,8 @@ namespace MyExperiment
         public string InputFile { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
-        public string MessageId { get; set; }
-        public string MessageReceipt { get; set; }
+        public int maxNewSynapseCount { get; set; }
+        public string file1 { get; set; }
+        public string file2 { get; set; }
     }
 }

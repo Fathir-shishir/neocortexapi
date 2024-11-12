@@ -2,6 +2,7 @@
 using Azure.Data.Tables;
 using Azure.Storage.Blobs;
 using Azure.Storage.Queues;
+using Azure.Storage.Queues.Models;
 using Microsoft.Extensions.Configuration;
 using MyCloudProject.Common;
 using System;
@@ -32,10 +33,28 @@ namespace MyExperiment
             throw new NotImplementedException();
         }
 
-        public IExerimentRequest ReceiveExperimentRequestAsync(CancellationToken token)
+        public async Task<IExerimentRequest> ReceiveExperimentRequestAsync(CancellationToken token)
         {
             // Receive the message and make sure that it is serialized to IExperimentResult.
-            throw new NotImplementedException();
+            QueueClient queueClient = new QueueClient(this._config.StorageConnectionString, this._config.Queue);
+            while (token.IsCancellationRequested == false)
+            {
+
+                QueueMessage message = await queueClient.ReceiveMessageAsync();
+                if (message != null)
+                {
+
+                    try {
+                        string msgTxt = Encoding.UTF8.GetString(message.Body.ToArray());
+                    } catch (Exception)
+                    {
+                        throw new ApplicationException();
+                    }
+                
+                }
+
+            }
+                throw new NotImplementedException();
         }
 
 

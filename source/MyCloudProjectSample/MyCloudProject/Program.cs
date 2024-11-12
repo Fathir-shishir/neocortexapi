@@ -21,6 +21,8 @@ namespace MyCloudProject
 
         string test;
 
+        public ILogger logger;
+
         static async Task Main(string[] args)
         {
             CancellationTokenSource tokeSrc = new CancellationTokenSource();
@@ -61,6 +63,7 @@ namespace MyCloudProject
                     try
                     {
                         // logging
+                        this.logger?.LogInformation($"{DateTime.Now} -  In to the experiment...");
 
                         // Step 4.
                         var localFileWithInputArgs = await storageProvider.DownloadInputAsync(request.InputFile);

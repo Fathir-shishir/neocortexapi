@@ -14,6 +14,7 @@ namespace MyCloudProject
 {
     class Program
     {
+        private ILogger logger;
         /// <summary>
         /// Your project ID from the last semester.
         /// </summary>
@@ -21,10 +22,9 @@ namespace MyCloudProject
 
         string test;
 
-        public ILogger logger;
-
         static async Task Main(string[] args)
         {
+
             CancellationTokenSource tokeSrc = new CancellationTokenSource();
 
             Console.CancelKeyPress += (sender, e) =>
@@ -63,7 +63,7 @@ namespace MyCloudProject
                     try
                     {
                         // logging
-                        this.logger?.LogInformation($"{DateTime.Now} -  In to the experiment...");
+                        logger?.LogInformation($"{DateTime.Now} -  In to the experiment...");
 
                         // Step 4.
                         var localFileWithInputArgs = await storageProvider.DownloadInputAsync(request.InputFile);

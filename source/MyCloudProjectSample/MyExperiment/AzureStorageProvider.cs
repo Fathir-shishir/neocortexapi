@@ -57,6 +57,8 @@ namespace MyExperiment
                         var inputFile = request.InputFile;
                         var fileOne = request.file1;
                         var fileTwo = request.file2;
+
+                        this.logger?.LogInformation($"Received file {fileOne}");
                     } catch (Exception)
                     {
                         throw new ApplicationException();

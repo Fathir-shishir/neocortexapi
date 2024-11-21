@@ -66,7 +66,7 @@ namespace MyCloudProject
                         logger?.LogInformation($"{DateTime.Now} -  In to the experiment...");
 
                         // Step 4.
-                        var localFileWithInputArgs = await storageProvider.DownloadInputAsync(request.InputFile);
+                        var localFileWithInputArgs = await storageProvider.DownloadInputAsync(request.file);
 
                         // logging
 

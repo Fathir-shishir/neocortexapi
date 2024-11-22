@@ -123,6 +123,10 @@ namespace NeoCortexApiSample
 
                 bool isInStableState = false;
 
+                double finalAccuracy = 0.0;
+
+                int finalCycleCount = 0;
+
                 var numUniqueInputs = GetNumberOfInputs(sequences);
 
                 TemporalMemory tm = new TemporalMemory();
@@ -172,7 +176,7 @@ namespace NeoCortexApiSample
 
                 var lastPredictedValues = new List<string>(new string[] { "0" });
 
-                int maxCycles = 1000;
+                int maxCycles = 2000;
 
                 //
                 // Training SP to get stable. New-born stage.
@@ -324,11 +328,13 @@ namespace NeoCortexApiSample
 
                             //
                             // Experiment is completed if we are 30 cycles long at the 100% accuracy.
-                            if (maxMatchCnt >= 10)
+                            if (maxMatchCnt >= 30)
                             {
                                 sw.Stop();
                                 Debug.WriteLine($"Sequence learned. The algorithm is in the stable state after 30 repeats with with accuracy {accuracy} of maximum possible {maxMatchCnt}. Elapsed sequence {sequenceKeyPair.Key} learning time: {sw.Elapsed}.");
                                 isLearningCompleted = true;
+                                finalAccuracy= accuracy;
+                                finalCycleCount = cycle;
                                 break;
                             }
                         }
@@ -348,8 +354,10 @@ namespace NeoCortexApiSample
                 sw.Stop();
                 writer.WriteLine("Experiment End: " + DateTime.Now);
                 writer.WriteLine($"Total Experiment Duration: {sw.Elapsed}");
+                writer.WriteLine($"Accuracy reached '{finalAccuracy}%' with MaxNewSynapseCount value '{this.maxNewSynapseCount}' with cycle value '{finalCycleCount}'");
+
             }
-            
+
 
             Debug.WriteLine("------------ END ------------");
 

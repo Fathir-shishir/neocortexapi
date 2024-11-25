@@ -14,6 +14,7 @@ namespace MyCloudProject
 {
     class Program
     {
+        private ILogger logger;
         /// <summary>
         /// Your project ID from the last semester.
         /// </summary>
@@ -23,6 +24,7 @@ namespace MyCloudProject
 
         static async Task Main(string[] args)
         {
+
             CancellationTokenSource tokeSrc = new CancellationTokenSource();
 
             Console.CancelKeyPress += (sender, e) =>
@@ -54,18 +56,20 @@ namespace MyCloudProject
             while (tokeSrc.Token.IsCancellationRequested == false)
             {
                 // Step 3
-                IExerimentRequest request = storageProvider.ReceiveExperimentRequestAsync(tokeSrc.Token);
+                IExerimentRequest request = await storageProvider.ReceiveExperimentRequestAsync(tokeSrc.Token);
 
                 if (request != null)
                 {
                     try
                     {
                         // logging
+                        logger?.LogInformation($"{DateTime.Now} -  In to the experiment...");
 
                         // Step 4.
-                        var localFileWithInputArgs = await storageProvider.DownloadInputAsync(request.InputFile);
+                        var localFileWithInputArgs = await storageProvider.DownloadInputAsync(request.file);
 
                         // logging
+
 
                         // Here is your SE Project code started.(Between steps 4 and 5).
                         IExperimentResult result = await experiment.RunAsync(localFileWithInputArgs);

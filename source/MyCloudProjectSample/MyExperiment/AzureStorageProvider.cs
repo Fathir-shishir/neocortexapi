@@ -9,6 +9,7 @@ using Microsoft.Extensions.Logging;
 using MyCloudProject.Common;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 using System.Text.Json;
 using System.Threading;
@@ -54,9 +55,9 @@ namespace MyExperiment
 
                         ExerimentRequestMessage request = JsonSerializer.Deserialize<ExerimentRequestMessage>(msgTxt);
 
-                        var inputFile = request.InputFile;
-                        var fileOne = request.file1;
-                        var fileTwo = request.file2;
+                        var fileOne = request.file;
+
+                        this.logger?.LogInformation($"Received file {fileOne}");
                     } catch (Exception)
                     {
                         throw new ApplicationException();
@@ -78,6 +79,28 @@ namespace MyExperiment
         {
             throw new NotImplementedException();
         }
+
+        /// <summary>
+        /// Uploads a result file (from a MemoryStream) to Azure Blob Storage.
+        /// This method directly uploads data stored in the MemoryStream to the specified blob container.
+        /// </summary>
+        /// <param name="fileName">The name of the file to upload to the blob storage.</param>
+        /// <param name="memoryStream">The MemoryStream containing the file data.</param>
+        public async Task UploadResultFile(string fileName, MemoryStream memoryStream)
+        {
+            var experimentLabel = fileName;
+
+            BlobServiceClient blobServiceClient = new BlobServiceClient(this._config.StorageConnectionString);
+            BlobContainerClient containerClient = blobServiceClient.GetBlobContainerClient(this._config.ResultContainer);
+
+            string blobName = experimentLabel;
+
+            // Upload the data as a blob
+            BlobClient blobClient = containerClient.GetBlobClient(blobName);
+            await blobClient.UploadAsync(memoryStream);
+        }
+
+
     }
 
 

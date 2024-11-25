@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -41,6 +42,8 @@ namespace MyCloudProject.Common
         /// <param name="request">The requests received by <see cref="nameof(IStorageProvider.ReceiveExperimentRequestAsync)"/>.</param>
         /// <returns></returns>
         Task CommitRequestAsync(IExerimentRequest request);
+
+        Task UploadResultFile(string fileName, MemoryStream memoryStream);
 
     }
 }

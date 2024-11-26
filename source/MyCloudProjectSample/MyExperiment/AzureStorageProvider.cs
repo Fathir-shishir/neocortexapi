@@ -2,6 +2,7 @@
 using Azure.Core;
 using Azure.Data.Tables;
 using Azure.Storage.Blobs;
+using Azure.Storage.Blobs.Models;
 using Azure.Storage.Queues;
 using Azure.Storage.Queues.Models;
 using Microsoft.Extensions.Configuration;
@@ -33,9 +34,31 @@ namespace MyExperiment
             throw new NotImplementedException();
         }
 
-        public Task<string> DownloadInputAsync(string fileName)
+        public async Task<string> DownloadInputAsync(string fileName)
         {
-            throw new NotImplementedException();
+            BlobContainerClient container = new BlobContainerClient(this._config.StorageConnectionString, this._config.TrainingContainer);
+            await container.CreateIfNotExistsAsync();
+
+            // Get a reference to the blob
+            BlobClient blob = container.GetBlobClient(fileName);
+
+            // Check if the blob exists
+            if (await blob.ExistsAsync())
+            {
+                // Download the blob content as a stream
+                BlobDownloadInfo download = await blob.DownloadAsync();
+
+                // Read the content from the stream and return it as a string
+                using (StreamReader reader = new StreamReader(download.Content))
+                {
+                    string fileContent = await reader.ReadToEndAsync();
+                    return fileContent;
+                }
+            }
+            else
+            {
+                throw new FileNotFoundException($"The file '{fileName}' does not exist in the blob container.");
+            }
         }
 
         public async Task<IExerimentRequest> ReceiveExperimentRequestAsync(CancellationToken token)
@@ -66,7 +89,7 @@ namespace MyExperiment
                 }
 
             }
-                throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
 

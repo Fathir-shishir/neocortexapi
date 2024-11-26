@@ -9,6 +9,7 @@ using Azure.Storage.Queues.Models;
 using Azure.Storage.Queues;
 using System.Text.Json;
 using System.Text;
+using System.Runtime.CompilerServices;
 
 namespace MyCloudProject
 {
@@ -49,7 +50,7 @@ namespace MyCloudProject
 
             IStorageProvider storageProvider = new AzureStorageProvider(cfgSec);
 
-            IExperiment experiment = new Experiment(cfgSec, storageProvider, logger/* put some additional config here */);
+            IExperiment experiment = new Experiment(cfgSec, storageProvider, logger);
 
             //
             // Implements the step 3 in the architecture picture.
@@ -66,13 +67,17 @@ namespace MyCloudProject
                         logger?.LogInformation($"{DateTime.Now} -  In to the experiment...");
 
                         // Step 4.
-                        var localFileWithInputArgs = await storageProvider.DownloadInputAsync(request.file);
+                        string fileCFontent = await storageProvider.DownloadInputAsync(request.file);
+
+                        ExperimentData eData = await getAndDeserializeDataFromBlobContainerAsync(fileCFontent);
 
                         // logging
 
 
+
+
                         // Here is your SE Project code started.(Between steps 4 and 5).
-                        IExperimentResult result = await experiment.RunAsync(localFileWithInputArgs);
+                        IExperimentResult result = await experiment.RunAsync(eData.Sequences, eData.TestLists, eData.MaxNewSynapseCount);
 
                         // logging
 
@@ -98,6 +103,27 @@ namespace MyCloudProject
             }
 
             logger?.LogInformation($"{DateTime.Now} -  Experiment exit: {_projectName}");
+        }
+
+        /// <summary>
+        /// Downloads and deserializes the experiment data from a blob container.
+        /// </summary>
+        /// <param name="fileName">The name of the file in the blob container.</param>
+        /// <returns>An ExperimentData object containing the deserialized data.</returns>
+        public static async Task<ExperimentData> getAndDeserializeDataFromBlobContainerAsync(string fileContent)
+        {
+            // Deserialize the JSON content into an ExperimentData object.
+            return await DeserializeExperimentData(fileContent);
+        }
+
+        /// <summary>
+        /// Deserializes the experiment data from a JSON string.
+        /// </summary>
+        /// <param name="jsonString">The JSON string containing experiment data.</param>
+        /// <returns>A deserialized ExperimentData object.</returns>
+        private static async Task<ExperimentData> DeserializeExperimentData(string jsonString)
+        {
+            return JsonSerializer.Deserialize<ExperimentData>(jsonString);
         }
 
 

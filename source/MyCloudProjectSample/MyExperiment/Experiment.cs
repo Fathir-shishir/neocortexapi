@@ -33,15 +33,13 @@ namespace MyExperiment
         }
 
 
-        public Task<IExperimentResult> RunAsync(string inputData)
+        public Task<IExperimentResult> RunAsync(Dictionary<string, List<double>> sequences, List<List<double>> testList, int maxNewSynapseCount)
         {
-            // TODO read file
-
-            // YOU START HERE WITH YOUR SE EXPERIMENT!!!!
 
             ExperimentResult res = new ExperimentResult(this.config.GroupId, null);
 
-            // logging, logging and logging
+            logger?.LogTrace("cc started running........");
+            logger?.LogInformation($"Variable testing '{testList}' sequence '{sequences}'");
 
             res.StartTimeUtc = DateTime.UtcNow;
 

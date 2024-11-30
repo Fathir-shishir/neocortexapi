@@ -61,35 +61,40 @@ namespace MyExperiment
             }
         }
 
+        /// <summary>
+        /// Receives an experiment request from the Azure queue asynchronously.
+        /// </summary>
+        /// <param name="token">Cancellation token.</param>
+        /// <returns>A task representing the asynchronous operation, returning the experiment request received from the queue.</returns>
         public async Task<IExerimentRequest> ReceiveExperimentRequestAsync(CancellationToken token)
         {
-            // Receive the message and make sure that it is serialized to IExperimentResult.
-            QueueClient queueClient = new QueueClient(this._config.StorageConnectionString, this._config.Queue);
-            while (token.IsCancellationRequested == false)
+            QueueClient queueClient = new QueueClient(_config.StorageConnectionString, _config.Queue);
+
+            // Receive a message from the queue
+            QueueMessage message = await queueClient.ReceiveMessageAsync();
+
+            if (message != null)
             {
-
-                QueueMessage message = await queueClient.ReceiveMessageAsync();
-                if (message != null)
+                try
                 {
-
-                    try {
-                        string msgTxt = Encoding.UTF8.GetString(message.Body.ToArray());
-                        this.logger?.LogInformation($"Received the message {msgTxt}");
-
-                        ExerimentRequestMessage request = JsonSerializer.Deserialize<ExerimentRequestMessage>(msgTxt);
-
-                        var fileOne = request.file;
-
-                        this.logger?.LogInformation($"Received file {fileOne}");
-                    } catch (Exception)
-                    {
-                        throw new ApplicationException();
-                    }
-                
+                    // Process the received message
+                    string msgTxt = Encoding.UTF8.GetString(message.Body.ToArray());
+                    ExerimentRequestMessage request = JsonSerializer.Deserialize<ExerimentRequestMessage>(msgTxt);
+                    request.ExperimentId = message.MessageId;
+                    return request;
                 }
-
+                catch (JsonException jsonEx)
+                {
+                    logger?.LogError(jsonEx, "JSON deserialization failed for the message");
+                    Console.Error.WriteLine("The message sent is not correctly formatted. Please send another message.");
+                }
             }
-            throw new NotImplementedException();
+            else
+            {
+                logger?.LogInformation("The message is null");
+            }
+
+            return null;
         }
 
 

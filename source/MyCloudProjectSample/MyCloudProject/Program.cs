@@ -54,10 +54,11 @@ namespace MyCloudProject
 
             //
             // Implements the step 3 in the architecture picture.
-            while (tokeSrc.Token.IsCancellationRequested == false)
+            while (!tokeSrc.Token.IsCancellationRequested)
             {
                 // Step 3
-                IExerimentRequest request = await storageProvider.ReceiveExperimentRequestAsync(tokeSrc.Token);
+                Task<IExerimentRequest> requestTask = storageProvider.ReceiveExperimentRequestAsync(tokeSrc.Token);
+                IExerimentRequest request = await requestTask;
 
                 if (request != null)
                 {

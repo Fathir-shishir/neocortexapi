@@ -74,12 +74,7 @@ namespace MyCloudProject
 
                         ExperimentData eData = await getAndDeserializeDataFromBlobContainerAsync(fileCFontent);
 
-                        // logging
-
-
-
-
-                        // Here is your SE Project code started.(Between steps 4 and 5).
+                        // Here SE Project code started.(Between steps 4 and 5).
                         IExperimentResult result = await experiment.RunAsync(eData.Sequences, eData.TestLists, eData.MaxNewSynapseCount);
 
                         // logging

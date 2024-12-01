@@ -44,7 +44,7 @@ namespace SEProject
         /// Second, three short sequences with three elements each are created und used for prediction. The predictor used by experiment privides to the HTM every element of every predicting sequence.
         /// The predictor tries to predict the next element.
         /// </summary>
-        private static void RunMultiSequenceLearningExperiment(int MaxNewSynapseCount, Dictionary<string, List<double>> sequence, List<List<double>> testList)
+        public void RunMultiSequenceLearningExperiment(int MaxNewSynapseCount, Dictionary<string, List<double>> sequence, List<List<double>> testList)
         {
             Dictionary<string, List<double>> sequences = sequence ;
 
@@ -67,7 +67,7 @@ namespace SEProject
                 var predictor = experiment.Run(new Dictionary<string, List<double>> { { sequence.Key, sequence.Value } });
 
                 // Predict for test lists
-                var testLists = GenerateTestLists(testList);
+                var testLists = GenerateTestLists(testList);  
                 foreach (var testList in testLists)
                 {
                     predictor.Reset();
@@ -81,7 +81,7 @@ namespace SEProject
         }
 
         /// <summary>
-        /// Processes and returns test lists for predictions based on the provided data.
+        /// Processes and returns test lists for predictions based on the provided data. 
         /// </summary>
         /// <param name="testLists">A list of test sequences (List<List<double>>) to be used for predictions.</param>
         /// <returns>A list of test sequences converted to double arrays.</returns>

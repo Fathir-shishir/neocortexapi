@@ -70,6 +70,8 @@ namespace MyCloudProject
                         // Step 4.
                         string fileCFontent = await storageProvider.DownloadInputAsync(request.file);
 
+                        logger?.LogInformation($"{fileCFontent} -  File content log");
+
                         ExperimentData eData = await getAndDeserializeDataFromBlobContainerAsync(fileCFontent);
 
                         // logging

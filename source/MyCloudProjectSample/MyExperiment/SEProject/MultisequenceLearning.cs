@@ -163,7 +163,7 @@ namespace SEProject
                     int matches = 0;
 
                     var lastPredictedValues = new List<string>(new string[] { "0" });
-                    int maxCycles = 200;
+                    int maxCycles = 2000;
 
                     for (int i = 0; i < maxCycles && isInStableState == false; i++)
                     {

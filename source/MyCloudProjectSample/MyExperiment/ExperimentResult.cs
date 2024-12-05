@@ -34,15 +34,16 @@ namespace MyExperiment
 
         public DateTime? EndTimeUtc { get; set; }
 
-        public long DurationSec { get; set; }
+        public string SequenceID { get; set; }
 
-        public string InputFileUrl { get; set; }
+        public int sequence { get; set; }
 
-        public string[] OutputFiles { get; set; }
-        // Your properties related to experiment.
+        public string status { get; set; }
 
         public float Accuracy { get; set; }
 
         public TimeSpan Duration { get; set; }
+
+        public int MaxNewSynapseCount { get; set; }
     }
 }

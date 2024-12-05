@@ -103,9 +103,38 @@ namespace MyExperiment
             throw new NotImplementedException();
         }
 
-        public Task UploadResultAsync(string experimentName, IExperimentResult result)
+        public async Task UploadResultAsync(IExperimentResult result)
         {
-            throw new NotImplementedException();
+            Random rnd = new Random();
+            int rowKeyNumber = rnd.Next(0, 1000);
+            string rowKey = "team-as-" + rowKeyNumber.ToString();
+            string partitionKey = "cc-proj-" + rowKey;
+
+            var testResult = new ExperimentResult(partitionKey, rowKey)
+            {
+                ExperimentId = result.ExperimentId,
+                Name = result.SequenceID,
+                Description = result.SequenceID,
+                StartTimeUtc = result.StartTimeUtc,
+                EndTimeUtc = result.EndTimeUtc,
+                maxNewSynapseCount = result.maxNewSynapseCount,
+                MaxNewSynapseCount1 = result.MaxNewSynapseCount1,
+                MaxNewSynapseCount2 = result.MaxNewSynapseCount2,
+            };
+
+            Console.WriteLine($"Upload ExperimentResult to table: {this._config.ResultTable}");
+            var client = new TableClient(_config.StorageConnectionString, _config.ResultTable);
+
+            await client.CreateIfNotExistsAsync();
+            try
+            {
+                await client.AddEntityAsync<ExperimentResult>(testResult);
+                Console.WriteLine("Uploaded to Table Storage completed");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Failed to upload to Table Storage: {ex.ToString()}");
+            }
         }
 
         /// <summary>

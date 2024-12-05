@@ -39,49 +39,85 @@ namespace SEProject
 
 
         /// <summary>
-        /// This example demonstrates how to learn two sequences and how to use the prediction mechanism.
-        /// First, two sequences are learned.
-        /// Second, three short sequences with three elements each are created und used for prediction. The predictor used by experiment privides to the HTM every element of every predicting sequence.
-        /// The predictor tries to predict the next element.
+        /// Demonstrates how to learn multiple sequences and use the prediction mechanism.
+        /// Captures results like cycle count, accuracy, duration, and status for each sequence.
         /// </summary>
-        private static void RunMultiSequenceLearningExperiment(int MaxNewSynapseCount, Dictionary<string, List<double>> sequence, List<List<double>> testList)
+        /// <param name="MaxNewSynapseCount">The maximum number of new synapses per segment.</param>
+        /// <param name="sequence">A dictionary containing sequences to learn.</param>
+        /// <param name="testList">A list of test sequences used for prediction validation.</param>
+        /// <param name="sequenceResults">Outputs results for each sequence, including cycle count, accuracy, duration, and status.</param>
+        public void RunMultiSequenceLearningExperiment(
+            int MaxNewSynapseCount,
+            Dictionary<string, List<double>> sequence,
+            List<List<double>> testList,
+            out Dictionary<string, (string CycleID, int CycleCount, double Accuracy, TimeSpan Duration, string Status, int maxNewSynapseCount)> sequenceResults)
         {
-            Dictionary<string, List<double>> sequences = sequence ;
+            // Local dictionary to store results
+            var localResults = new Dictionary<string, (string CycleID, int CycleCount, double Accuracy, TimeSpan Duration, string Status, int maxNewSynapseCount)>();
+            Dictionary<string, List<double>> sequences = sequence;
 
-            // Prototype for building the prediction engine.
-            MultiSequenceLearning experiment = new MultiSequenceLearning(MaxNewSynapseCount);
-            var predictor = experiment.Run(sequences);
-
-            //
-            // These list are used to see how the prediction works.
-            // Predictor is traversing the list element by element. 
-            // By providing more elements to the prediction, the predictor delivers more precise result.
             Console.WriteLine("Starting multi-sequence learning experiment...");
 
+            // Use a thread-safe structure for updating results in parallel
+            var resultsLock = new object();
+
+            // Parallel execution for each sequence
             Parallel.ForEach(sequences, sequence =>
             {
-                Log($"Processing {sequence.Key}...");
+                string sequenceKey = sequence.Key; // This will be used as CycleID
+                Log($"Processing {sequenceKey}...");
 
-                // Each sequence gets its own Predictor
-                MultiSequenceLearning experiment = new MultiSequenceLearning(MaxNewSynapseCount);
-                var predictor = experiment.Run(new Dictionary<string, List<double>> { { sequence.Key, sequence.Value } });
-
-                // Predict for test lists
-                var testLists = GenerateTestLists(testList);
-                foreach (var testList in testLists)
+                try
                 {
-                    predictor.Reset();
-                    PredictNextElement(predictor, testList);
-                }
+                    // Each sequence gets its own Predictor
+                    MultiSequenceLearning experiment = new MultiSequenceLearning(MaxNewSynapseCount);
+                    var predictor = experiment.Run(
+                        new Dictionary<string, List<double>> { { sequenceKey, sequence.Value } },
+                        out int cycleCount,
+                        out double accuracy,
+                        out TimeSpan duration,
+                        out string status,
+                        out int maxNewSynapseCount
+                    );
 
-                Log($"Finished processing {sequence.Key}.");
+                    // Predict for test lists
+                    var testLists = GenerateTestLists(testList);
+                    foreach (var testList in testLists)
+                    {
+                        predictor.Reset();
+                        PredictNextElement(predictor, testList);
+                    }
+
+                    // Log results for this sequence
+                    lock (resultsLock)
+                    {
+                        localResults[sequenceKey] = (sequenceKey, cycleCount, accuracy, duration, status, maxNewSynapseCount);
+                    }
+
+                    Log($"Finished processing {sequenceKey} with Cycle Count: {cycleCount}, Accuracy: {accuracy:F2}%, Duration: {duration}, Status: {status}.");
+                }
+                catch (Exception ex)
+                {
+                    // In case of failure, log the result as failed
+                    lock (resultsLock)
+                    {
+                        localResults[sequenceKey] = (sequenceKey, 0, 0.0, TimeSpan.Zero, "Failed", MaxNewSynapseCount);
+                    }
+
+                    Log($"Error processing {sequenceKey}: {ex.Message}");
+                }
             });
 
             Console.WriteLine("Experiment completed.");
+
+            // Assign local results to the out parameter
+            sequenceResults = localResults;
         }
 
+
+
         /// <summary>
-        /// Processes and returns test lists for predictions based on the provided data.
+        /// Processes and returns test lists for predictions based on the provided data. 
         /// </summary>
         /// <param name="testLists">A list of test sequences (List<List<double>>) to be used for predictions.</param>
         /// <returns>A list of test sequences converted to double arrays.</returns>

@@ -10,6 +10,7 @@ using Azure.Storage.Queues;
 using System.Text.Json;
 using System.Text;
 using System.Runtime.CompilerServices;
+using System.Collections.Generic;
 
 namespace MyCloudProject
 {
@@ -80,12 +81,16 @@ namespace MyCloudProject
 
 
                         // Here is your SE Project code started.(Between steps 4 and 5).
-                        IExperimentResult result = await experiment.RunAsync(eData.Sequences, eData.TestLists, eData.MaxNewSynapseCount);
+                        List<IExperimentResult> results = await experiment.RunAsync(eData.Sequences, eData.TestLists, eData.MaxNewSynapseCount);
 
                         // logging
 
                         // Step 5.
-                        await storageProvider.UploadResultAsync("outputfile", result);
+                        foreach (var result in results)
+                        {
+                            await storageProvider.UploadResultAsync('', result);
+                        }
+                        
 
                         // logging
 

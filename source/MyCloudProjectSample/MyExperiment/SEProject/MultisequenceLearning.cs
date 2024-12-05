@@ -1,4 +1,5 @@
-﻿using MyCloudProject.Common;
+﻿using Microsoft.Extensions.Logging;
+using MyCloudProject.Common;
 using NeoCortexApi;
 using NeoCortexApi.Classifiers;
 using NeoCortexApi.Encoders;
@@ -44,12 +45,13 @@ namespace SEProject
         /// </summary>
         /// <param name="sequences">A dictionary containing the sequences to be learned. Each key represents a sequence identifier, and its corresponding value is a list of double values constituting the sequence.</param>
         /// <returns>A Predictor object configured for making predictions based on the learned sequences.</returns>
-        public Predictor Run(Dictionary<string, List<double>> sequences, double defaultMaxSynapsesPerSegment = 0.40)
+        public Predictor Run(Dictionary<string, List<double>> sequences, out int finalCycleCount, out double finalAccuracy, out TimeSpan duration, out string status, out int maxNewSynapseCountValue3)
         {
             Console.WriteLine($"Hello NeocortexApi! Experiment {nameof(MultiSequenceLearning)}");
 
             int inputBits = 100;
             int numColumns = 1024;
+
 
             HtmConfig cfg = new HtmConfig(new int[] { inputBits }, new int[] { numColumns })
             {
@@ -65,8 +67,8 @@ namespace SEProject
                 MaxBoost = 10.0,
                 DutyCyclePeriod = 25,
                 MinPctOverlapDutyCycles = 0.75,
-                MaxSynapsesPerSegment = (int)(defaultMaxSynapsesPerSegment * numColumns),
-                MaxNewSynapseCount = this.maxNewSynapseCount,
+                MaxSynapsesPerSegment = (int)(0.40 * numColumns),
+                MaxNewSynapseCount = maxNewSynapseCount,
 
                 ActivationThreshold = 15,
                 ConnectedPermanence = 0.5,
@@ -94,8 +96,12 @@ namespace SEProject
             };
 
             EncoderBase encoder = new ScalarEncoder(settings);
-
-            return RunExperiment(inputBits, cfg, encoder, sequences);
+            finalCycleCount = 0;
+            finalAccuracy = 0;
+            duration = default;
+            status = null;
+            maxNewSynapseCountValue3= maxNewSynapseCount;
+            return RunExperiment(inputBits, cfg, encoder, sequences, out int finalCycleCount1, out double finalAccuracy1, out TimeSpan duration1, out string status1, out int maxNewSynapseCount1);
         }
 
         /// <summary>
@@ -109,11 +115,26 @@ namespace SEProject
         /// <param name="encoder">The encoder used to transform raw input into a binary representation suitable for the HTM network.</param>
         /// <param name="sequences">A collection of input sequences that the network will learn and predict. Each sequence is a list of double values.</param>
         /// <returns>A Predictor object that can be used to make predictions based on the learned model.</returns>
-        private Predictor RunExperiment(int inputBits, HtmConfig cfg, EncoderBase encoder, Dictionary<string, List<double>> sequences)
+        private Predictor RunExperiment(
+            int inputBits, 
+            HtmConfig cfg, 
+            EncoderBase encoder, 
+            Dictionary<string, 
+            List<double>> sequences, 
+            out int finalCycleCount,
+            out double finalAccuracy, 
+            out TimeSpan duration,
+            out string status,
+            out int maxNewSynapseCountValue2)
         {
+            finalCycleCount = 0;
+            finalAccuracy = 0;
+            status = "failed";
+            duration= TimeSpan.Zero;
+            maxNewSynapseCountValue2 = maxNewSynapseCount;
             Random rnd = new Random();
             int num = rnd.Next();
-            string fileName = "experiment_results" + "_" + num.ToString() + "_" + this.maxNewSynapseCount.ToString() + ".txt";
+            string fileName = "experiment_results" + "_" + num.ToString() + "_" + maxNewSynapseCount.ToString() + ".txt";
             CortexLayer<object, object> layer1 = new CortexLayer<object, object>("L1");
             var mem = new Connections(cfg);
             HtmClassifier<string, ComputeCycle> cls = new HtmClassifier<string, ComputeCycle>();
@@ -190,99 +211,116 @@ namespace SEProject
                     cls.ClearState();
                     layer1.HtmModules.Add("tm", tm);
 
-                    foreach (var sequenceKeyPair in sequences)
-                    {
-                        Console.WriteLine($"-------------- Sequences {sequenceKeyPair.Key} ---------------");
-
-                        int maxPrevInputs = sequenceKeyPair.Value.Count - 1;
-                        List<string> previousInputs = new List<string> { "-1.0" };
-                        bool isLearningCompleted = false;
-
-                        for (int i = 0; i < maxCycles; i++)
+                    try {
+                        foreach (var sequenceKeyPair in sequences)
                         {
-                            matches = 0;
-                            cycle++;
-                            Console.WriteLine($"-------------- Cycle {cycle} ---------------");
+                            Console.WriteLine($"-------------- Sequences {sequenceKeyPair.Key} ---------------");
 
-                            foreach (var input in sequenceKeyPair.Value)
+                            int maxPrevInputs = sequenceKeyPair.Value.Count - 1;
+                            List<string> previousInputs = new List<string> { "-1.0" };
+                            bool isLearningCompleted = false;
+
+                            for (int i = 0; i < maxCycles; i++)
                             {
-                                Console.WriteLine($"-------------- {input} ---------------");
+                                matches = 0;
+                                cycle++;
+                                Console.WriteLine($"-------------- Cycle {cycle} ---------------");
 
-                                var lyrOut = layer1.Compute(input, true) as ComputeCycle;
-                                var activeColumns = layer1.GetResult("sp") as int[];
-
-                                previousInputs.Add(input.ToString());
-                                if (previousInputs.Count > (maxPrevInputs + 1))
-                                    previousInputs.RemoveAt(0);
-
-                                if (previousInputs.Count < maxPrevInputs)
-                                    continue;
-
-                                string key = GetKey(previousInputs, input, sequenceKeyPair.Key);
-                                List<Cell> actCells = lyrOut.ActiveCells.Count == lyrOut.WinnerCells.Count ? lyrOut.ActiveCells : lyrOut.WinnerCells;
-                                cls.Learn(key, actCells.ToArray());
-
-                                if (lastPredictedValues.Contains(key))
+                                foreach (var input in sequenceKeyPair.Value)
                                 {
-                                    matches++;
-                                    Console.WriteLine($"Match. Actual value: {key} - Predicted value: {lastPredictedValues.FirstOrDefault(key)}.");
-                                }
-                                else
-                                {
-                                    Console.WriteLine($"Missmatch! Actual value: {key} - Predicted values: {string.Join(',', lastPredictedValues)}");
-                                }
+                                    Console.WriteLine($"-------------- {input} ---------------");
 
-                                if (lyrOut.PredictiveCells.Count > 0)
-                                {
-                                    var predictedInputValues = cls.GetPredictedInputValues(lyrOut.PredictiveCells.ToArray(), 3);
-                                    foreach (var item in predictedInputValues)
+                                    var lyrOut = layer1.Compute(input, true) as ComputeCycle;
+                                    var activeColumns = layer1.GetResult("sp") as int[];
+
+                                    previousInputs.Add(input.ToString());
+                                    if (previousInputs.Count > maxPrevInputs + 1)
+                                        previousInputs.RemoveAt(0);
+
+                                    if (previousInputs.Count < maxPrevInputs)
+                                        continue;
+
+                                    string key = GetKey(previousInputs, input, sequenceKeyPair.Key);
+                                    List<Cell> actCells = lyrOut.ActiveCells.Count == lyrOut.WinnerCells.Count ? lyrOut.ActiveCells : lyrOut.WinnerCells;
+                                    cls.Learn(key, actCells.ToArray());
+
+                                    if (lastPredictedValues.Contains(key))
                                     {
-                                        Console.WriteLine($"Current Input: {input} \t| Predicted Input: {item.PredictedInput} - {item.Similarity}");
+                                        matches++;
+                                        Console.WriteLine($"Match. Actual value: {key} - Predicted value: {lastPredictedValues.FirstOrDefault(key)}.");
                                     }
-                                    lastPredictedValues = predictedInputValues.Select(v => v.PredictedInput).ToList();
+                                    else
+                                    {
+                                        Console.WriteLine($"Missmatch! Actual value: {key} - Predicted values: {string.Join(',', lastPredictedValues)}");
+                                    }
+
+                                    if (lyrOut.PredictiveCells.Count > 0)
+                                    {
+                                        var predictedInputValues = cls.GetPredictedInputValues(lyrOut.PredictiveCells.ToArray(), 3);
+                                        foreach (var item in predictedInputValues)
+                                        {
+                                            Console.WriteLine($"Current Input: {input} \t| Predicted Input: {item.PredictedInput} - {item.Similarity}");
+                                        }
+                                        lastPredictedValues = predictedInputValues.Select(v => v.PredictedInput).ToList();
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine($"NO CELLS PREDICTED for next cycle.");
+                                        lastPredictedValues = new List<string>();
+                                    }
                                 }
-                                else
+
+                                double maxPossibleAccuracy = (double)((double)sequenceKeyPair.Value.Count - 1) / sequenceKeyPair.Value.Count * 100.0;
+                                double accuracy = matches / (double)sequenceKeyPair.Value.Count * 100.0;
+
+                                writer.WriteLine($"Sequence: {sequenceKeyPair.Key}, Cycle: {cycle}, Matches: {matches}, Accuracy: {accuracy}%");
+                                writer.Flush(); // Ensure the latest data is written to the memory stream
+                                Console.WriteLine($"Sequence: {sequenceKeyPair.Key}, Cycle: {cycle}, Matches: {matches}, Accuracy: {accuracy}%");
+
+                                if (accuracy >= maxPossibleAccuracy)
                                 {
-                                    Console.WriteLine($"NO CELLS PREDICTED for next cycle.");
-                                    lastPredictedValues = new List<string>();
+                                    maxMatchCnt++;
+                                    Console.WriteLine($"100% accuracy reached {maxMatchCnt} times.");
+                                    if (maxMatchCnt >= 30)
+                                    {
+                                        sw.Stop();
+                                        Debug.WriteLine($"Sequence learned. The algorithm is in the stable state after 30 repeats with with accuracy {accuracy} of maximum possible {maxMatchCnt}. Elapsed sequence {sequenceKeyPair.Key} learning time: {sw.Elapsed}.");
+                                        isLearningCompleted = true;
+                                        finalAccuracy = accuracy;
+                                        finalCycleCount = cycle;
+                                        status = "passed";
+                                        duration = sw.Elapsed;
+                                        maxNewSynapseCountValue2 = maxNewSynapseCount;
+                                        break;
+                                    }
                                 }
-                            }
-
-                            double maxPossibleAccuracy = (double)((double)sequenceKeyPair.Value.Count - 1) / (double)sequenceKeyPair.Value.Count * 100.0;
-                            double accuracy = (double)matches / (double)sequenceKeyPair.Value.Count * 100.0;
-
-                            writer.WriteLine($"Sequence: {sequenceKeyPair.Key}, Cycle: {cycle}, Matches: {matches}, Accuracy: {accuracy}%");
-                            writer.Flush(); // Ensure the latest data is written to the memory stream
-                            Console.WriteLine($"Sequence: {sequenceKeyPair.Key}, Cycle: {cycle}, Matches: {matches}, Accuracy: {accuracy}%");
-
-                            if (accuracy >= maxPossibleAccuracy)
-                            {
-                                maxMatchCnt++;
-                                Console.WriteLine($"100% accuracy reached {maxMatchCnt} times.");
-                                if (maxMatchCnt >= 30)
+                                else if (maxMatchCnt > 0)
                                 {
-                                    sw.Stop();
-                                    Console.WriteLine($"Sequence learned. The algorithm is in the stable state after 30 repeats with accuracy {accuracy} of maximum possible {maxMatchCnt}. Elapsed sequence {sequenceKeyPair.Key} learning time: {sw.Elapsed}.");
-                                    isLearningCompleted = true;
-                                    break;
+                                    Debug.WriteLine($"At 100% accuracy after {maxMatchCnt} repeats we get a drop of accuracy with accuracy {accuracy}. This indicates instable state. Learning will be continued.");
+                                    maxMatchCnt = 0;
                                 }
-                            }
-                            else if (maxMatchCnt > 0)
-                            {
-                                Debug.WriteLine($"At 100% accuracy after {maxMatchCnt} repeats we get a drop of accuracy with accuracy {accuracy}. This indicates instable state. Learning will be continued.");
-                                maxMatchCnt = 0;
+
+                                tm.Reset(mem);
                             }
 
-                            tm.Reset(mem);
+                            if (!isLearningCompleted)
+                                throw new Exception($"The system didn't learn with expected accuracy!");
                         }
-
-                        if (!isLearningCompleted)
-                            throw new Exception($"The system didn't learn with expected accuracy!");
+                        sw.Stop();
+                        writer.WriteLine("Experiment End: " + DateTime.Now);
+                        writer.WriteLine($"Total Experiment Duration: {sw.Elapsed}");
+                        writer.Flush();
                     }
-                    sw.Stop();
-                    writer.WriteLine("Experiment End: " + DateTime.Now);
-                    writer.WriteLine($"Total Experiment Duration: {sw.Elapsed}");
-                    writer.Flush(); // Ensure all data is written to the memory stream
+                    catch( Exception ex ) {
+                        finalAccuracy = 0.0;
+                        finalCycleCount = cycle;
+                        status = "failed";
+                        duration = sw.Elapsed;
+                        maxNewSynapseCountValue2 = maxNewSynapseCount;
+                        Debug.WriteLine($"Error occured while learning '{ex}'.");
+
+                    }
+
                 }
 
                 memoryStream.Position = 0; // Reset the position of the memory stream to the beginning
@@ -294,7 +332,6 @@ namespace SEProject
                 {
                     Console.WriteLine(ex.Message);
                 }
-                
 
                 return new Predictor(layer1, mem, cls);
             }

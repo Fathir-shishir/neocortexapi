@@ -35,7 +35,7 @@ namespace MyExperiment
         /// <summary>
         /// Runs the experiment asynchronously.
         /// </summary>
-        public async Task<List<IExperimentResult>> RunAsync(Dictionary<string, List<double>> sequences, List<List<double>> testList, int maxNewSynapseCount)
+        public async Task<List<IExperimentResult>> RunAsync(Dictionary<string, List<double>> sequences, List<List<double>> testList, int maxNewSynapseCountValue)
         {
             var overallResults = new List<IExperimentResult>();
             logger?.LogInformation("Experiment started...");
@@ -44,12 +44,12 @@ namespace MyExperiment
 
             try
             {
-                Dictionary<string, (string CycleID, int CycleCount, double Accuracy, TimeSpan Duration, string Status, int maxNewSynapseCount1)> sequenceResults;
-                RunMultiSequenceLearningExperiment(maxNewSynapseCount, sequences, testList, out sequenceResults);
+                Dictionary<string, (string CycleID, int CycleCount, double Accuracy, TimeSpan Duration, string Status)> sequenceResults;
+                RunMultiSequenceLearningExperiment(maxNewSynapseCountValue, sequences, testList, out sequenceResults);
 
                 foreach (var sequenceKey in sequenceResults.Keys)
                 {
-                    var (cycleID, cycleCount, accuracy, duration, status, maxNewSynapseCount1) = sequenceResults[sequenceKey];
+                    var (cycleID, cycleCount, accuracy, duration, status) = sequenceResults[sequenceKey];
 
                     var sequenceResult = new ExperimentResult(config.GroupId, Guid.NewGuid().ToString())
                     {
@@ -61,7 +61,7 @@ namespace MyExperiment
                         sequence = cycleCount,
                         status = status,
                         Accuracy = (float)accuracy,
-                        MaxNewSynapseCount = maxNewSynapseCount
+                        MaxNewSynapseCount = maxNewSynapseCountValue
                     };
 
                     logger?.LogInformation($"Processed Sequence: {sequenceKey}");
@@ -70,7 +70,7 @@ namespace MyExperiment
                     logger?.LogInformation($"  Accuracy: {accuracy:F2}%");
                     logger?.LogInformation($"  Duration: {duration}");
                     logger?.LogInformation($"  Status: {status}");
-                    logger?.LogInformation($"  Status: {maxNewSynapseCount}");
+                    logger?.LogInformation($"  Status: {maxNewSynapseCountValue}");
 
                     overallResults.Add(sequenceResult);
                 }
@@ -91,7 +91,8 @@ namespace MyExperiment
                     SequenceID = "Failed",
                     sequence = 0,
                     status = "Failed",
-                    Accuracy = 0
+                    Accuracy = 0,
+                    MaxNewSynapseCount = maxNewSynapseCountValue
                 });
             }
 
@@ -103,20 +104,21 @@ namespace MyExperiment
         /// Runs the multi-sequence learning experiment.
         /// </summary>
         private void RunMultiSequenceLearningExperiment(
-            int maxNewSynapseCount,
+            int maxNewSynapseCountValue,
             Dictionary<string, List<double>> sequences,
             List<List<double>> testList,
-            out Dictionary<string, (string CycleID, int CycleCount, double Accuracy, TimeSpan Duration, string Status, int maxNewSynapseCount)> sequenceResults)
+            out Dictionary<string, (string CycleID, int CycleCount, double Accuracy, TimeSpan Duration, string Status)> sequenceResults)
         {
             Program1 program = new Program1();
-            program.RunMultiSequenceLearningExperiment(maxNewSynapseCount, sequences, testList, out sequenceResults);
+            logger?.LogInformation($"1st call maxNewSynapseCount: {maxNewSynapseCountValue}");
+            program.RunMultiSequenceLearningExperiment(maxNewSynapseCountValue, sequences, testList, out sequenceResults);
         }
 
         /// <summary>
         /// Processes and logs the results of the sequence learning experiment.
         /// </summary>
         private void ProcessSequenceResults(
-            Dictionary<string, (string CycleID, int CycleCount, double Accuracy, TimeSpan Duration, string Status, int maxNewSynapsCount)> sequenceResults,
+            Dictionary<string, (string CycleID, int CycleCount, double Accuracy, TimeSpan Duration, string Status)> sequenceResults,
             ExperimentResult overallResult)
         {
             var aggregatedDescription = new StringBuilder();
@@ -126,7 +128,7 @@ namespace MyExperiment
             foreach (var item in sequenceResults)
             {
                 string sequenceKey = item.Key;
-                var (cycleID, cycleCount, accuracy, duration, status, maxNewSynapseCount) = item.Value;
+                var (cycleID, cycleCount, accuracy, duration, status) = item.Value;
 
                 logger?.LogInformation($"Sequence Key: {sequenceKey}");
                 logger?.LogInformation($"  Cycle ID: {cycleID}");

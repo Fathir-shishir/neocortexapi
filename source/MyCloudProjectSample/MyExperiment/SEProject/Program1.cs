@@ -50,10 +50,10 @@ namespace SEProject
             int MaxNewSynapseCount,
             Dictionary<string, List<double>> sequence,
             List<List<double>> testList,
-            out Dictionary<string, (string CycleID, int CycleCount, double Accuracy, TimeSpan Duration, string Status, int maxNewSynapseCount)> sequenceResults)
+            out Dictionary<string, (string CycleID, int CycleCount, double Accuracy, TimeSpan Duration, string Status)> sequenceResults)
         {
             // Local dictionary to store results
-            var localResults = new Dictionary<string, (string CycleID, int CycleCount, double Accuracy, TimeSpan Duration, string Status, int maxNewSynapseCount)>();
+            var localResults = new Dictionary<string, (string CycleID, int CycleCount, double Accuracy, TimeSpan Duration, string Status)>();
             Dictionary<string, List<double>> sequences = sequence;
 
             Console.WriteLine("Starting multi-sequence learning experiment...");
@@ -69,6 +69,7 @@ namespace SEProject
 
                 try
                 {
+                    Log($"Just inside the parrallel loop and the value is{MaxNewSynapseCount}");
                     // Each sequence gets its own Predictor
                     MultiSequenceLearning experiment = new MultiSequenceLearning(MaxNewSynapseCount);
                     var predictor = experiment.Run(
@@ -76,8 +77,7 @@ namespace SEProject
                         out int cycleCount,
                         out double accuracy,
                         out TimeSpan duration,
-                        out string status,
-                        out int maxNewSynapseCount
+                        out string status
                     );
 
                     // Predict for test lists
@@ -91,7 +91,7 @@ namespace SEProject
                     // Log results for this sequence
                     lock (resultsLock)
                     {
-                        localResults[sequenceKey] = (sequenceKey, cycleCount, accuracy, duration, status, maxNewSynapseCount);
+                        localResults[sequenceKey] = (sequenceKey, cycleCount, accuracy, duration, status);
                     }
 
                     Log($"Finished processing {sequenceKey} with Cycle Count: {cycleCount}, Accuracy: {accuracy:F2}%, Duration: {duration}, Status: {status}.");
@@ -101,7 +101,7 @@ namespace SEProject
                     // In case of failure, log the result as failed
                     lock (resultsLock)
                     {
-                        localResults[sequenceKey] = (sequenceKey, 0, 0.0, TimeSpan.Zero, "Failed", MaxNewSynapseCount);
+                        localResults[sequenceKey] = (sequenceKey, 0, 0.0, TimeSpan.Zero, "Failed");
                     }
 
                     Log($"Error processing {sequenceKey}: {ex.Message}");

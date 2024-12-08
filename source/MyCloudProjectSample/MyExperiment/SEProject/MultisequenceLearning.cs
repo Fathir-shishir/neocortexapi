@@ -45,13 +45,12 @@ namespace SEProject
         /// </summary>
         /// <param name="sequences">A dictionary containing the sequences to be learned. Each key represents a sequence identifier, and its corresponding value is a list of double values constituting the sequence.</param>
         /// <returns>A Predictor object configured for making predictions based on the learned sequences.</returns>
-        public Predictor Run(Dictionary<string, List<double>> sequences, out int finalCycleCount, out double finalAccuracy, out TimeSpan duration, out string status, out int maxNewSynapseCountValue3)
+        public Predictor Run(Dictionary<string, List<double>> sequences, out int finalCycleCount, out double finalAccuracy, out TimeSpan duration, out string status)
         {
             Console.WriteLine($"Hello NeocortexApi! Experiment {nameof(MultiSequenceLearning)}");
 
             int inputBits = 100;
             int numColumns = 1024;
-
 
             HtmConfig cfg = new HtmConfig(new int[] { inputBits }, new int[] { numColumns })
             {
@@ -62,7 +61,6 @@ namespace SEProject
                 LocalAreaDensity = -1,
                 NumActiveColumnsPerInhArea = 0.02 * numColumns,
                 PotentialRadius = (int)(0.15 * inputBits),
-                //InhibitionRadius = 15,
 
                 MaxBoost = 10.0,
                 DutyCyclePeriod = 25,
@@ -72,12 +70,8 @@ namespace SEProject
 
                 ActivationThreshold = 15,
                 ConnectedPermanence = 0.5,
-
-                // Learning is slower than forgetting in this case.
                 PermanenceDecrement = 0.25,
                 PermanenceIncrement = 0.15,
-
-                // Used by punishing of segments.
                 PredictedSegmentDecrement = 0.1
             };
 
@@ -85,23 +79,19 @@ namespace SEProject
 
             Dictionary<string, object> settings = new Dictionary<string, object>()
             {
-                { "W", 15},
-                { "N", inputBits},
-                { "Radius", -1.0},
-                { "MinVal", 0.0},
-                { "Periodic", false},
-                { "Name", "scalar"},
-                { "ClipInput", false},
-                { "MaxVal", max}
+                { "W", 15 },
+                { "N", inputBits },
+                { "Radius", -1.0 },
+                { "MinVal", 0.0 },
+                { "Periodic", false },
+                { "Name", "scalar" },
+                { "ClipInput", false },
+                { "MaxVal", max }
             };
 
             EncoderBase encoder = new ScalarEncoder(settings);
-            finalCycleCount = 0;
-            finalAccuracy = 0;
-            duration = default;
-            status = null;
-            maxNewSynapseCountValue3= maxNewSynapseCount;
-            return RunExperiment(inputBits, cfg, encoder, sequences, out int finalCycleCount1, out double finalAccuracy1, out TimeSpan duration1, out string status1, out int maxNewSynapseCount1);
+
+            return RunExperiment(inputBits, cfg, encoder, sequences, out finalCycleCount, out finalAccuracy, out duration, out status);
         }
 
         /// <summary>
@@ -115,7 +105,7 @@ namespace SEProject
         /// <param name="encoder">The encoder used to transform raw input into a binary representation suitable for the HTM network.</param>
         /// <param name="sequences">A collection of input sequences that the network will learn and predict. Each sequence is a list of double values.</param>
         /// <returns>A Predictor object that can be used to make predictions based on the learned model.</returns>
-        private Predictor RunExperiment(
+        private Predictor RunExperiment( 
             int inputBits, 
             HtmConfig cfg, 
             EncoderBase encoder, 
@@ -124,14 +114,12 @@ namespace SEProject
             out int finalCycleCount,
             out double finalAccuracy, 
             out TimeSpan duration,
-            out string status,
-            out int maxNewSynapseCountValue2)
+            out string status)
         {
             finalCycleCount = 0;
             finalAccuracy = 0;
             status = "failed";
             duration= TimeSpan.Zero;
-            maxNewSynapseCountValue2 = maxNewSynapseCount;
             Random rnd = new Random();
             int num = rnd.Next();
             string fileName = "experiment_results" + "_" + num.ToString() + "_" + maxNewSynapseCount.ToString() + ".txt";
@@ -290,7 +278,6 @@ namespace SEProject
                                         finalCycleCount = cycle;
                                         status = "passed";
                                         duration = sw.Elapsed;
-                                        maxNewSynapseCountValue2 = maxNewSynapseCount;
                                         break;
                                     }
                                 }
@@ -316,7 +303,6 @@ namespace SEProject
                         finalCycleCount = cycle;
                         status = "failed";
                         duration = sw.Elapsed;
-                        maxNewSynapseCountValue2 = maxNewSynapseCount;
                         Debug.WriteLine($"Error occured while learning '{ex}'.");
 
                     }
@@ -327,7 +313,7 @@ namespace SEProject
                                            // At this point, you can upload `memoryStream` to Azure Blob Storage
 
                 try {
-                    storageProvider.UploadResultFile($"Test_data_{DateTime.UtcNow.ToString("yyyy-MM-dd_HH-mm-ss")}_MaxNewSynapseCountValue_{maxNewSynapseCount}.txt", memoryStream);
+                   storageProvider.UploadResultFile($"Test_data_{DateTime.UtcNow.ToString("yyyy-MM-dd_HH-mm-ss")}_MaxNewSynapseCountValue_{maxNewSynapseCount}.txt", memoryStream);
                 } catch(Exception ex)
                 {
                     Console.WriteLine(ex.Message);

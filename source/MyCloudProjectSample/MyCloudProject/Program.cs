@@ -77,7 +77,7 @@ namespace MyCloudProject
 
                         // logging
 
-
+                        logger?.LogInformation($"1st 1st MaxNewSynapseCount value '{eData.MaxNewSynapseCount}'");
 
 
                         // Here is your SE Project code started.(Between steps 4 and 5).

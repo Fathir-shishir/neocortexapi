@@ -81,6 +81,8 @@ namespace MyExperiment
                     string msgTxt = Encoding.UTF8.GetString(message.Body.ToArray());
                     ExerimentRequestMessage request = JsonSerializer.Deserialize<ExerimentRequestMessage>(msgTxt);
                     request.ExperimentId = message.MessageId;
+
+                    await queueClient.DeleteMessageAsync(message.MessageId, message.PopReceipt);
                     return request;
                 }
                 catch (JsonException jsonEx)

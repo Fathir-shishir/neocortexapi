@@ -35,7 +35,7 @@ namespace MyExperiment
         public DateTime? EndTimeUtc { get; set; }
 
         public string SequenceID { get; set; }
-        
+
         public int sequence { get; set; }
 
         public string status { get; set; }
@@ -43,5 +43,7 @@ namespace MyExperiment
         public float Accuracy { get; set; }
 
         public TimeSpan Duration { get; set; }
+
+        public int MaxNewSynapseCount { get; set; }
     }
 }

@@ -11,6 +11,7 @@ using System.Text.Json;
 using System.Text;
 using System.Runtime.CompilerServices;
 using System.Collections.Generic;
+using System.IO;
 
 namespace MyCloudProject
 {
@@ -21,8 +22,6 @@ namespace MyCloudProject
         /// Your project ID from the last semester.
         /// </summary>
         private static string _projectName = "ML22/23-13 Investigate Influence of parameter MaxNewSynapseCount";
-
-        string test;
 
         static async Task Main(string[] args)
         {
@@ -65,7 +64,6 @@ namespace MyCloudProject
                 {
                     try
                     {
-                        // logging
                         logger?.LogInformation($"{DateTime.Now} -  In to the experiment...");
 
                         // Step 4.
@@ -75,32 +73,34 @@ namespace MyCloudProject
 
                         ExperimentData eData = await getAndDeserializeDataFromBlobContainerAsync(fileCFontent);
 
-                        // logging
-
                         logger?.LogInformation($"1st 1st MaxNewSynapseCount value '{eData.MaxNewSynapseCount}'");
-
 
                         // Here is your SE Project code started.(Between steps 4 and 5).
                         List<IExperimentResult> results = await experiment.RunAsync(eData.Sequences, eData.TestLists, eData.MaxNewSynapseCount);
 
-                        // logging
-
                         // Step 5.
                         foreach (var result in results)
                         {
-                            await storageProvider.UploadResultAsync(result);
+                            await storageProvider.UploadExperimentResult(result);
                         }
-                        
 
-                        // logging
+                        foreach (var result in results)
+                        {
+                            string fileName = GenerateFileName(result);
+
+                            // Step 6.2: Convert the result to MemoryStream
+                            using (MemoryStream memoryStream = ConvertResultToMemoryStream(result))
+                            {
+                                await storageProvider.UploadResultAsync(fileName, memoryStream);
+                            }
+                        }
+
 
                         await storageProvider.CommitRequestAsync(request);
-
-                        // loggingx
                     }
                     catch (Exception ex)
                     {
-                        // logging
+                        logger?.LogError($"This happened: '{ex.Message}'");
                     }
                 }
                 else
@@ -132,6 +132,35 @@ namespace MyCloudProject
         private static async Task<ExperimentData> DeserializeExperimentData(string jsonString)
         {
             return JsonSerializer.Deserialize<ExperimentData>(jsonString);
+        }
+
+        /// <summary>
+        /// Generates a unique and readable file name based on IExperimentResult values.
+        /// </summary>
+        private static string GenerateFileName(IExperimentResult result)
+        {
+            string timestamp = DateTime.UtcNow.ToString("yyyyMMdd_HHmmss");
+            string experimentId = result.ExperimentId ?? "Experiment";
+            string sequenceId = result.SequenceID ?? "UnknownSequence";
+            string status = result.status ?? "UnknownStatus";
+
+            return $"{experimentId}_{sequenceId}_{status}_{timestamp}.json";
+        }
+
+        /// <summary>
+        /// Converts IExperimentResult object into a MemoryStream.
+        /// </summary>
+        private static MemoryStream ConvertResultToMemoryStream(IExperimentResult result)
+        {
+            string jsonContent = JsonSerializer.Serialize(result, new JsonSerializerOptions { WriteIndented = true });
+            MemoryStream memoryStream = new MemoryStream();
+            StreamWriter writer = new StreamWriter(memoryStream);
+
+            writer.Write(jsonContent);
+            writer.Flush();
+            memoryStream.Position = 0;
+
+            return memoryStream;
         }
 
 

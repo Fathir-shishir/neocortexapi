@@ -29,11 +29,11 @@ namespace MyCloudProject.Common
         Task<string> DownloadInputAsync(string fileName);
 
         /// <summary>
-        /// Uploads the result of the experiment in the cloud or any other kind of store or database.
+        /// Uploads the result of the experiment to a table
         /// </summary>
-        /// <param name="result">The result of the experiment that should be uploaded to the table.</param>
-        /// <remarks>See step 5 (oposite way) in the architecture picture.</remarks>
-        Task UploadResultAsync(IExperimentResult result);
+        /// <param name="result"></param>
+        /// <returns></returns>
+        Task UploadExperimentResult(IExperimentResult result);
 
         /// <summary>
         /// Makes sure that the message is deleted from the queue.
@@ -42,7 +42,12 @@ namespace MyCloudProject.Common
         /// <returns></returns>
         Task CommitRequestAsync(IExerimentRequest request);
 
-        Task UploadResultFile(string fileName, MemoryStream memoryStream);
+        /// <summary>
+        /// Uploads the result of the experiment in the cloud or any other kind of store or database.
+        /// </summary>
+        /// <param name="result">The result of the experiment that should be uploaded to the table.</param>
+        /// <remarks>See step 5 (oposite way) in the architecture picture.</remarks>
+        Task UploadResultAsync(string fileName, MemoryStream memoryStream);
 
     }
 }

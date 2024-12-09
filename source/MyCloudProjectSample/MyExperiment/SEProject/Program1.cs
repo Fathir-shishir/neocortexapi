@@ -69,7 +69,6 @@ namespace SEProject
 
                 try
                 {
-                    Log($"Just inside the parrallel loop and the value is{MaxNewSynapseCount}");
                     // Each sequence gets its own Predictor
                     MultiSequenceLearning experiment = new MultiSequenceLearning(MaxNewSynapseCount);
                     var predictor = experiment.Run(

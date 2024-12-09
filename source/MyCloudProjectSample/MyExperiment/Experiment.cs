@@ -110,7 +110,6 @@ namespace MyExperiment
             out Dictionary<string, (string CycleID, int CycleCount, double Accuracy, TimeSpan Duration, string Status)> sequenceResults)
         {
             Program1 program = new Program1();
-            logger?.LogInformation($"1st call maxNewSynapseCount: {maxNewSynapseCountValue}");
             program.RunMultiSequenceLearningExperiment(maxNewSynapseCountValue, sequences, testList, out sequenceResults);
         }
 

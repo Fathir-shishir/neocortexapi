@@ -312,13 +312,6 @@ namespace SEProject
                 memoryStream.Position = 0; // Reset the position of the memory stream to the beginning
                                            // At this point, you can upload `memoryStream` to Azure Blob Storage
 
-                try {
-                   storageProvider.UploadResultFile($"Test_data_{DateTime.UtcNow.ToString("yyyy-MM-dd_HH-mm-ss")}_MaxNewSynapseCountValue_{maxNewSynapseCount}.txt", memoryStream);
-                } catch(Exception ex)
-                {
-                    Console.WriteLine(ex.Message);
-                }
-
                 return new Predictor(layer1, mem, cls);
             }
         }

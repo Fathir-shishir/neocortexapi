@@ -11,10 +11,12 @@ using MyCloudProject.Common;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text;
 using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Xml;
 
 namespace MyExperiment
 {
@@ -23,6 +25,10 @@ namespace MyExperiment
         private MyConfig _config;
         private ILogger logger;
 
+        /// <summary>
+        /// Configuration parameter initialization for Azure cloud
+        /// </summary>
+        /// <param name="configSection"></param>
         public AzureStorageProvider(IConfigurationSection configSection)
         {
             _config = new MyConfig();
@@ -36,7 +42,22 @@ namespace MyExperiment
         public async Task CommitRequestAsync(IExerimentRequest request)
         {
             var queueClient = new QueueClient(_config.StorageConnectionString, _config.Queue);
-            await queueClient.DeleteMessageAsync(request.MessageId, request.MessageReceipt);
+
+            if (string.IsNullOrWhiteSpace(request.MessageId) || string.IsNullOrWhiteSpace(request.PopReceipt))
+            {
+                throw new ArgumentException("Invalid MessageId or PopReceipt for the request.");
+            }
+
+            try
+            {
+                await queueClient.DeleteMessageAsync(request.MessageId, request.PopReceipt);
+                Console.WriteLine("Message deleted successfully.");
+            }
+            catch (RequestFailedException ex)
+            {
+                Console.WriteLine($"Failed to delete message: {ex.Message}");
+                // Handle cases where the message might already be deleted or the receipt is invalid
+            }
         }
 
         /// <summary>
@@ -108,6 +129,8 @@ namespace MyExperiment
                     // Process the received message
                     string msgTxt = Encoding.UTF8.GetString(message.Body.ToArray());
                     ExerimentRequestMessage request = JsonSerializer.Deserialize<ExerimentRequestMessage>(msgTxt);
+                    request.MessageId = message.MessageId;
+                    request.PopReceipt = message.PopReceipt;
                     return request;
                 }
                 catch (JsonException jsonEx)
@@ -206,6 +229,100 @@ namespace MyExperiment
             BlobClient blobClient = containerClient.GetBlobClient(blobName);
             await blobClient.UploadAsync(memoryStream);
         }
+
+        /// <summary>
+        /// Uploads the efficiency results of the experiment based on the provided request.
+        /// This includes analyzing the experiment's performance metrics (e.g., average duration, accuracy, sequence count) 
+        /// and saving the results in the appropriate storage.
+        /// </summary>
+        /// <param name="request">The experiment request containing details about the experiment to process.</param>
+        /// <returns>A Task representing the asynchronous operation.</returns>
+        public async Task UploadEfficiencyResultAsync(IExerimentRequest request)
+        {
+            try
+            {
+                Console.WriteLine($"Starting efficiency result upload for Experiment ID: {request.ExperimentId}");
+
+                // Initialize table client for the results table
+                var client = new TableClient(_config.StorageConnectionString, _config.ResultTable);
+                await client.CreateIfNotExistsAsync();
+
+                // Query to get results for the specified MaxNewSynapseCount
+                var filter = $"MaxNewSynapseCount eq {request.MaxNewSynapseCount}";
+                var experimentResults = client.Query<TableEntity>(filter);
+
+                // Initialize accumulators
+                double totalAccuracy = 0;
+                double totalDuration = 0;
+                int totalSequences = 0;
+                int failedSequences = 0;
+                int totalExperimentCount = 0;
+
+                foreach (var entity in experimentResults)
+                {
+                    // Retrieve fields
+                    var accuracy = entity.GetInt32("Accuracy");
+                    var duration = XmlConvert.ToTimeSpan(entity.GetString("Duration"));
+                    var sequence = entity.GetInt32("sequence");
+                    var status = entity.GetString("status");
+
+                    Console.WriteLine($"Queried Entity - Accuracy: {accuracy}, Duration: {duration}, Sequences: {sequence}");
+
+                    totalExperimentCount++;
+                    if (status == "failed")
+                    {
+                        failedSequences++;
+                    }
+                    else
+                    {
+                        totalAccuracy += accuracy ?? 0.0;
+                        totalDuration += duration.TotalSeconds;
+                        totalSequences += sequence ?? 0;
+                    }
+                }
+
+                if (totalExperimentCount == 0)
+                {
+                    Console.WriteLine("No experiment results found for the specified MaxNewSynapseCount.");
+                    return;
+                }
+
+                // Calculate averages
+                var averageAccuracy = totalAccuracy / totalExperimentCount;
+                var averageDuration = TimeSpan.FromSeconds(totalDuration / totalExperimentCount);
+                var failureRate = (float)failedSequences / totalExperimentCount * 100;
+                var averageSequenceCount = (float)totalSequences / totalExperimentCount;
+
+                Console.WriteLine($"Computed Averages - Accuracy: {averageAccuracy:F2}%, Duration: {averageDuration}, Sequences: {averageSequenceCount}, Fail Rate: {failureRate:F2}%");
+
+                // Create and upload efficiency result
+                var partitionKey = $"team-as-{Guid.NewGuid()}";
+                var rowKey = Guid.NewGuid().ToString();
+
+                var efficiencyResult = new EfficiencyResult(partitionKey, rowKey)
+                {
+                    AverageAccuracy = (double)averageAccuracy,
+                    AverageDuration = averageDuration,
+                    AverageSequenceCount = averageSequenceCount,
+                    FailureRate = failureRate,
+                    MaxNewSynapseCount = request.MaxNewSynapseCount,
+                    ExperimentId = request.ExperimentId,
+                };
+
+                var efficiencyTableClient = new TableClient(_config.StorageConnectionString, _config.EfficiencyResultTable);
+                await efficiencyTableClient.UpsertEntityAsync(efficiencyResult);
+
+                Console.WriteLine("Efficiency results uploaded successfully.");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error uploading efficiency results: {ex.Message}");
+            }
+        }
+
+
+
+
 
 
     }

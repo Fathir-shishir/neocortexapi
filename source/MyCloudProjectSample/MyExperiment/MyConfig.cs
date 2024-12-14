@@ -37,6 +37,11 @@ namespace MyExperiment
         /// </summary>
         public string GroupId { get; set; }
 
+        /// <summary>
+        /// The name of the efficiency result table
+        /// </summary>
+        public string EfficiencyResultTable { get; set; }
+
     }
 }
 

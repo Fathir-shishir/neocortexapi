@@ -23,7 +23,7 @@
         /// <summary>
         /// Gets or sets the maximum number of new synapses that can be formed during the experiment.
         /// </summary>
-        public int maxNewSynapseCount { get; set; }
+        public int MaxNewSynapseCount { get; set; }
 
         /// <summary>
         /// Gets or sets the file path or name containing the input data for the experiment.
@@ -31,14 +31,18 @@
         public string file { get; set; }
 
         /// <summary>
-        /// Gets or sets a unique identifier for the queue message itself, used for message tracking and deletion.
+        /// Gets or sets the operation type wheather to calculate the efficiency or the the sequence operation 
+        /// </summary>
+        public string OperationType { get; set; }
+
+        /// <summary>
+        /// Gets or sets the unique identifier for the queue message associated with the experiment request.
         /// </summary>
         public string MessageId { get; set; }
 
         /// <summary>
-        /// Gets or sets the receipt acknowledging that the message has been successfully received and processed.
-        /// This is required to confirm and delete the message from the queue.
+        /// Gets or sets the pop receipt acknowledging the retrieval of the queue message.
         /// </summary>
-        public string MessageReceipt { get; set; }
+        public string PopReceipt { get; set; }
     }
 }

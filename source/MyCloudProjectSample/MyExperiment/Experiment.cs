@@ -142,8 +142,12 @@ namespace MyExperiment
             }
 
         }
+
     }
 
+    /// <summary>
+    /// Getters and setters of Sequence results which are derived from the MultiSequenceLearning
+    /// </summary>
     public class SequenceResult
     {
         public string CycleID { get; set; }

@@ -10,6 +10,10 @@ namespace MyExperiment
 
     public class ExperimentResult : ITableEntity, IExperimentResult
     {
+        public ExperimentResult()
+        {
+        }
+
         public ExperimentResult(string partitionKey, string rowKey)
         {
             this.PartitionKey = partitionKey;

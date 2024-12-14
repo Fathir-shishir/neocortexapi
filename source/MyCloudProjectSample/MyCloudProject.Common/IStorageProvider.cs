@@ -49,5 +49,11 @@ namespace MyCloudProject.Common
         /// <remarks>See step 5 (oposite way) in the architecture picture.</remarks>
         Task UploadResultAsync(string fileName, MemoryStream memoryStream);
 
+        /// <summary>
+        /// Uploads the efficiency result of the experiment in the cloud or any other kind of store or database.
+        /// </summary>
+        /// <remarks>See step 5 (oposite way) in the architecture picture.</remarks>
+        Task UploadEfficiencyResultAsync(IExerimentRequest request);
+
     }
 }

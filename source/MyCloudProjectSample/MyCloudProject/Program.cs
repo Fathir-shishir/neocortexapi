@@ -60,7 +60,8 @@ namespace MyCloudProject
                 Task<IExerimentRequest> requestTask = storageProvider.ReceiveExperimentRequestAsync(tokeSrc.Token);
                 IExerimentRequest request = await requestTask;
 
-                if (request != null)
+                // if operation type is not eficiency, run the multisequencelearning
+                if (request != null && request.OperationType != "efficiency")
                 {
                     try
                     {
@@ -102,6 +103,21 @@ namespace MyCloudProject
                     {
                         logger?.LogError($"This happened: '{ex.Message}'");
                     }
+                }
+                else if (request != null && request.OperationType == "efficiency")
+                {
+                    try 
+                    {
+                        // we will calculate the overall efficiency of a single 
+                        logger?.LogInformation($"{DateTime.Now} -  In to the efficiency calculation for MaxNewSynapseCount value '{request.MaxNewSynapseCount}'");
+                        await storageProvider.UploadEfficiencyResultAsync(request);
+                        await storageProvider.CommitRequestAsync(request);
+                    }
+                    catch (Exception ex)
+                    {
+                        logger?.LogError($"This happened: '{ex.Message}'");
+                    }
+
                 }
                 else
                 {

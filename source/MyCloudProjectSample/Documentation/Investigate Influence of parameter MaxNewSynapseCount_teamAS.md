@@ -320,7 +320,9 @@ Failure Rate (%) = (Failed Sequences / Total Experiment Count) × 100
 
 Below is the result table for the results of the data points we have calculated.
 
-### Table 1: Average Accuracy
+### Results
+
+#### Table 1: Average Accuracy
 | MaxNewSynapseCount | Average Accuracy (%) |
 |--------------------|-----------------------|
 | 20                 | 83.36                 |
@@ -331,7 +333,7 @@ Below is the result table for the results of the data points we have calculated.
 ![image](images/chart_accuracy.png)
 Figure: Bar chart with Best average accuracy
 
-### Table 2: Average Duration
+#### Table 2: Average Duration
 | MaxNewSynapseCount | Average Duration (minutes) |
 |--------------------|----------------------------|
 | 20                 | 4 min 41 s                 |
@@ -342,7 +344,7 @@ Figure: Bar chart with Best average accuracy
 ![image](images/chart_duration.png)
 Figure: Bar chart with Best average duration
 
-### Table 3: Average Sequence Count
+#### Table 3: Average Sequence Count
 | MaxNewSynapseCount | Average Sequence Count |
 |--------------------|-------------------------|
 | 20                 | 246.34                  |
@@ -353,7 +355,7 @@ Figure: Bar chart with Best average duration
 ![image](images/chart_sequence_count.png)
 Figure: Bar chart with Best average sequence counts
 
-### Table 4: Failure Rate
+#### Table 4: Failure Rate
 | MaxNewSynapseCount | Failure Rate (%) |
 |--------------------|------------------|
 | 20                 | 12.24           |

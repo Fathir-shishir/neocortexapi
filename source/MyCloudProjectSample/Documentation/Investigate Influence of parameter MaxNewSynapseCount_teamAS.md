@@ -331,6 +331,7 @@ Below is the result table for the results of the data points we have calculated.
 | 50                 | 77.45                 |
 
 ![image](images/chart_accuracy.png)
+
 Figure: Bar chart with Best average accuracy
 
 #### Table 2: Average Duration
@@ -342,6 +343,7 @@ Figure: Bar chart with Best average accuracy
 | 50                 | 18 min 31 s                |
 
 ![image](images/chart_duration.png)
+
 Figure: Bar chart with Best average duration
 
 #### Table 3: Average Sequence Count
@@ -353,6 +355,7 @@ Figure: Bar chart with Best average duration
 | 50                 | 231.98                  |
 
 ![image](images/chart_sequence_count.png)
+
 Figure: Bar chart with Best average sequence counts
 
 #### Table 4: Failure Rate
@@ -364,6 +367,7 @@ Figure: Bar chart with Best average sequence counts
 | 50                 | 17.00           |
 
 ![image](images/chart_failure_rate.png)
+
 Figure: Bar chart with worst failure rate
 
 ## Observations

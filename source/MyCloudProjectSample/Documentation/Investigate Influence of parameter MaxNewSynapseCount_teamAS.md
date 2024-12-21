@@ -117,7 +117,7 @@ the result data are also subsequently uploaded into a database table named "team
 
 # Datasets Input Format:
 
-This is how we save the dataset in a json file and upload in the blobstorage named training container and pass the file name as the value in queue message such as "file1": "file_1.json". We have created sample datasets like this which accumulates to `1600` sequences and we have conducted experiments on them with different maxNewSynapseCount like 20, 30, 40 and 50.
+This is how we save the dataset in a json file and upload in the blobstorage named training container and pass the file name as the value in queue message such as "file1": "file_1.json". We have created sample datasets like this which accumulates to over `1600` sequences and we have conducted experiments on them with different maxNewSynapseCount like 20, 30, 40 and 50.
 
 ```json
 {
@@ -220,7 +220,7 @@ Parallel.ForEach(sequences, sequence =>
 });
 ```
 
-The GenerateTestLists method prepares input data for prediction by converting lists of doubles into arrays. Arrays are often more efficient to process than lists in numerical computation tasks, especially in prediction algorithms. The transformation maintains data integrity while ensuring compatibility with the predictor. We pass the TestList data from our training container.
+The GenerateTestLists method prepares input data for prediction by converting lists of doubles into arrays. Arrays are often more efficient to process than lists in numerical computation tasks, especially in prediction algorithms. The transformation maintains data integrity while ensuring compatibility with the predictor. We pass the TestList data from our training container. Here is the [full code snippet with context](https://github.com/Fathir-shishir/neocortexapi/blob/b774717c6e3f1d36cc0c8fdfada63b880043ed65/source/MyCloudProjectSample/MyExperiment/SEProject/Program1.cs#L41). 
 
 ```csharp
 /// <summary>
@@ -235,7 +235,7 @@ private static List<double[]> GenerateTestLists(List<List<double>> testLists)
 }
 ```
 
-We have created a seperate entity class to store the efficiency of the sequence results in order to dynamically calculate the results after the sequence runs are complete.
+We have created a seperate entity class to store the efficiency of the sequence results in order to dynamically calculate the results after the sequence runs are complete. Here is the [full context of the code](https://github.com/Fathir-shishir/neocortexapi/blob/b774717c6e3f1d36cc0c8fdfada63b880043ed65/source/MyCloudProjectSample/MyExperiment/SEProject/Program1.cs#L118).
 ```csharp
 public class EfficiencyResult : ITableEntity, IEfficiencyResult
 {
@@ -304,10 +304,21 @@ var failureRate = (float)failedSequences / totalExperimentCount * 100;
 var averageSequenceCount = (float)totalSequences / totalExperimentCount;
 ```
 
+We have calculated all the results after running over 2000 sequences and calculated 4 points of difference when running sequences with different maxNewSynapseCount. Tyhe data points are Average Accuracy, Average Duration, Average Sequence count to stabilise the learning, and Average failure rate.
 
+#### Average Accuracy
+Average Accuracy = Total Accuracy / Total Experiment Count
 
+#### Average Duration
+Average Duration = Total Duration / Total Experiment Count
 
-We have run over 2000 sequences and get 4 specific data points to measure which maxNewSynapseCount is more efficient over the other. 
+#### Average Sequence Count
+Average Sequence Count = Total Sequences / Total Experiment Count
+
+#### Failure Rate
+Failure Rate (%) = (Failed Sequences / Total Experiment Count) × 100
+
+Below is the result table for the results of the data points we have calculated.
 
 ### Table 1: Average Accuracy
 | MaxNewSynapseCount | Average Accuracy (%) |
@@ -317,6 +328,9 @@ We have run over 2000 sequences and get 4 specific data points to measure which 
 | 40                 | 78.85                 |
 | 50                 | 77.45                 |
 
+![image](images/chart_accuracy.png)
+Figure: Bar chart with Best average accuracy
+
 ### Table 2: Average Duration
 | MaxNewSynapseCount | Average Duration (minutes) |
 |--------------------|----------------------------|
@@ -324,6 +338,9 @@ We have run over 2000 sequences and get 4 specific data points to measure which 
 | 30                 | 16 min 58 s                |
 | 40                 | 16 min 31 s                |
 | 50                 | 18 min 31 s                |
+
+![image](images/chart_duration.png)
+Figure: Bar chart with Best average duration
 
 ### Table 3: Average Sequence Count
 | MaxNewSynapseCount | Average Sequence Count |
@@ -333,6 +350,9 @@ We have run over 2000 sequences and get 4 specific data points to measure which 
 | 40                 | 231.98                  |
 | 50                 | 231.98                  |
 
+![image](images/chart_sequence_count.png)
+Figure: Bar chart with Best average sequence counts
+
 ### Table 4: Failure Rate
 | MaxNewSynapseCount | Failure Rate (%) |
 |--------------------|------------------|
@@ -341,33 +361,30 @@ We have run over 2000 sequences and get 4 specific data points to measure which 
 | 40                 | 17.00           |
 | 50                 | 17.00           |
 
+![image](images/chart_failure_rate.png)
+Figure: Bar chart with worst failure rate
+
+## Observations
+#### Accuracy vs. MaxNewSynapseCount
+Increasing the MaxNewSynapseCount reduces the accuracy slightly.
+Best accuracy is achieved at 20 synapses with 83.36%.
+Duration vs. MaxNewSynapseCount
+
+#### Higher MaxNewSynapseCount increases processing time.
+Duration rises from 4 min 41 s (20) to 18 min 31 s (50).
+Sequence Count vs. MaxNewSynapseCount
+
+The number of sequences processed decreases as MaxNewSynapseCount increases.
+
+#### Failure Rate vs. MaxNewSynapseCount
+
+Higher failure rates are observed for larger MaxNewSynapseCount, indicating diminishing returns.
 
 
+### 4. Balancing Accuracy, Cycles to StabThere is a trade-off between accuracy, cilize, and Duration
+ycles to stabilize, and duration. Lower `maxNewSynapseCount` values perform well on simpler datasets with high accuracy and reasonable stabilization times. On the other hand, higher values stabilize faster but often lead to lower accuracy in simpler datasets and longer durations.
 
-## Discussion and Conclusion
-
-The various tests conducted using different datasets and `maxNewSynapseCount` values provide critical insights into how different parameters influence the efficiency and accuracy of sequence learning models. Below is a detailed discussion of the results:
-
-### 1. Accuracy vs. MaxNewSynapseCount
-Across multiple datasets, we observed that lower values of `maxNewSynapseCount` (20 and 30) generally led to higher accuracy scores compared to higher values (40 and 50). For simpler datasets, such as sequences with smaller or fewer variations, the model achieves near-perfect accuracy with lower `maxNewSynapseCount`. 
-
-For more complex datasets, slightly larger `maxNewSynapseCount` values (around 30) can yield decent accuracy while avoiding a steep drop in performance. This demonstrates the importance of tuning `maxNewSynapseCount` based on the complexity of the dataset to achieve optimal performance.
-
-### 2. Cycles to Stabilize vs. MaxNewSynapseCount
-The results show a trend where larger `maxNewSynapseCount` values generally lead to fewer cycles to stabilize. Specifically, for higher values like 40 and 50, the model stabilizes quicker, particularly in complex datasets.
-
-For simpler datasets, lower values (20 and 30) also resulted in fewer cycles, suggesting that complex architectures are unnecessary and may lead to slower learning.
-
-**Conclusion**: For complex datasets, using a higher `maxNewSynapseCount` can stabilize the model faster, whereas for simple datasets, lower values are more efficient both in terms of speed and accuracy.
-
-### 3. Test Duration vs. MaxNewSynapseCount
-The test duration closely aligns with the number of cycles required to stabilize the model. Larger `maxNewSynapseCount` values generally resulted in longer test durations, especially for complex datasets. 
-
-For simple datasets, lower `maxNewSynapseCount` values (20) often led to shorter durations and still provided high accuracy scores. In contrast, higher values such as 50 not only took longer but also showed a decrease in accuracy for these simpler datasets.
-
-### 4. Balancing Accuracy, Cycles to Stabilize, and Duration
-There is a trade-off between accuracy, cycles to stabilize, and duration. Lower `maxNewSynapseCount` values perform well on simpler datasets with high accuracy and reasonable stabilization times. On the other hand, higher values stabilize faster but often lead to lower accuracy in simpler datasets and longer durations.
-
-#### Optimal Choice:
-- For simpler datasets, `maxNewSynapseCount` values around **20-30** are ideal as they provide high accuracy, stabilize in a reasonable number of cycles, and minimize test duration.
-- For more complex datasets, `maxNewSynapseCount` values around **40-50** might be necessary to stabilize the model quickly, though at the cost of slightly lower accuracy and longer test duration.
+## Conclusion
+This analysis demonstrates the trade-offs between accuracy, runtime, and reliability when configuring MaxNewSynapseCount.
+Lower values (e.g., 20) provide higher accuracy and faster performance but may be less adaptable to complex patterns.
+Higher values (e.g., 50) offer robustness for larger datasets at the expense of increased computation time and slightly lower accuracy.

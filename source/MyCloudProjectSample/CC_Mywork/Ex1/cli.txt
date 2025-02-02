@@ -1,0 +1,63 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Install the latest PowerShell for new features and improvements! https://aka.ms/PSWindows
+
+PS C:\Users\Akash> az --version
+azure-cli                         2.59.0
+
+core                              2.59.0
+telemetry                          1.1.0
+
+Dependencies:
+msal                              1.27.0
+azure-mgmt-resource             23.1.0b2
+
+Python location 'C:\Program Files\Microsoft SDKs\Azure\CLI2\python.exe'
+Extensions directory 'C:\Users\Akash\.azure\cliextensions'
+
+Python (Windows) 3.11.8 (tags/v3.11.8:db85d51, Feb  6 2024, 22:03:32) [MSC v.1937 64 bit (AMD64)]
+
+Legal docs and information: aka.ms/AzureCliLegal
+
+
+Your CLI is up-to-date.
+PS C:\Users\Akash> az login
+A web browser has been opened at https://login.microsoftonline.com/organizations/oauth2/v2.0/authorize. Please continue the login in the web browser. If no web browser is available or if the web browser fails to open, use device code flow with `az login --use-device-code`.
+[
+  {
+    "cloudName": "AzureCloud",
+    "homeTenantId": "66c5e13f-8c43-4359-b2e8-51775c6d298d",
+    "id": "6d4a7902-78cd-4a71-b055-e9f5b87b1032",
+    "isDefault": true,
+    "managedByTenants": [],
+    "name": "Azure for Students",
+    "state": "Enabled",
+    "tenantId": "66c5e13f-8c43-4359-b2e8-51775c6d298d",
+    "user": {
+      "name": "akash.saha@stud.fra-uas.de",
+      "type": "user"
+    }
+  }
+]
+PS C:\Users\Akash> az account show
+{
+  "environmentName": "AzureCloud",
+  "homeTenantId": "66c5e13f-8c43-4359-b2e8-51775c6d298d",
+  "id": "6d4a7902-78cd-4a71-b055-e9f5b87b1032",
+  "isDefault": true,
+  "managedByTenants": [],
+  "name": "Azure for Students",
+  "state": "Enabled",
+  "tenantId": "66c5e13f-8c43-4359-b2e8-51775c6d298d",
+  "user": {
+    "name": "akash.saha@stud.fra-uas.de",
+    "type": "user"
+  }
+}
+PS C:\Users\Akash> az account list --output table
+Name                CloudName    SubscriptionId                        TenantId                              State    IsDefault
+------------------  -----------  ------------------------------------  ------------------------------------  -------  -----------
+Azure for Students  AzureCloud   6d4a7902-78cd-4a71-b055-e9f5b87b1032  66c5e13f-8c43-4359-b2e8-51775c6d298d  Enabled  True
+PS C:\Users\Akash>
+

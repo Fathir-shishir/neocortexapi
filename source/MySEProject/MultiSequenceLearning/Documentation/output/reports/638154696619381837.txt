@@ -1,0 +1,1358 @@
+----------------------------- Start of Cycle: 209 -----------------------------
+Cycle: 209, Sequence: S1, Accuracy: 0
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 7
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 7
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 7
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 7
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 7
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 7
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 7
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 7
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 7
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 7
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 7
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 7
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 7
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 7
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 7
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 7
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 7
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 7
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 7
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 7
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 8
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 8
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 8
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 8
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 8
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 8
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 8
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 8
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 8
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 8
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 8
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 8
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 8
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 8
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 8
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 8
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 8
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 8
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 8
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 8
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 11
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 11
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 11
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 11
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 11
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 11
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 11
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 11
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 11
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 11
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 11
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 11
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 11
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 11
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 11
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 11
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 11
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 11
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 11
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 11
+----------------------------- End of Cycle: 209 -----------------------------
+----------------------------- Start of Cycle: 210 -----------------------------
+Cycle: 210, Sequence: S1, Accuracy: 0
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 3, numMissingSynapses: 3, input: 1
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 4, numMissingSynapses: 4, input: 1
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 7, numMissingSynapses: 7, input: 1
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 6, numMissingSynapses: 6, input: 1
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 7, numMissingSynapses: 7, input: 1
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 2, numMissingSynapses: 2, input: 2
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 2, numMissingSynapses: 2, input: 2
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 5, numMissingSynapses: 5, input: 2
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 3, numMissingSynapses: 3, input: 2
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 2, numMissingSynapses: 2, input: 2
+----------------------------- End of Cycle: 210 -----------------------------
+----------------------------- Start of Cycle: 211 -----------------------------
+Cycle: 211, Sequence: S1, Accuracy: 22.22222222222222
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 2, numMissingSynapses: 2, input: 1
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 2, numMissingSynapses: 2, input: 1
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 2, numMissingSynapses: 2, input: 1
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 3, numMissingSynapses: 3, input: 1
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 2, numMissingSynapses: 2, input: 1
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 2, numMissingSynapses: 2, input: 2
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 3, numMissingSynapses: 3, input: 2
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 4, numMissingSynapses: 4, input: 2
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 4, numMissingSynapses: 4, input: 2
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 4, numMissingSynapses: 4, input: 2
+----------------------------- End of Cycle: 211 -----------------------------
+----------------------------- Start of Cycle: 212 -----------------------------
+Cycle: 212, Sequence: S1, Accuracy: 88.88888888888889
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 2, numMissingSynapses: 2, input: 1
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 2, numMissingSynapses: 2, input: 1
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 2, numMissingSynapses: 2, input: 1
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 2, numMissingSynapses: 2, input: 1
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 3, numMissingSynapses: 3, input: 2
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 3, numMissingSynapses: 3, input: 2
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 3, numMissingSynapses: 3, input: 2
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 3, numMissingSynapses: 3, input: 2
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 5, numMissingSynapses: 5, input: 2
+----------------------------- End of Cycle: 212 -----------------------------
+----------------------------- Start of Cycle: 213 -----------------------------
+Cycle: 213, Sequence: S1, Accuracy: 88.88888888888889
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 1, numMissingSynapses: 1, input: 1
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 1, numMissingSynapses: 1, input: 1
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 3, numMissingSynapses: 3, input: 2
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 2, numMissingSynapses: 2, input: 2
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 2, numMissingSynapses: 2, input: 2
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 2, numMissingSynapses: 2, input: 2
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 4, numMissingSynapses: 4, input: 2
+----------------------------- End of Cycle: 213 -----------------------------
+----------------------------- Start of Cycle: 214 -----------------------------
+Cycle: 214, Sequence: S1, Accuracy: 77.77777777777779
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 11, numMissingSynapses: 11, input: 2
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 2
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 11, numMissingSynapses: 11, input: 2
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 2
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 2
+----------------------------- End of Cycle: 214 -----------------------------
+----------------------------- Start of Cycle: 215 -----------------------------
+Cycle: 215, Sequence: S1, Accuracy: 77.77777777777779
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 1, numMissingSynapses: 1, input: 1
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 11, numMissingSynapses: 11, input: 2
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 11, numMissingSynapses: 11, input: 2
+----------------------------- End of Cycle: 215 -----------------------------
+----------------------------- Start of Cycle: 216 -----------------------------
+Cycle: 216, Sequence: S1, Accuracy: 77.77777777777779
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 1, numMissingSynapses: 1, input: 1
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 11, numMissingSynapses: 11, input: 2
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 11, numMissingSynapses: 11, input: 2
+----------------------------- End of Cycle: 216 -----------------------------
+----------------------------- Start of Cycle: 217 -----------------------------
+Cycle: 217, Sequence: S1, Accuracy: 88.88888888888889
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 1, numMissingSynapses: 1, input: 1
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 11, numMissingSynapses: 11, input: 2
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 11, numMissingSynapses: 11, input: 2
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 3, numMissingSynapses: 3, input: 3
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 3, numMissingSynapses: 3, input: 3
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 3, numMissingSynapses: 3, input: 3
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 3, numMissingSynapses: 3, input: 3
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 3, numMissingSynapses: 3, input: 3
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 3, numMissingSynapses: 3, input: 3
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 3, numMissingSynapses: 3, input: 3
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 3, numMissingSynapses: 3, input: 3
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 3, numMissingSynapses: 3, input: 3
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 3, numMissingSynapses: 3, input: 3
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 3, numMissingSynapses: 3, input: 3
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 3, numMissingSynapses: 3, input: 3
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 3, numMissingSynapses: 3, input: 3
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 3, numMissingSynapses: 3, input: 3
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 3, numMissingSynapses: 3, input: 3
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 3, numMissingSynapses: 3, input: 3
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 3, numMissingSynapses: 3, input: 3
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 3, numMissingSynapses: 3, input: 3
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 3, numMissingSynapses: 3, input: 3
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 3, numMissingSynapses: 3, input: 3
+----------------------------- End of Cycle: 217 -----------------------------
+----------------------------- Start of Cycle: 218 -----------------------------
+Cycle: 218, Sequence: S1, Accuracy: 88.88888888888889
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 2, numMissingSynapses: 2, input: 1
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 10, numMissingSynapses: 10, input: 2
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 10, numMissingSynapses: 10, input: 2
+----------------------------- End of Cycle: 218 -----------------------------
+----------------------------- Start of Cycle: 219 -----------------------------
+Cycle: 219, Sequence: S1, Accuracy: 88.88888888888889
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 2, numMissingSynapses: 2, input: 1
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 10, numMissingSynapses: 10, input: 2
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 10, numMissingSynapses: 10, input: 2
+----------------------------- End of Cycle: 219 -----------------------------
+----------------------------- Start of Cycle: 220 -----------------------------
+Cycle: 220, Sequence: S1, Accuracy: 88.88888888888889
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 2, numMissingSynapses: 2, input: 1
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 10, numMissingSynapses: 10, input: 2
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 10, numMissingSynapses: 10, input: 2
+----------------------------- End of Cycle: 220 -----------------------------
+----------------------------- Start of Cycle: 221 -----------------------------
+Cycle: 221, Sequence: S1, Accuracy: 88.88888888888889
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 2, numMissingSynapses: 2, input: 1
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 2, numMissingSynapses: 2, input: 1
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 10, numMissingSynapses: 10, input: 2
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 10, numMissingSynapses: 10, input: 2
+----------------------------- End of Cycle: 221 -----------------------------
+----------------------------- Start of Cycle: 222 -----------------------------
+Cycle: 222, Sequence: S1, Accuracy: 88.88888888888889
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 2, numMissingSynapses: 2, input: 1
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 2, numMissingSynapses: 2, input: 1
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 9, numMissingSynapses: 9, input: 2
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 10, numMissingSynapses: 10, input: 2
+----------------------------- End of Cycle: 222 -----------------------------
+----------------------------- Start of Cycle: 223 -----------------------------
+Cycle: 223, Sequence: S1, Accuracy: 88.88888888888889
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 9, numMissingSynapses: 9, input: 1
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 10, numMissingSynapses: 10, input: 1
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 8, numMissingSynapses: 8, input: 2
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 8, numMissingSynapses: 8, input: 2
+----------------------------- End of Cycle: 223 -----------------------------
+----------------------------- Start of Cycle: 224 -----------------------------
+Cycle: 224, Sequence: S1, Accuracy: 88.88888888888889
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 8, numMissingSynapses: 8, input: 1
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 8, numMissingSynapses: 8, input: 1
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 7, numMissingSynapses: 7, input: 2
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 7, numMissingSynapses: 7, input: 2
+----------------------------- End of Cycle: 224 -----------------------------
+----------------------------- Start of Cycle: 225 -----------------------------
+Cycle: 225, Sequence: S1, Accuracy: 88.88888888888889
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 7, numMissingSynapses: 7, input: 1
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 7, numMissingSynapses: 7, input: 1
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 7, numMissingSynapses: 7, input: 2
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 6, numMissingSynapses: 6, input: 2
+----------------------------- End of Cycle: 225 -----------------------------
+----------------------------- Start of Cycle: 226 -----------------------------
+Cycle: 226, Sequence: S1, Accuracy: 88.88888888888889
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 7, numMissingSynapses: 7, input: 1
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 6, numMissingSynapses: 6, input: 1
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 7, numMissingSynapses: 7, input: 2
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 5, numMissingSynapses: 5, input: 2
+----------------------------- End of Cycle: 226 -----------------------------
+----------------------------- Start of Cycle: 227 -----------------------------
+Cycle: 227, Sequence: S1, Accuracy: 88.88888888888889
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 7, numMissingSynapses: 7, input: 1
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 5, numMissingSynapses: 5, input: 1
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 7, numMissingSynapses: 7, input: 2
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 4, numMissingSynapses: 4, input: 2
+----------------------------- End of Cycle: 227 -----------------------------
+----------------------------- Start of Cycle: 228 -----------------------------
+Cycle: 228, Sequence: S1, Accuracy: 88.88888888888889
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 7, numMissingSynapses: 7, input: 1
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 4, numMissingSynapses: 4, input: 1
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 10, numMissingSynapses: 10, input: 2
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 8, numMissingSynapses: 8, input: 2
+----------------------------- End of Cycle: 228 -----------------------------
+----------------------------- Start of Cycle: 229 -----------------------------
+Cycle: 229, Sequence: S1, Accuracy: 88.88888888888889
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 6, numMissingSynapses: 6, input: 1
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 4, numMissingSynapses: 4, input: 1
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 10, numMissingSynapses: 10, input: 2
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 8, numMissingSynapses: 8, input: 2
+----------------------------- End of Cycle: 229 -----------------------------
+----------------------------- Start of Cycle: 230 -----------------------------
+Cycle: 230, Sequence: S1, Accuracy: 88.88888888888889
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 6, numMissingSynapses: 6, input: 1
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 4, numMissingSynapses: 4, input: 1
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 5, numMissingSynapses: 5, input: 2
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 3, numMissingSynapses: 3, input: 2
+----------------------------- End of Cycle: 230 -----------------------------
+----------------------------- Start of Cycle: 231 -----------------------------
+Cycle: 231, Sequence: S1, Accuracy: 88.88888888888889
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 5, numMissingSynapses: 5, input: 1
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 3, numMissingSynapses: 3, input: 1
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 9, numMissingSynapses: 9, input: 2
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 7, numMissingSynapses: 7, input: 2
+----------------------------- End of Cycle: 231 -----------------------------
+----------------------------- Start of Cycle: 232 -----------------------------
+Cycle: 232, Sequence: S1, Accuracy: 88.88888888888889
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 5, numMissingSynapses: 5, input: 1
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 3, numMissingSynapses: 3, input: 1
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 11, numMissingSynapses: 11, input: 2
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 11, numMissingSynapses: 11, input: 2
+----------------------------- End of Cycle: 232 -----------------------------
+----------------------------- Start of Cycle: 233 -----------------------------
+Cycle: 233, Sequence: S1, Accuracy: 88.88888888888889
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 5, numMissingSynapses: 5, input: 1
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 3, numMissingSynapses: 3, input: 1
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 7, numMissingSynapses: 7, input: 2
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 7, numMissingSynapses: 7, input: 2
+----------------------------- End of Cycle: 233 -----------------------------
+----------------------------- Start of Cycle: 234 -----------------------------
+Cycle: 234, Sequence: S1, Accuracy: 88.88888888888889
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 5, numMissingSynapses: 5, input: 1
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 3, numMissingSynapses: 3, input: 1
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 5, numMissingSynapses: 5, input: 2
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 3, numMissingSynapses: 3, input: 2
+----------------------------- End of Cycle: 234 -----------------------------
+----------------------------- Start of Cycle: 235 -----------------------------
+Cycle: 235, Sequence: S1, Accuracy: 88.88888888888889
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 5, numMissingSynapses: 5, input: 1
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 3, numMissingSynapses: 3, input: 1
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 11, numMissingSynapses: 11, input: 2
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 11, numMissingSynapses: 11, input: 2
+----------------------------- End of Cycle: 235 -----------------------------
+----------------------------- Start of Cycle: 236 -----------------------------
+Cycle: 236, Sequence: S1, Accuracy: 88.88888888888889
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 5, numMissingSynapses: 5, input: 1
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 3, numMissingSynapses: 3, input: 1
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 11, numMissingSynapses: 11, input: 2
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 11, numMissingSynapses: 11, input: 2
+----------------------------- End of Cycle: 236 -----------------------------
+----------------------------- Start of Cycle: 237 -----------------------------
+Cycle: 237, Sequence: S1, Accuracy: 88.88888888888889
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 5, numMissingSynapses: 5, input: 1
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 3, numMissingSynapses: 3, input: 1
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 7, numMissingSynapses: 7, input: 2
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 7, numMissingSynapses: 7, input: 2
+----------------------------- End of Cycle: 237 -----------------------------
+----------------------------- Start of Cycle: 238 -----------------------------
+Cycle: 238, Sequence: S1, Accuracy: 88.88888888888889
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 5, numMissingSynapses: 5, input: 1
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 4, numMissingSynapses: 4, input: 1
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 4, numMissingSynapses: 4, input: 2
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 4, numMissingSynapses: 4, input: 2
+----------------------------- End of Cycle: 238 -----------------------------
+----------------------------- Start of Cycle: 239 -----------------------------
+Cycle: 239, Sequence: S1, Accuracy: 88.88888888888889
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 4, numMissingSynapses: 4, input: 1
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 4, numMissingSynapses: 4, input: 1
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 5, numMissingSynapses: 5, input: 2
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 7, numMissingSynapses: 7, input: 2
+----------------------------- End of Cycle: 239 -----------------------------
+----------------------------- Start of Cycle: 240 -----------------------------
+Cycle: 240, Sequence: S1, Accuracy: 88.88888888888889
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 3, numMissingSynapses: 3, input: 1
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 4, numMissingSynapses: 4, input: 1
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 5, numMissingSynapses: 5, input: 2
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 7, numMissingSynapses: 7, input: 2
+----------------------------- End of Cycle: 240 -----------------------------
+----------------------------- Start of Cycle: 241 -----------------------------
+Cycle: 241, Sequence: S1, Accuracy: 88.88888888888889
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 3, numMissingSynapses: 3, input: 1
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 4, numMissingSynapses: 4, input: 1
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 3, numMissingSynapses: 3, input: 2
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 4, numMissingSynapses: 4, input: 2
+----------------------------- End of Cycle: 241 -----------------------------
+----------------------------- Start of Cycle: 242 -----------------------------
+Cycle: 242, Sequence: S1, Accuracy: 88.88888888888889
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 3, numMissingSynapses: 3, input: 1
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 4, numMissingSynapses: 4, input: 1
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 5, numMissingSynapses: 5, input: 2
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 7, numMissingSynapses: 7, input: 2
+----------------------------- End of Cycle: 242 -----------------------------
+----------------------------- Start of Cycle: 243 -----------------------------
+Cycle: 243, Sequence: S1, Accuracy: 88.88888888888889
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 3, numMissingSynapses: 3, input: 1
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 4, numMissingSynapses: 4, input: 1
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 5, numMissingSynapses: 5, input: 2
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 7, numMissingSynapses: 7, input: 2
+----------------------------- End of Cycle: 243 -----------------------------
+----------------------------- Start of Cycle: 244 -----------------------------
+Cycle: 244, Sequence: S1, Accuracy: 88.88888888888889
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 3, numMissingSynapses: 3, input: 1
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 4, numMissingSynapses: 4, input: 1
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 5, numMissingSynapses: 5, input: 2
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 7, numMissingSynapses: 7, input: 2
+----------------------------- End of Cycle: 244 -----------------------------
+----------------------------- Start of Cycle: 245 -----------------------------
+Cycle: 245, Sequence: S1, Accuracy: 88.88888888888889
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 3, numMissingSynapses: 3, input: 1
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 4, numMissingSynapses: 4, input: 1
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 5, numMissingSynapses: 5, input: 2
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 7, numMissingSynapses: 7, input: 2
+----------------------------- End of Cycle: 245 -----------------------------
+----------------------------- Start of Cycle: 246 -----------------------------
+Cycle: 246, Sequence: S1, Accuracy: 88.88888888888889
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 3, numMissingSynapses: 3, input: 1
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 7, numMissingSynapses: 7, input: 1
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 5, numMissingSynapses: 5, input: 2
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 7, numMissingSynapses: 7, input: 2
+----------------------------- End of Cycle: 246 -----------------------------
+----------------------------- Start of Cycle: 247 -----------------------------
+Cycle: 247, Sequence: S2, Accuracy: 0
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 10, numMissingSynapses: 10, input: 10
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 10
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 10, numMissingSynapses: 10, input: 10
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 10, numMissingSynapses: 10, input: 10
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 10, numMissingSynapses: 10, input: 10
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 10, numMissingSynapses: 10, input: 10
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 10, numMissingSynapses: 10, input: 10
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 10
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 10, numMissingSynapses: 10, input: 10
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 10
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 10, numMissingSynapses: 10, input: 10
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 10
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 10
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 10
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 10, numMissingSynapses: 10, input: 10
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 10
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 10
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 10, numMissingSynapses: 10, input: 10
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 10, numMissingSynapses: 10, input: 10
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 10, numMissingSynapses: 10, input: 10
+----------------------------- End of Cycle: 247 -----------------------------
+----------------------------- Start of Cycle: 248 -----------------------------
+Cycle: 248, Sequence: S2, Accuracy: 0
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 3, numMissingSynapses: 3, input: 1
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 7, numMissingSynapses: 7, input: 1
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 5, numMissingSynapses: 5, input: 2
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 7, numMissingSynapses: 7, input: 2
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 10, numMissingSynapses: 10, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 10, numMissingSynapses: 10, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 10, numMissingSynapses: 10, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 10, numMissingSynapses: 10, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 10, numMissingSynapses: 10, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 10, numMissingSynapses: 10, input: 10
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 10, numMissingSynapses: 10, input: 10
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 10, numMissingSynapses: 10, input: 10
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 10, numMissingSynapses: 10, input: 10
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 10, numMissingSynapses: 10, input: 10
+----------------------------- End of Cycle: 248 -----------------------------
+----------------------------- Start of Cycle: 249 -----------------------------
+Cycle: 249, Sequence: S2, Accuracy: 55.55555555555556
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 4, numMissingSynapses: 4, input: 1
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 7, numMissingSynapses: 7, input: 1
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 5, numMissingSynapses: 5, input: 2
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 7, numMissingSynapses: 7, input: 2
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 10, numMissingSynapses: 10, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 10, numMissingSynapses: 10, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 10, numMissingSynapses: 10, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 10, numMissingSynapses: 10, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 10, numMissingSynapses: 10, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 10, numMissingSynapses: 10, input: 10
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 10, numMissingSynapses: 10, input: 10
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 10, numMissingSynapses: 10, input: 10
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 10, numMissingSynapses: 10, input: 10
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 10, numMissingSynapses: 10, input: 10
+----------------------------- End of Cycle: 249 -----------------------------
+----------------------------- Start of Cycle: 250 -----------------------------
+Cycle: 250, Sequence: S2, Accuracy: 66.66666666666666
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 5, numMissingSynapses: 5, input: 1
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 7, numMissingSynapses: 7, input: 1
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 5, numMissingSynapses: 5, input: 2
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 7, numMissingSynapses: 7, input: 2
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 6
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 6
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 6
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 6
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 6
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 6
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 8
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 8
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 8
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 8
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 8
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 8
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 8
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 8
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 8
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 8
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 8
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 8
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 8
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 8
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 8
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 8
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 8
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 8
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 8
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 8
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 3, numMissingSynapses: 3, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 5, numMissingSynapses: 5, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 4, numMissingSynapses: 4, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 5, numMissingSynapses: 5, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 4, numMissingSynapses: 4, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 3, numMissingSynapses: 3, input: 10
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 4, numMissingSynapses: 4, input: 10
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 2, numMissingSynapses: 2, input: 10
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 2, numMissingSynapses: 2, input: 10
+----------------------------- End of Cycle: 250 -----------------------------
+----------------------------- Start of Cycle: 251 -----------------------------
+Cycle: 251, Sequence: S2, Accuracy: 66.66666666666666
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 5, numMissingSynapses: 5, input: 1
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 7, numMissingSynapses: 7, input: 1
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 5, numMissingSynapses: 5, input: 2
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 6, numMissingSynapses: 6, input: 2
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 2, numMissingSynapses: 2, input: 9
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 3, numMissingSynapses: 3, input: 9
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 2, numMissingSynapses: 2, input: 9
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 1, numMissingSynapses: 1, input: 9
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 2, numMissingSynapses: 2, input: 10
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 3, numMissingSynapses: 3, input: 10
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 3, numMissingSynapses: 3, input: 10
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 1, numMissingSynapses: 1, input: 10
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 1, numMissingSynapses: 1, input: 10
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 2, numMissingSynapses: 2, input: 10
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 1, numMissingSynapses: 1, input: 10
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 2, numMissingSynapses: 2, input: 10
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 1, numMissingSynapses: 1, input: 10
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 1, numMissingSynapses: 1, input: 10
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 1, numMissingSynapses: 1, input: 10
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 1, numMissingSynapses: 1, input: 10
+----------------------------- End of Cycle: 251 -----------------------------
+----------------------------- Start of Cycle: 252 -----------------------------
+Cycle: 252, Sequence: S2, Accuracy: 66.66666666666666
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 5, numMissingSynapses: 5, input: 1
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 6, numMissingSynapses: 6, input: 1
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 4, numMissingSynapses: 4, input: 2
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 5, numMissingSynapses: 5, input: 2
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 2, numMissingSynapses: 2, input: 9
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 2, numMissingSynapses: 2, input: 9
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 2, numMissingSynapses: 2, input: 10
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 1, numMissingSynapses: 1, input: 10
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 3, numMissingSynapses: 3, input: 10
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 1, numMissingSynapses: 1, input: 10
+----------------------------- End of Cycle: 252 -----------------------------
+----------------------------- Start of Cycle: 253 -----------------------------
+Cycle: 253, Sequence: S2, Accuracy: 55.55555555555556
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 4, numMissingSynapses: 4, input: 1
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 5, numMissingSynapses: 5, input: 1
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 4, numMissingSynapses: 4, input: 2
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 4, numMissingSynapses: 4, input: 2
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 6, numMissingSynapses: 6, input: 7
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 6, numMissingSynapses: 6, input: 7
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 6, numMissingSynapses: 6, input: 7
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 6, numMissingSynapses: 6, input: 7
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 6, numMissingSynapses: 6, input: 7
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 6, numMissingSynapses: 6, input: 7
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 6, numMissingSynapses: 6, input: 7
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 6, numMissingSynapses: 6, input: 7
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 6, numMissingSynapses: 6, input: 7
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 6, numMissingSynapses: 6, input: 7
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 6, numMissingSynapses: 6, input: 7
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 6, numMissingSynapses: 6, input: 7
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 6, numMissingSynapses: 6, input: 7
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 6, numMissingSynapses: 6, input: 7
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 6, numMissingSynapses: 6, input: 7
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 6, numMissingSynapses: 6, input: 7
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 6, numMissingSynapses: 6, input: 7
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 6, numMissingSynapses: 6, input: 7
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 6, numMissingSynapses: 6, input: 7
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 6, numMissingSynapses: 6, input: 7
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 7, numMissingSynapses: 7, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 6, numMissingSynapses: 6, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 9, numMissingSynapses: 9, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 6, numMissingSynapses: 6, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 7, numMissingSynapses: 7, input: 9
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 1, numMissingSynapses: 1, input: 10
+----------------------------- End of Cycle: 253 -----------------------------
+----------------------------- Start of Cycle: 254 -----------------------------
+Cycle: 254, Sequence: S2, Accuracy: 66.66666666666666
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 4, numMissingSynapses: 4, input: 1
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 4, numMissingSynapses: 4, input: 1
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 11, numMissingSynapses: 11, input: 2
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 11, numMissingSynapses: 11, input: 2
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 5, numMissingSynapses: 5, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 6, numMissingSynapses: 6, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 8, numMissingSynapses: 8, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 6, numMissingSynapses: 6, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 5, numMissingSynapses: 5, input: 9
+----------------------------- End of Cycle: 254 -----------------------------
+----------------------------- Start of Cycle: 255 -----------------------------
+Cycle: 255, Sequence: S2, Accuracy: 77.77777777777779
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 4, numMissingSynapses: 4, input: 1
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 4, numMissingSynapses: 4, input: 1
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 4, numMissingSynapses: 4, input: 2
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 4, numMissingSynapses: 4, input: 2
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 5, numMissingSynapses: 5, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 4, numMissingSynapses: 4, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 7, numMissingSynapses: 7, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 4, numMissingSynapses: 4, input: 9
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 5, numMissingSynapses: 5, input: 9
+----------------------------- End of Cycle: 255 -----------------------------
+----------------------------- Start of Cycle: 256 -----------------------------
+Cycle: 256, Sequence: S2, Accuracy: 88.88888888888889
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 4, numMissingSynapses: 4, input: 1
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 4, numMissingSynapses: 4, input: 1
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 11, numMissingSynapses: 11, input: 2
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 11, numMissingSynapses: 11, input: 2
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 4, numMissingSynapses: 4, input: 8
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 4, numMissingSynapses: 4, input: 8
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 4, numMissingSynapses: 4, input: 8
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 4, numMissingSynapses: 4, input: 8
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 4, numMissingSynapses: 4, input: 8
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 4, numMissingSynapses: 4, input: 8
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 4, numMissingSynapses: 4, input: 8
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 4, numMissingSynapses: 4, input: 8
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 4, numMissingSynapses: 4, input: 8
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 4, numMissingSynapses: 4, input: 8
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 4, numMissingSynapses: 4, input: 8
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 4, numMissingSynapses: 4, input: 8
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 4, numMissingSynapses: 4, input: 8
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 4, numMissingSynapses: 4, input: 8
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 4, numMissingSynapses: 4, input: 8
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 4, numMissingSynapses: 4, input: 8
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 4, numMissingSynapses: 4, input: 8
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 4, numMissingSynapses: 4, input: 8
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 4, numMissingSynapses: 4, input: 8
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 4, numMissingSynapses: 4, input: 8
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 5, numMissingSynapses: 5, input: 9
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 3, numMissingSynapses: 3, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 5, numMissingSynapses: 5, input: 9
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 2, numMissingSynapses: 2, input: 9
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 4, numMissingSynapses: 4, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 10
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 10
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 10
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 9, numMissingSynapses: 9, input: 10
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 9, numMissingSynapses: 9, input: 10
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 10
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 9, numMissingSynapses: 9, input: 10
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 10
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 9, numMissingSynapses: 9, input: 10
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 9, numMissingSynapses: 9, input: 10
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 9, numMissingSynapses: 9, input: 10
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 9, numMissingSynapses: 9, input: 10
+----------------------------- End of Cycle: 256 -----------------------------
+----------------------------- Start of Cycle: 257 -----------------------------
+Cycle: 257, Sequence: S2, Accuracy: 88.88888888888889
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 4, numMissingSynapses: 4, input: 1
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 4, numMissingSynapses: 4, input: 1
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 11, numMissingSynapses: 11, input: 2
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 11, numMissingSynapses: 11, input: 2
+----------------------------- End of Cycle: 257 -----------------------------
+----------------------------- Start of Cycle: 258 -----------------------------
+Cycle: 258, Sequence: S2, Accuracy: 77.77777777777779
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 4, numMissingSynapses: 4, input: 1
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 4, numMissingSynapses: 4, input: 1
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 3, numMissingSynapses: 3, input: 2
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 3, numMissingSynapses: 3, input: 2
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 11, numMissingSynapses: 11, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 11, numMissingSynapses: 11, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 11, numMissingSynapses: 11, input: 9
+----------------------------- End of Cycle: 258 -----------------------------
+----------------------------- Start of Cycle: 259 -----------------------------
+Cycle: 259, Sequence: S2, Accuracy: 77.77777777777779
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 3, numMissingSynapses: 3, input: 1
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 3, numMissingSynapses: 3, input: 1
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 11, numMissingSynapses: 11, input: 2
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 11, numMissingSynapses: 11, input: 2
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 8, numMissingSynapses: 8, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 6, numMissingSynapses: 6, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 7, numMissingSynapses: 7, input: 9
+----------------------------- End of Cycle: 259 -----------------------------
+----------------------------- Start of Cycle: 260 -----------------------------
+Cycle: 260, Sequence: S2, Accuracy: 77.77777777777779
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 3, numMissingSynapses: 3, input: 1
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 3, numMissingSynapses: 3, input: 1
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 3, numMissingSynapses: 3, input: 2
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 3, numMissingSynapses: 3, input: 2
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 8, numMissingSynapses: 8, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 6, numMissingSynapses: 6, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 7, numMissingSynapses: 7, input: 9
+----------------------------- End of Cycle: 260 -----------------------------
+----------------------------- Start of Cycle: 261 -----------------------------
+Cycle: 261, Sequence: S2, Accuracy: 88.88888888888889
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 3, numMissingSynapses: 3, input: 1
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 3, numMissingSynapses: 3, input: 1
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 11, numMissingSynapses: 11, input: 2
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 11, numMissingSynapses: 11, input: 2
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 8, numMissingSynapses: 8, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 6, numMissingSynapses: 6, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 7, numMissingSynapses: 7, input: 9
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 2, numMissingSynapses: 2, input: 10
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 2, numMissingSynapses: 2, input: 10
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 2, numMissingSynapses: 2, input: 10
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 2, numMissingSynapses: 2, input: 10
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 2, numMissingSynapses: 2, input: 10
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 2, numMissingSynapses: 2, input: 10
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 2, numMissingSynapses: 2, input: 10
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 2, numMissingSynapses: 2, input: 10
+----------------------------- End of Cycle: 261 -----------------------------
+----------------------------- Start of Cycle: 262 -----------------------------
+Cycle: 262, Sequence: S2, Accuracy: 88.88888888888889
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 3, numMissingSynapses: 3, input: 1
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 3, numMissingSynapses: 3, input: 1
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 11, numMissingSynapses: 11, input: 2
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 11, numMissingSynapses: 11, input: 2
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 10, numMissingSynapses: 10, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 10, numMissingSynapses: 10, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 10, numMissingSynapses: 10, input: 9
+----------------------------- End of Cycle: 262 -----------------------------
+----------------------------- Start of Cycle: 263 -----------------------------
+Cycle: 263, Sequence: S2, Accuracy: 88.88888888888889
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 3, numMissingSynapses: 3, input: 1
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 3, numMissingSynapses: 3, input: 1
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 3, numMissingSynapses: 3, input: 2
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 3, numMissingSynapses: 3, input: 2
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 10, numMissingSynapses: 10, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 10, numMissingSynapses: 10, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 10, numMissingSynapses: 10, input: 9
+----------------------------- End of Cycle: 263 -----------------------------
+----------------------------- Start of Cycle: 264 -----------------------------
+Cycle: 264, Sequence: S2, Accuracy: 88.88888888888889
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 3, numMissingSynapses: 3, input: 1
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 3, numMissingSynapses: 3, input: 1
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 11, numMissingSynapses: 11, input: 2
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 11, numMissingSynapses: 11, input: 2
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 10, numMissingSynapses: 10, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 10, numMissingSynapses: 10, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 10, numMissingSynapses: 10, input: 9
+----------------------------- End of Cycle: 264 -----------------------------
+----------------------------- Start of Cycle: 265 -----------------------------
+Cycle: 265, Sequence: S2, Accuracy: 88.88888888888889
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 3, numMissingSynapses: 3, input: 1
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 3, numMissingSynapses: 3, input: 1
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 3, numMissingSynapses: 3, input: 2
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 3, numMissingSynapses: 3, input: 2
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 10, numMissingSynapses: 10, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 10, numMissingSynapses: 10, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 10, numMissingSynapses: 10, input: 9
+----------------------------- End of Cycle: 265 -----------------------------
+----------------------------- Start of Cycle: 266 -----------------------------
+Cycle: 266, Sequence: S2, Accuracy: 88.88888888888889
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 3, numMissingSynapses: 3, input: 1
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 3, numMissingSynapses: 3, input: 1
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 11, numMissingSynapses: 11, input: 2
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 11, numMissingSynapses: 11, input: 2
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 10, numMissingSynapses: 10, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 10, numMissingSynapses: 10, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 10, numMissingSynapses: 10, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 2, numMissingSynapses: 2, input: 10
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 2, numMissingSynapses: 2, input: 10
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 2, numMissingSynapses: 2, input: 10
+----------------------------- End of Cycle: 266 -----------------------------
+----------------------------- Start of Cycle: 267 -----------------------------
+Cycle: 267, Sequence: S2, Accuracy: 77.77777777777779
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 3, numMissingSynapses: 3, input: 1
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 3, numMissingSynapses: 3, input: 1
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 11, numMissingSynapses: 11, input: 2
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 11, numMissingSynapses: 11, input: 2
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 10
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 10
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 10
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 10
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 10
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 10
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 10
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 10
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 10
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 10
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 10
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 10
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 10
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 10
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 10
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 10
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 10
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 10
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 10
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 10
+----------------------------- End of Cycle: 267 -----------------------------
+----------------------------- Start of Cycle: 268 -----------------------------
+Cycle: 268, Sequence: S2, Accuracy: 77.77777777777779
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 3, numMissingSynapses: 3, input: 1
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 3, numMissingSynapses: 3, input: 1
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 3, numMissingSynapses: 3, input: 2
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 3, numMissingSynapses: 3, input: 2
+----------------------------- End of Cycle: 268 -----------------------------
+----------------------------- Start of Cycle: 269 -----------------------------
+Cycle: 269, Sequence: S2, Accuracy: 77.77777777777779
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 3, numMissingSynapses: 3, input: 1
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 3, numMissingSynapses: 3, input: 1
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 11, numMissingSynapses: 11, input: 2
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 11, numMissingSynapses: 11, input: 2
+----------------------------- End of Cycle: 269 -----------------------------
+----------------------------- Start of Cycle: 270 -----------------------------
+Cycle: 270, Sequence: S2, Accuracy: 88.88888888888889
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 3, numMissingSynapses: 3, input: 1
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 3, numMissingSynapses: 3, input: 1
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 3, numMissingSynapses: 3, input: 2
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 2, numMissingSynapses: 2, input: 2
+----------------------------- End of Cycle: 270 -----------------------------
+----------------------------- Start of Cycle: 271 -----------------------------
+Cycle: 271, Sequence: S2, Accuracy: 88.88888888888889
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 3, numMissingSynapses: 3, input: 1
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 2, numMissingSynapses: 2, input: 1
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 11, numMissingSynapses: 11, input: 2
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 11, numMissingSynapses: 11, input: 2
+----------------------------- End of Cycle: 271 -----------------------------
+----------------------------- Start of Cycle: 272 -----------------------------
+Cycle: 272, Sequence: S2, Accuracy: 88.88888888888889
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 3, numMissingSynapses: 3, input: 1
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 2, numMissingSynapses: 2, input: 1
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 11, numMissingSynapses: 11, input: 2
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 11, numMissingSynapses: 11, input: 2
+----------------------------- End of Cycle: 272 -----------------------------
+----------------------------- Start of Cycle: 273 -----------------------------
+Cycle: 273, Sequence: S2, Accuracy: 88.88888888888889
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 3, numMissingSynapses: 3, input: 1
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 3, numMissingSynapses: 3, input: 1
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 3, numMissingSynapses: 3, input: 2
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 2, numMissingSynapses: 2, input: 2
+----------------------------- End of Cycle: 273 -----------------------------
+----------------------------- Start of Cycle: 274 -----------------------------
+Cycle: 274, Sequence: S2, Accuracy: 88.88888888888889
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 3, numMissingSynapses: 3, input: 1
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 2, numMissingSynapses: 2, input: 1
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 11, numMissingSynapses: 11, input: 2
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 11, numMissingSynapses: 11, input: 2
+----------------------------- End of Cycle: 274 -----------------------------
+----------------------------- Start of Cycle: 275 -----------------------------
+Cycle: 275, Sequence: S2, Accuracy: 88.88888888888889
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 3, numMissingSynapses: 3, input: 1
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 2, numMissingSynapses: 2, input: 1
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 2, numMissingSynapses: 2, input: 2
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 2, numMissingSynapses: 2, input: 2
+----------------------------- End of Cycle: 275 -----------------------------
+----------------------------- Start of Cycle: 276 -----------------------------
+Cycle: 276, Sequence: S2, Accuracy: 88.88888888888889
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 2, numMissingSynapses: 2, input: 1
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 2, numMissingSynapses: 2, input: 1
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 11, numMissingSynapses: 11, input: 2
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 11, numMissingSynapses: 11, input: 2
+----------------------------- End of Cycle: 276 -----------------------------
+----------------------------- Start of Cycle: 277 -----------------------------
+Cycle: 277, Sequence: S2, Accuracy: 88.88888888888889
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 2, numMissingSynapses: 2, input: 1
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 2, numMissingSynapses: 2, input: 1
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 11, numMissingSynapses: 11, input: 2
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 11, numMissingSynapses: 11, input: 2
+----------------------------- End of Cycle: 277 -----------------------------
+----------------------------- Start of Cycle: 278 -----------------------------
+Cycle: 278, Sequence: S2, Accuracy: 88.88888888888889
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 3, numMissingSynapses: 3, input: 1
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 2, numMissingSynapses: 2, input: 1
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 3, numMissingSynapses: 3, input: 2
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 1, numMissingSynapses: 1, input: 2
+----------------------------- End of Cycle: 278 -----------------------------
+----------------------------- Start of Cycle: 279 -----------------------------
+Cycle: 279, Sequence: S2, Accuracy: 88.88888888888889
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 3, numMissingSynapses: 3, input: 1
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 1, numMissingSynapses: 1, input: 1
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 11, numMissingSynapses: 11, input: 2
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 11, numMissingSynapses: 11, input: 2
+----------------------------- End of Cycle: 279 -----------------------------
+----------------------------- Start of Cycle: 280 -----------------------------
+Cycle: 280, Sequence: S2, Accuracy: 88.88888888888889
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 3, numMissingSynapses: 3, input: 1
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 1, numMissingSynapses: 1, input: 1
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 3, numMissingSynapses: 3, input: 2
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 2, numMissingSynapses: 2, input: 2
+----------------------------- End of Cycle: 280 -----------------------------
+----------------------------- Start of Cycle: 281 -----------------------------
+Cycle: 281, Sequence: S2, Accuracy: 88.88888888888889
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 3, numMissingSynapses: 3, input: 1
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 1, numMissingSynapses: 1, input: 1
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 11, numMissingSynapses: 11, input: 2
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 11, numMissingSynapses: 11, input: 2
+----------------------------- End of Cycle: 281 -----------------------------
+----------------------------- Start of Cycle: 282 -----------------------------
+Cycle: 282, Sequence: S2, Accuracy: 88.88888888888889
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 3, numMissingSynapses: 3, input: 1
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 2, numMissingSynapses: 2, input: 1
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 11, numMissingSynapses: 11, input: 2
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 11, numMissingSynapses: 11, input: 2
+----------------------------- End of Cycle: 282 -----------------------------
+----------------------------- Start of Cycle: 283 -----------------------------
+Cycle: 283, Sequence: S2, Accuracy: 88.88888888888889
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 3, numMissingSynapses: 3, input: 1
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 2, numMissingSynapses: 2, input: 1
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 3, numMissingSynapses: 3, input: 2
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 2, numMissingSynapses: 2, input: 2
+----------------------------- End of Cycle: 283 -----------------------------
+----------------------------- Start of Cycle: 284 -----------------------------
+Cycle: 284, Sequence: S2, Accuracy: 88.88888888888889
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 3, numMissingSynapses: 3, input: 1
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 2, numMissingSynapses: 2, input: 1
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 11, numMissingSynapses: 11, input: 2
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 11, numMissingSynapses: 11, input: 2
+----------------------------- End of Cycle: 284 -----------------------------
+----------------------------- Start of Cycle: 285 -----------------------------
+Cycle: 285, Sequence: S2, Accuracy: 88.88888888888889
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 3, numMissingSynapses: 3, input: 1
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 2, numMissingSynapses: 2, input: 1
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 3, numMissingSynapses: 3, input: 2
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 2, numMissingSynapses: 2, input: 2
+----------------------------- End of Cycle: 285 -----------------------------
+----------------------------- Start of Cycle: 286 -----------------------------
+Cycle: 286, Sequence: S2, Accuracy: 88.88888888888889
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 3, numMissingSynapses: 3, input: 1
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 2, numMissingSynapses: 2, input: 1
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 11, numMissingSynapses: 11, input: 2
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 11, numMissingSynapses: 11, input: 2
+----------------------------- End of Cycle: 286 -----------------------------
+----------------------------- Start of Cycle: 287 -----------------------------
+Cycle: 287, Sequence: S2, Accuracy: 88.88888888888889
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 3, numMissingSynapses: 3, input: 1
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 2, numMissingSynapses: 2, input: 1
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 11, numMissingSynapses: 11, input: 2
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 11, numMissingSynapses: 11, input: 2
+----------------------------- End of Cycle: 287 -----------------------------
+----------------------------- Start of Cycle: 288 -----------------------------
+Cycle: 288, Sequence: S2, Accuracy: 88.88888888888889
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 3, numMissingSynapses: 3, input: 1
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 2, numMissingSynapses: 2, input: 1
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 2, numMissingSynapses: 2, input: 2
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 1, numMissingSynapses: 1, input: 2
+----------------------------- End of Cycle: 288 -----------------------------
+----------------------------- Start of Cycle: 289 -----------------------------
+Cycle: 289, Sequence: S2, Accuracy: 88.88888888888889
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 2, numMissingSynapses: 2, input: 1
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 1, numMissingSynapses: 1, input: 1
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 11, numMissingSynapses: 11, input: 2
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 11, numMissingSynapses: 11, input: 2
+----------------------------- End of Cycle: 289 -----------------------------
+----------------------------- Start of Cycle: 290 -----------------------------
+Cycle: 290, Sequence: S2, Accuracy: 88.88888888888889
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 2, numMissingSynapses: 2, input: 1
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 1, numMissingSynapses: 1, input: 1
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 2, numMissingSynapses: 2, input: 2
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 1, numMissingSynapses: 1, input: 2
+----------------------------- End of Cycle: 290 -----------------------------
+----------------------------- Start of Cycle: 291 -----------------------------
+Cycle: 291, Sequence: S2, Accuracy: 88.88888888888889
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 2, numMissingSynapses: 2, input: 1
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 1, numMissingSynapses: 1, input: 1
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 11, numMissingSynapses: 11, input: 2
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 11, numMissingSynapses: 11, input: 2
+----------------------------- End of Cycle: 291 -----------------------------
+----------------------------- Start of Cycle: 292 -----------------------------
+Cycle: 292, Sequence: S2, Accuracy: 88.88888888888889
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 2, numMissingSynapses: 2, input: 1
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 1, numMissingSynapses: 1, input: 1
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 11, numMissingSynapses: 11, input: 2
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 11, numMissingSynapses: 11, input: 2
+----------------------------- End of Cycle: 292 -----------------------------
+----------------------------- Start of Cycle: 293 -----------------------------
+Cycle: 293, Sequence: S2, Accuracy: 88.88888888888889
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 2, numMissingSynapses: 2, input: 1
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 1, numMissingSynapses: 1, input: 1
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 2, numMissingSynapses: 2, input: 2
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 1, numMissingSynapses: 1, input: 2
+----------------------------- End of Cycle: 293 -----------------------------
+----------------------------- Start of Cycle: 294 -----------------------------
+Cycle: 294, Sequence: S2, Accuracy: 88.88888888888889
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 2, numMissingSynapses: 2, input: 1
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 1, numMissingSynapses: 1, input: 1
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 11, numMissingSynapses: 11, input: 2
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 11, numMissingSynapses: 11, input: 2
+----------------------------- End of Cycle: 294 -----------------------------
+----------------------------- Start of Cycle: 295 -----------------------------
+Cycle: 295, Sequence: S2, Accuracy: 88.88888888888889
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 2, numMissingSynapses: 2, input: 1
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 1, numMissingSynapses: 1, input: 1
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 2, numMissingSynapses: 2, input: 2
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 1, numMissingSynapses: 1, input: 2
+----------------------------- End of Cycle: 295 -----------------------------
+----------------------------- Start of Cycle: 296 -----------------------------
+Cycle: 296, Sequence: S2, Accuracy: 88.88888888888889
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 2, numMissingSynapses: 2, input: 1
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 1, numMissingSynapses: 1, input: 1
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 11, numMissingSynapses: 11, input: 2
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 11, numMissingSynapses: 11, input: 2
+----------------------------- End of Cycle: 296 -----------------------------
+----------------------------- Start of Cycle: 297 -----------------------------
+Cycle: 297, Sequence: S2, Accuracy: 88.88888888888889
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 2, numMissingSynapses: 2, input: 1
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 1, numMissingSynapses: 1, input: 1
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 11, numMissingSynapses: 11, input: 2
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 11, numMissingSynapses: 11, input: 2
+----------------------------- End of Cycle: 297 -----------------------------
+----------------------------- Start of Cycle: 298 -----------------------------
+Cycle: 298, Sequence: S2, Accuracy: 88.88888888888889
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 2, numMissingSynapses: 2, input: 1
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 1, numMissingSynapses: 1, input: 1
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 2, numMissingSynapses: 2, input: 2
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 1, numMissingSynapses: 1, input: 2
+----------------------------- End of Cycle: 298 -----------------------------
+----------------------------- Start of Cycle: 299 -----------------------------
+Cycle: 299, Sequence: S2, Accuracy: 88.88888888888889
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 2, numMissingSynapses: 2, input: 1
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 1, numMissingSynapses: 1, input: 1
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 11, numMissingSynapses: 11, input: 2
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 11, numMissingSynapses: 11, input: 2
+----------------------------- End of Cycle: 299 -----------------------------
+----------------------------- Start of Cycle: 300 -----------------------------
+Cycle: 300, Sequence: S3, Accuracy: 0
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 9, numMissingSynapses: 9, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 9, numMissingSynapses: 9, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 9, numMissingSynapses: 9, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 9, numMissingSynapses: 9, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 9, numMissingSynapses: 9, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 9, numMissingSynapses: 9, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 9, numMissingSynapses: 9, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 9, numMissingSynapses: 9, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 10, numMissingSynapses: 10, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 9, numMissingSynapses: 9, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 9, numMissingSynapses: 9, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 9, numMissingSynapses: 9, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 9, numMissingSynapses: 9, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 9, numMissingSynapses: 9, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 9, numMissingSynapses: 9, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 9, numMissingSynapses: 9, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 10, numMissingSynapses: 10, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 11
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 11
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 11
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 11
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 11
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 11
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 11
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 11
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 11
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 11
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 11
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 11
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 11
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 11
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 11
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 11
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 11
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 11
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 11
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 11
+----------------------------- End of Cycle: 300 -----------------------------
+----------------------------- Start of Cycle: 301 -----------------------------
+Cycle: 301, Sequence: S3, Accuracy: 0
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 10, numMissingSynapses: 10, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 10, numMissingSynapses: 10, input: 9
+----------------------------- End of Cycle: 301 -----------------------------
+----------------------------- Start of Cycle: 302 -----------------------------
+Cycle: 302, Sequence: S3, Accuracy: 66.66666666666666
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 10, numMissingSynapses: 10, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 10, numMissingSynapses: 10, input: 9
+----------------------------- End of Cycle: 302 -----------------------------
+----------------------------- Start of Cycle: 303 -----------------------------
+Cycle: 303, Sequence: S3, Accuracy: 44.44444444444444
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 5
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 5
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 5
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 5
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 7
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 7
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 7
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 7
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 7
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 7
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 7
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 7
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 7
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 7
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 7
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 7
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 7
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 7
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 7
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 7
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 7
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 7
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 7
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 7
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 3, numMissingSynapses: 3, input: 9
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 2, numMissingSynapses: 2, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 9, numMissingSynapses: 9, input: 11
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 9, numMissingSynapses: 9, input: 11
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 11
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 9, numMissingSynapses: 9, input: 11
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 11
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 9, numMissingSynapses: 9, input: 11
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 9, numMissingSynapses: 9, input: 11
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 10, numMissingSynapses: 10, input: 11
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 10, numMissingSynapses: 10, input: 11
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 10, numMissingSynapses: 10, input: 11
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 11
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 9, numMissingSynapses: 9, input: 11
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 9, numMissingSynapses: 9, input: 11
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 11
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 11, numMissingSynapses: 11, input: 11
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 8, numMissingSynapses: 8, input: 11
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 7, numMissingSynapses: 7, input: 11
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 9, numMissingSynapses: 9, input: 11
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 11, numMissingSynapses: 11, input: 11
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 10, numMissingSynapses: 10, input: 11
+----------------------------- End of Cycle: 303 -----------------------------
+----------------------------- Start of Cycle: 304 -----------------------------
+Cycle: 304, Sequence: S3, Accuracy: 66.66666666666666
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 1, numMissingSynapses: 1, input: 11
+	GrowSynapses(): calledBy: BurstColumnWithMatchingSegments, requiredNewSynapses: 1, numMissingSynapses: 1, input: 11
+----------------------------- End of Cycle: 304 -----------------------------
+----------------------------- Start of Cycle: 305 -----------------------------
+Cycle: 305, Sequence: S3, Accuracy: 66.66666666666666
+----------------------------- End of Cycle: 305 -----------------------------
+----------------------------- Start of Cycle: 306 -----------------------------
+Cycle: 306, Sequence: S3, Accuracy: 77.77777777777779
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 8
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 8
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 8
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 8
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 8
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 8
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 8
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 8
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 8
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 8
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 8
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 8
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 8
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 8
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 8
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 8
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 8
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 8
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 8
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 8
+----------------------------- End of Cycle: 306 -----------------------------
+----------------------------- Start of Cycle: 307 -----------------------------
+Cycle: 307, Sequence: S3, Accuracy: 77.77777777777779
+----------------------------- End of Cycle: 307 -----------------------------
+----------------------------- Start of Cycle: 308 -----------------------------
+Cycle: 308, Sequence: S3, Accuracy: 77.77777777777779
+----------------------------- End of Cycle: 308 -----------------------------
+----------------------------- Start of Cycle: 309 -----------------------------
+Cycle: 309, Sequence: S3, Accuracy: 77.77777777777779
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 9
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 9
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 3, numMissingSynapses: 3, input: 10
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 2, numMissingSynapses: 2, input: 10
+----------------------------- End of Cycle: 309 -----------------------------
+----------------------------- Start of Cycle: 310 -----------------------------
+Cycle: 310, Sequence: S3, Accuracy: 77.77777777777779
+----------------------------- End of Cycle: 310 -----------------------------
+----------------------------- Start of Cycle: 311 -----------------------------
+Cycle: 311, Sequence: S3, Accuracy: 77.77777777777779
+----------------------------- End of Cycle: 311 -----------------------------
+----------------------------- Start of Cycle: 312 -----------------------------
+Cycle: 312, Sequence: S3, Accuracy: 88.88888888888889
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 3, numMissingSynapses: 3, input: 10
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 5, numMissingSynapses: 5, input: 10
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 5, numMissingSynapses: 5, input: 10
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 3, numMissingSynapses: 3, input: 10
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 1, numMissingSynapses: 1, input: 10
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 5, numMissingSynapses: 5, input: 10
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 5, numMissingSynapses: 5, input: 10
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 3, numMissingSynapses: 3, input: 10
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 5, numMissingSynapses: 5, input: 10
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 5, numMissingSynapses: 5, input: 10
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 2, numMissingSynapses: 2, input: 10
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 5, numMissingSynapses: 5, input: 10
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 3, numMissingSynapses: 3, input: 10
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 5, numMissingSynapses: 5, input: 10
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 5, numMissingSynapses: 5, input: 10
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 5, numMissingSynapses: 5, input: 10
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 3, numMissingSynapses: 3, input: 10
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 4, numMissingSynapses: 4, input: 10
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 5, numMissingSynapses: 5, input: 10
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 5, numMissingSynapses: 5, input: 10
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 3, numMissingSynapses: 3, input: 10
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 3, numMissingSynapses: 3, input: 10
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 5, numMissingSynapses: 5, input: 10
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 5, numMissingSynapses: 5, input: 10
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 5, numMissingSynapses: 5, input: 10
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 5, numMissingSynapses: 5, input: 10
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 5, numMissingSynapses: 5, input: 10
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 3, numMissingSynapses: 3, input: 10
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 5, numMissingSynapses: 5, input: 10
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 4, numMissingSynapses: 4, input: 10
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 5, numMissingSynapses: 5, input: 10
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 5, numMissingSynapses: 5, input: 10
+	GrowSynapses(): calledBy: ActivatePredictedColumn, requiredNewSynapses: 5, numMissingSynapses: 5, input: 10
+----------------------------- End of Cycle: 312 -----------------------------
+----------------------------- Start of Cycle: 313 -----------------------------
+Cycle: 313, Sequence: S3, Accuracy: 88.88888888888889
+----------------------------- End of Cycle: 313 -----------------------------
+----------------------------- Start of Cycle: 314 -----------------------------
+Cycle: 314, Sequence: S3, Accuracy: 88.88888888888889
+----------------------------- End of Cycle: 314 -----------------------------
+----------------------------- Start of Cycle: 315 -----------------------------
+Cycle: 315, Sequence: S3, Accuracy: 88.88888888888889
+----------------------------- End of Cycle: 315 -----------------------------
+----------------------------- Start of Cycle: 316 -----------------------------
+Cycle: 316, Sequence: S3, Accuracy: 88.88888888888889
+----------------------------- End of Cycle: 316 -----------------------------
+----------------------------- Start of Cycle: 317 -----------------------------
+Cycle: 317, Sequence: S3, Accuracy: 88.88888888888889
+----------------------------- End of Cycle: 317 -----------------------------
+----------------------------- Start of Cycle: 318 -----------------------------
+Cycle: 318, Sequence: S3, Accuracy: 77.77777777777779
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 10
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 10
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 10
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 10
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 10
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 10
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 10
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 10
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 10
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 10
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 10
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 10
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 10
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 10
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 10
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 10
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 10
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 10
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 10
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 10
+----------------------------- End of Cycle: 318 -----------------------------
+----------------------------- Start of Cycle: 319 -----------------------------
+Cycle: 319, Sequence: S3, Accuracy: 77.77777777777779
+----------------------------- End of Cycle: 319 -----------------------------
+----------------------------- Start of Cycle: 320 -----------------------------
+Cycle: 320, Sequence: S3, Accuracy: 77.77777777777779
+----------------------------- End of Cycle: 320 -----------------------------
+----------------------------- Start of Cycle: 321 -----------------------------
+Cycle: 321, Sequence: S3, Accuracy: 77.77777777777779
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 11
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 11
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 11
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 11
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 11
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 11
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 11
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 11
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 11
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 11
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 11
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 11
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 11
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 11
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 11
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 11
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 11
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 11
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 11
+	GrowSynapses(): calledBy: BurstColumnWithoutMatchingSegments, requiredNewSynapses: 20, numMissingSynapses: 20, input: 11
+----------------------------- End of Cycle: 321 -----------------------------
+----------------------------- Start of Cycle: 322 -----------------------------
+Cycle: 322, Sequence: S3, Accuracy: 77.77777777777779
+----------------------------- End of Cycle: 322 -----------------------------
+----------------------------- Start of Cycle: 323 -----------------------------
+Cycle: 323, Sequence: S3, Accuracy: 77.77777777777779
+----------------------------- End of Cycle: 323 -----------------------------
+----------------------------- Start of Cycle: 324 -----------------------------
+Cycle: 324, Sequence: S3, Accuracy: 88.88888888888889
+----------------------------- End of Cycle: 324 -----------------------------
+----------------------------- Start of Cycle: 325 -----------------------------
+Cycle: 325, Sequence: S3, Accuracy: 88.88888888888889
+----------------------------- End of Cycle: 325 -----------------------------
+----------------------------- Start of Cycle: 326 -----------------------------
+Cycle: 326, Sequence: S3, Accuracy: 88.88888888888889
+----------------------------- End of Cycle: 326 -----------------------------
+----------------------------- Start of Cycle: 327 -----------------------------
+Cycle: 327, Sequence: S3, Accuracy: 88.88888888888889
+----------------------------- End of Cycle: 327 -----------------------------
+----------------------------- Start of Cycle: 328 -----------------------------
+Cycle: 328, Sequence: S3, Accuracy: 88.88888888888889
+----------------------------- End of Cycle: 328 -----------------------------
+----------------------------- Start of Cycle: 329 -----------------------------
+Cycle: 329, Sequence: S3, Accuracy: 88.88888888888889
+----------------------------- End of Cycle: 329 -----------------------------
+----------------------------- Start of Cycle: 330 -----------------------------
+Cycle: 330, Sequence: S3, Accuracy: 88.88888888888889
+----------------------------- End of Cycle: 330 -----------------------------
+----------------------------- Start of Cycle: 331 -----------------------------
+Cycle: 331, Sequence: S3, Accuracy: 88.88888888888889
+----------------------------- End of Cycle: 331 -----------------------------
+----------------------------- Start of Cycle: 332 -----------------------------
+Cycle: 332, Sequence: S3, Accuracy: 88.88888888888889
+----------------------------- End of Cycle: 332 -----------------------------
+----------------------------- Start of Cycle: 333 -----------------------------
+Cycle: 333, Sequence: S3, Accuracy: 88.88888888888889
+----------------------------- End of Cycle: 333 -----------------------------
+----------------------------- Start of Cycle: 334 -----------------------------
+Cycle: 334, Sequence: S3, Accuracy: 88.88888888888889
+----------------------------- End of Cycle: 334 -----------------------------
+----------------------------- Start of Cycle: 335 -----------------------------
+Cycle: 335, Sequence: S3, Accuracy: 88.88888888888889
+----------------------------- End of Cycle: 335 -----------------------------
+----------------------------- Start of Cycle: 336 -----------------------------
+Cycle: 336, Sequence: S3, Accuracy: 88.88888888888889
+----------------------------- End of Cycle: 336 -----------------------------
+----------------------------- Start of Cycle: 337 -----------------------------
+Cycle: 337, Sequence: S3, Accuracy: 88.88888888888889
+----------------------------- End of Cycle: 337 -----------------------------
+----------------------------- Start of Cycle: 338 -----------------------------
+Cycle: 338, Sequence: S3, Accuracy: 88.88888888888889
+----------------------------- End of Cycle: 338 -----------------------------
+----------------------------- Start of Cycle: 339 -----------------------------
+Cycle: 339, Sequence: S3, Accuracy: 88.88888888888889
+----------------------------- End of Cycle: 339 -----------------------------
+----------------------------- Start of Cycle: 340 -----------------------------
+Cycle: 340, Sequence: S3, Accuracy: 88.88888888888889
+----------------------------- End of Cycle: 340 -----------------------------
+----------------------------- Start of Cycle: 341 -----------------------------
+Cycle: 341, Sequence: S3, Accuracy: 88.88888888888889
+----------------------------- End of Cycle: 341 -----------------------------
+----------------------------- Start of Cycle: 342 -----------------------------
+Cycle: 342, Sequence: S3, Accuracy: 88.88888888888889
+----------------------------- End of Cycle: 342 -----------------------------
+----------------------------- Start of Cycle: 343 -----------------------------
+Cycle: 343, Sequence: S3, Accuracy: 88.88888888888889
+----------------------------- End of Cycle: 343 -----------------------------
+----------------------------- Start of Cycle: 344 -----------------------------
+Cycle: 344, Sequence: S3, Accuracy: 88.88888888888889
+----------------------------- End of Cycle: 344 -----------------------------
+----------------------------- Start of Cycle: 345 -----------------------------
+Cycle: 345, Sequence: S3, Accuracy: 88.88888888888889
+----------------------------- End of Cycle: 345 -----------------------------
+----------------------------- Start of Cycle: 346 -----------------------------
+Cycle: 346, Sequence: S3, Accuracy: 88.88888888888889
+----------------------------- End of Cycle: 346 -----------------------------
+----------------------------- Start of Cycle: 347 -----------------------------
+Cycle: 347, Sequence: S3, Accuracy: 88.88888888888889
+----------------------------- End of Cycle: 347 -----------------------------
+----------------------------- Start of Cycle: 348 -----------------------------
+Cycle: 348, Sequence: S3, Accuracy: 88.88888888888889
+----------------------------- End of Cycle: 348 -----------------------------
+----------------------------- Start of Cycle: 349 -----------------------------
+Cycle: 349, Sequence: S3, Accuracy: 88.88888888888889
+----------------------------- End of Cycle: 349 -----------------------------
+----------------------------- Start of Cycle: 350 -----------------------------
+Cycle: 350, Sequence: S3, Accuracy: 88.88888888888889
+----------------------------- End of Cycle: 350 -----------------------------
+----------------------------- Start of Cycle: 351 -----------------------------
+Cycle: 351, Sequence: S3, Accuracy: 88.88888888888889
+----------------------------- End of Cycle: 351 -----------------------------
+----------------------------- Start of Cycle: 352 -----------------------------
+Cycle: 352, Sequence: S3, Accuracy: 88.88888888888889
+----------------------------- End of Cycle: 352 -----------------------------
+----------------------------- Start of Cycle: 353 -----------------------------
+Cycle: 353, Sequence: S3, Accuracy: 88.88888888888889
+----------------------------- End of Cycle: 353 -----------------------------

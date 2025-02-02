@@ -1,0 +1,10 @@
+{
+  "ExperimentId": "1",
+  "Name": "Test MaxNewSynapseCount values",
+  "Description": "Team AS Cloud Computing Implementation",
+  "ProjectName": "ML22/23-13 Investigate Influence of parameter MaxNewSynapseCount",
+  "GroupName": "team-as",
+  "MaxNewSynapseCount": 20,
+  "file": "file_1.json",
+  "OperationType":  "efficiency"
+}
